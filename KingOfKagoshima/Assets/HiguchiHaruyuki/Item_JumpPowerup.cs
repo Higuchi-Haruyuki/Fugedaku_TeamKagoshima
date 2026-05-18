@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Item_JumpPowerup : ItemBase
@@ -12,8 +13,8 @@ public class Item_JumpPowerup : ItemBase
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数
-    public override ItemBase Effect()
+    public override void Use()
     {
-        return this;
+        base.Use();
     }
 }
