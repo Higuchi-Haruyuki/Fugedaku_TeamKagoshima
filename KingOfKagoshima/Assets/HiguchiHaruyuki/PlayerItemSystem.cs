@@ -29,6 +29,7 @@ public class PlayerItemSystem : MonoBehaviour
                 {
                     m_itemList.Add(item);                    
                 }
+                //持っているときは既存の使用回数を増加させる
                 else
                 {
                     i.AddUseCount(item.UseCount);
