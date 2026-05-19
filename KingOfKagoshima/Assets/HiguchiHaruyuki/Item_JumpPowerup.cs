@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Item_JumpPowerup : ItemBase
 {
     [SerializeField] private int m_useCount = 0;
+    public readonly int m_jumpPower = 70;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,8 +15,11 @@ public class Item_JumpPowerup : ItemBase
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数
-    public override void Use()
+    public override ItemBase Use()
     {
         base.Use();
+        return this;
     }
+
+    
 }

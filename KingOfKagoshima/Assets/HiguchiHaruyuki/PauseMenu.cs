@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Canvas))]
 public class PauseMenu : MonoBehaviour
@@ -206,6 +207,7 @@ public class PauseMenu : MonoBehaviour
     {
         //giveupしてメインシーンを終了する
         Debug.Log("GIVEUP!!!");
+        SceneManager.LoadScene("StageSelect");
     }
 
     //giveupメニューでのNo選択肢
