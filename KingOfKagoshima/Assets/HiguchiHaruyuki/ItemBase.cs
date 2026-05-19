@@ -8,8 +8,9 @@ public class ItemBase : MonoBehaviour
     public string IconPath {  get; protected set; }
     public int UseCount { get; protected set; }
     public void AddUseCount(int useCount) {  UseCount = useCount; }
-    public virtual void Use() 
+    public virtual ItemBase Use()
     {
         UseCount--;
+        return this;
     }
 }
