@@ -3,9 +3,12 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.InputSystem;
 public class PlayerItemSystem : MonoBehaviour
 {
     [SerializeField] private List<ItemBase> m_itemList;
+    //デバック用
+    private bool m_isPressdSpaceKeyBeforeFlame = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,45 +18,93 @@ public class PlayerItemSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Item"))
+        if (Keyboard.current.aKey.isPressed)
         {
-            ItemBase item = collision.gameObject.GetComponent<ItemBase>();
-            foreach (ItemBase i in m_itemList)
+            var pos = transform.position;
+            pos.x -= 2 * Time.deltaTime;
+            transform.position = pos;
+        }
+        if (Keyboard.current.dKey.isPressed)
+        {
+            var pos = transform.position;
+            pos.x += 2 * Time.deltaTime;
+            transform.position = pos;
+        }
+        if (Keyboard.current.spaceKey.isPressed)
+        {
+            if (!m_isPressdSpaceKeyBeforeFlame)
             {
-                //同じアイテムをもっていないときアイテムリストに追加する
-                if (i.Name != item.Name)
-                {
-                    m_itemList.Add(item);                    
+                int jumpPower = 50;
+                ItemBase itembase = UseItem("ジャンプ力上昇");
+                //ジャンプ力上昇アイテムをもっているとき
+                if (itembase != null) 
+                { 
+                    var jumpPowerUp = itembase as Item_JumpPowerup; 
+                    //キャストにせいこうしたとき
+                    if (jumpPowerUp != null) 
+                    {
+                        jumpPower = jumpPowerUp.m_jumpPower;
+                    }
                 }
-                //持っているときは既存の使用回数を増加させる
-                else
-                {
-                    i.AddUseCount(item.UseCount);
-                }
+
+                var pos = transform.position;
+                pos.y += jumpPower * Time.deltaTime;
+                transform.position = pos;
+                m_isPressdSpaceKeyBeforeFlame=true;
             }
 
         }
+        else
+        {
+            m_isPressdSpaceKeyBeforeFlame = false;
+        }
     }
-    //アイテムの名前を引数にとり、所持しているときにTrueを返す関数
-    public bool UseItem(string itemName)
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Debug.Log("Itemと衝突しました");
+            ItemBase item = collision.gameObject.GetComponent<ItemBase>();
+            if (m_itemList.Count == 0) m_itemList.Add(item);
+            else
+            {
+                foreach (ItemBase i in m_itemList)
+                {
+                    //同じアイテムをもっていないときアイテムリストに追加する
+                    if (i.Name != item.Name)
+                    {
+                        m_itemList.Add(item);                    
+                    }
+                    //持っているときは既存の使用回数を増加させる
+                    else
+                    {
+                        i.AddUseCount(item.UseCount);
+                    }
+                    item.gameObject.GetComponent<Collider2D>().enabled = false;
+                    item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+        }
+    }
+    //アイテムの名前を引数にとり、所持しているときに使用して、そのインスタンスを返す関数
+    public ItemBase UseItem(string itemName)
     {
         foreach (ItemBase item in m_itemList)
         {
             if(item.Name == itemName)
-            {
-                item.Use();
+            {                
                 //残り使用回数が0のときアイテムリストから削除する
                 if(item.UseCount == 0)
                 {
                     m_itemList.Remove(item);
+                    Destroy(item);
+                    return null;
                 }
-                return true; 
+                item.Use();
+                return item; 
             }
         }
-        return false;
+        return null;
     }
 }
