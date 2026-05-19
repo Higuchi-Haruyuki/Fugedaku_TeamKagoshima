@@ -12,9 +12,14 @@ public class PlayerController : MonoBehaviour
     private float chargePower;
     private bool isGround = true;
 
+    // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
+    [Range(0f, 1.5f)] public float bounciness = 0.8f;
+    Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
     public LayerMask groundLayer; // 地面と判定するレイヤー
     public float rayLength = 0.2f; // 足元からどれくらい下にレイを伸ばすか
+
+
 
     void Start()
     {
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         Move(keyboard);
         ChargeJump(keyboard);
+        velocityBeforeFlame = rb.linearVelocity;
     }
 
     // ★新規追加：レイキャストによる接地判定メソッド
@@ -99,5 +105,28 @@ public class PlayerController : MonoBehaviour
             chargePower = 0f;
             // ※isGround = false は、次のフレームの CheckGrounded() で自動計算されるため不要になります
         }
+    }
+    // ★新規追加：壁に衝突した瞬間の処理
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 地面にいるときは反射しない（壁や天井にぶつかったときだけ）
+        if (isGround) return;
+        Debug.Log("壁に当たったよ");
+
+        // 衝突した面（最初の接触点）の情報を取得
+        ContactPoint2D contact = collision.contacts[0];
+
+        // 壁の法線ベクトル（壁が向いている正面の向き）
+        Vector2 wallNormal = contact.normal;
+
+        // 【重要】真下を向いている法線（＝床）や、斜めすぎる床は除外する
+        // wallNormal.y が 0.7 以上の場合は「ほぼ床」とみなして反射処理をスキップ
+        if (wallNormal.y > 0.7f) return;
+        Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
+        // 現在の速度ベクトルを、壁の法線を基準に反射させる
+        Vector2 reflectDir = Vector2.Reflect(velocityBeforeFlame, wallNormal);
+
+        // 反射ベクトルに勢い（bounciness）をかけて速度を再設定
+        rb.linearVelocity = reflectDir * bounciness;
     }
 }
