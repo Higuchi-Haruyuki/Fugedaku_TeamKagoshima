@@ -10,7 +10,7 @@ public class Stage1Selection : MonoBehaviour
         if (Keyboard.current.digit1Key.isPressed)
         {
             // StageSelectシーンへ移動
-            SceneManager.LoadScene("Stage1");
+            SceneManager.LoadScene("StageSelect");
         }
     }
 }
