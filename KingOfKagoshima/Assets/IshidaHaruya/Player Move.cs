@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             if (keyboard.spaceKey.isPressed && !m_isPressdDoubleJump)
             {
                 ItemBase itembase = m_playerItemSystem.CheckItem("二段ジャンプ");
-                //ジャンプ力上昇アイテムをもっているとき
+                //二段ジャンプアイテムをもっているとき
                 if (itembase != null)
                 {
                     var doubleJump = itembase as Item_DoubleJump;

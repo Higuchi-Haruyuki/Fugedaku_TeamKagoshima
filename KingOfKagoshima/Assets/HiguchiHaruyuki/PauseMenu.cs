@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Canvas))]
 public class PauseMenu : MonoBehaviour
@@ -21,7 +22,9 @@ public class PauseMenu : MonoBehaviour
     private char m_currentMenu = 'c';
     private List<bool> m_isChoiceMenuCheckBoxList = new();
     private List<bool> m_isGiveupMenuCheckBoxList = new();
-
+    private ScoreTime m_scoreTime = new();
+    //
+    public UnityEvent OnGiveup;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -58,7 +61,10 @@ public class PauseMenu : MonoBehaviour
 
         }
     }
-
+    public ScoreTime GetScoreTime()
+    {
+        return m_scoreTime;
+    }
     void Update()
     {
         if (!m_pauseCanvas.enabled) return;
@@ -191,6 +197,7 @@ public class PauseMenu : MonoBehaviour
         //pauseメニューを閉じる処理
         m_pauseCanvas.enabled = false;
         m_giveupMenu.SetActive(false);
+        Time.timeScale = 1.0f;
         m_currentMenu = 'c';
     }
 
@@ -207,6 +214,7 @@ public class PauseMenu : MonoBehaviour
     {
         //giveupしてメインシーンを終了する
         Debug.Log("GIVEUP!!!");
+        OnGiveup?.Invoke();
         SceneManager.LoadScene("StageSelect");
     }
 
