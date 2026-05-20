@@ -27,20 +27,27 @@ public class PlayerItemSystem : MonoBehaviour
             if (m_itemList.Count == 0) m_itemList.Add(item);
             else
             {
+                //見つかったアイテムを保管する変数
+                ItemBase foundItem = null;
                 foreach (ItemBase i in m_itemList)
                 {
-                    //同じアイテムをもっていないときアイテムリストに追加する
-                    if (i.Name != item.Name)
+                    //同じアイテムのインスタンスを代入する
+                    if (i.Name == item.Name)
                     {
-                        m_itemList.Add(item);                    
+                        foundItem = i; 
+                        item.gameObject.GetComponent<Collider2D>().enabled = false;
+                        item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        break;               
                     }
-                    //持っているときは既存の使用回数を増加させる
-                    else
-                    {
-                        i.AddUseCount(item.UseCount);
-                    }
-                    item.gameObject.GetComponent<Collider2D>().enabled = false;
-                    item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (foundItem != null)
+                {
+                    //アイテムが見つかている時、使用可能数を増加させる
+                    foundItem.AddUseCount(item.UseCount);
+                }
+                else
+                {
+                    m_itemList.Add(item);
                 }
             }
         }
