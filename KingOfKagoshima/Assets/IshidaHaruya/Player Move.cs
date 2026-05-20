@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer; // 地面と判定するレイヤー
     public float rayLength = 0.2f; // 足元からどれくらい下にレイを伸ばすか
 
-
+    private PlayerItemSystem m_playerItemSystem;
+    private float m_doubleJumpPower = 10f;
+    private bool m_isPressdDoubleJump = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>(); // プレイヤーのコライダーを取得
+        m_playerItemSystem = GetComponent<PlayerItemSystem>();
     }
 
     void Update()
@@ -85,8 +88,29 @@ public class PlayerController : MonoBehaviour
 
     void ChargeJump(Keyboard keyboard)
     {
-        if (!isGround) return;
-
+        if (!isGround) 
+        {
+            //2段ジャンプの処理
+            //既に二段ジャンプをしているときは二段ジャンプできないようにする
+            if (keyboard.spaceKey.isPressed && !m_isPressdDoubleJump)
+            {
+                ItemBase itembase = m_playerItemSystem.CheckItem("二段ジャンプ");
+                //ジャンプ力上昇アイテムをもっているとき
+                if (itembase != null)
+                {
+                    var doubleJump = itembase as Item_DoubleJump;
+                    //キャストに成功したとき
+                    if (doubleJump != null)
+                    {
+                        doubleJump.Use();
+                        DoubleJump(keyboard);
+                        Debug.Log($"二段ジャンプの残り回数{doubleJump.UseCount}");
+                        m_isPressdDoubleJump = true;
+                    }
+                }
+            }
+            return; 
+        }
         if (keyboard.spaceKey.isPressed)
         {
             chargePower += Time.deltaTime * 10f;
@@ -98,25 +122,78 @@ public class PlayerController : MonoBehaviour
             float x = 0f;
             if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
             {
-                Debug.Log("左入力あり");
                 x = -1f; 
             }
             if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
             {
-                Debug.Log("右入力あり");
                 x = 1f; 
             }
 
             Vector2 jumpDir = new Vector2(x, 1f).normalized;
-            Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}");
-            rb.linearVelocity = jumpDir * chargePower;
-            Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
+
+            float jumpPowerModifier = 1f;
+            ItemBase itembase = m_playerItemSystem.CheckItem("ジャンプ力上昇");
+            //ジャンプ力上昇アイテムをもっているとき
+            if (itembase != null)
+            {
+                var jumpPowerUp = itembase as Item_JumpPowerup;
+                //キャストに成功したとき
+                if (jumpPowerUp != null)
+                {
+                    jumpPowerUp.Use();
+                    Debug.Log($"ジャンプ力上昇の残り回数{jumpPowerUp.UseCount}");
+                    jumpPowerModifier = jumpPowerUp.m_jumpPower;
+                }
+            }
+            //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
+            rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
+            //Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
             chargePower = 0f;
+            //ジャンプ後に二段ジャンプのフラグを戻す
+            m_isPressdDoubleJump = false;
 
             if (JumpCounter.instance != null)
             {
                 JumpCounter.instance.AddJump();
             }
+        }
+    }
+    //二段ジャンプのジャンプ
+    private void DoubleJump(Keyboard keyboard)
+    {
+        float x = 0f;
+        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
+        {
+            x = -1f;
+        }
+        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
+        {
+            x = 1f;
+        }
+        Vector2 jumpDir = new Vector2(x, 1f).normalized;
+
+        float jumpPowerModifier = 1f;
+        ItemBase itembase = m_playerItemSystem.CheckItem("ジャンプ力上昇");
+        //ジャンプ力上昇アイテムをもっているとき
+        if (itembase != null)
+        {
+            var jumpPowerUp = itembase as Item_JumpPowerup;
+            //キャストに成功したとき
+            if (jumpPowerUp != null)
+            {
+                jumpPowerUp.Use();
+                jumpPowerModifier = jumpPowerUp.m_jumpPower;
+            }
+        }
+
+        chargePower = m_doubleJumpPower;
+        //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
+        rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
+        chargePower = 0f;
+
+        if (JumpCounter.instance != null)
+        {
+            JumpCounter.instance.AddJump();
         }
     }
     // ★新規追加：壁に衝突した瞬間の処理
@@ -135,7 +212,7 @@ public class PlayerController : MonoBehaviour
         // 【重要】真下を向いている法線（＝床）や、斜めすぎる床は除外する
         // wallNormal.y が 0.7 以上の場合は「ほぼ床」とみなして反射処理をスキップ
         if (wallNormal.y > 0.7f) return;
-        Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
+        //Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
         // 現在の速度ベクトルを、壁の法線を基準に反射させる
         Vector2 reflectDir = Vector2.Reflect(velocityBeforeFlame, wallNormal);
 
