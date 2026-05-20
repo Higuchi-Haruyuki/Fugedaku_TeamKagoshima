@@ -22,7 +22,6 @@ public class PlayerItemSystem : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("Itemと衝突しました");
             ItemBase item = collision.gameObject.GetComponent<ItemBase>();
             if (m_itemList.Count == 0) m_itemList.Add(item);
             else
@@ -35,6 +34,7 @@ public class PlayerItemSystem : MonoBehaviour
                     if (i.Name == item.Name)
                     {
                         foundItem = i; 
+                        
                         item.gameObject.GetComponent<Collider2D>().enabled = false;
                         item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         break;               
@@ -58,17 +58,23 @@ public class PlayerItemSystem : MonoBehaviour
         foreach (ItemBase item in m_itemList)
         {
             if(item.Name == itemName)
-            {                
+            {
                 //残り使用回数が0のときアイテムリストから削除する
-                if(item.UseCount == 0)
+                if (item.UseCount == 0)
                 {
                     m_itemList.Remove(item);
-                    Destroy(item);
+                    //Destroy(item);
                     return null;
+                }
+                //残り使用回数が0のときアイテムリストから削除するがインスタンスを返す
+                else if (item.UseCount == 1) 
+                {
+                    m_itemList.Remove(item);
                 }
                 return item; 
             }
         }
         return null;
     }
+    public List<ItemBase> GetItems() => m_itemList;
 }

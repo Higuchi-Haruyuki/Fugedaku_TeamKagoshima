@@ -17,23 +17,16 @@ public class UIDirector : MonoBehaviour
         m_pauseCanvas.enabled = false;
         m_pauseMenu = m_pauseCanvas.GetComponent<PauseMenu>();
         m_scoreTime = new();
-        var mainScoreTime = m_mainCanvas.GetComponent<MainUIDirector>().GetScoreTime();
-        SetScoreTime(ref mainScoreTime);
-        var pauseScoreTime = m_pauseMenu.GetScoreTime();
-        SetScoreTime(ref pauseScoreTime);
+        m_mainCanvas.GetComponent<MainUIDirector>().SetScoreTime(m_scoreTime);
+        m_pauseMenu.GetComponent<PauseMenu>().SetScoreTime(m_scoreTime);
         //Giveupイベントの購読
-        m_pauseMenu.OnGiveup.AddListener(() => 
+        m_pauseMenu.OnGiveup += (() => 
         { 
             m_isTimerStop = true;
             m_scoreTime.SaveTime(STAGENUMBER);
         });
 
     }
-    //引数の変数に代入する
-    public void SetScoreTime(ref ScoreTime scoreTime)
-    {
-        scoreTime = m_scoreTime;
-    } 
     // Update is called once per frame
     void Update()
     {
