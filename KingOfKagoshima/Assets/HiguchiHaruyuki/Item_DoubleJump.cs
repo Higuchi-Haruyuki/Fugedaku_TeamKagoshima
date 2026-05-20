@@ -17,4 +17,5 @@ public class Item_DoubleJump : ItemBase
         base.Use();
         return this;
     }
+
 }
