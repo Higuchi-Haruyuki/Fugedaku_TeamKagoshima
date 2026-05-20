@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 1374649365}
   - component: {fileID: 1374649367}
   - component: {fileID: 1374649366}
+  - component: {fileID: 1374649368}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1088,6 +1089,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374649364}
   m_CullTransparentMesh: 1
+--- !u!114 &1374649368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374649364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59149c3dbfeb35d4fb894c58094b91a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpCounter
 --- !u!1 &1613870964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1471,7 @@ SpriteRenderer:
   m_Size: {x: 14.08, y: 7.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1893929633
 Transform:
