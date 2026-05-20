@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 [RequireComponent(typeof(Canvas))]
 public class PauseMenu : MonoBehaviour
@@ -22,9 +23,9 @@ public class PauseMenu : MonoBehaviour
     private char m_currentMenu = 'c';
     private List<bool> m_isChoiceMenuCheckBoxList = new();
     private List<bool> m_isGiveupMenuCheckBoxList = new();
-    private ScoreTime m_scoreTime = new();
+    private ScoreTime m_scoreTime;
     //
-    public UnityEvent OnGiveup;
+    public Action OnGiveup;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -60,10 +61,6 @@ public class PauseMenu : MonoBehaviour
             m_giveupMenuCheckBoxList[i].SetActive(false);
 
         }
-    }
-    public ScoreTime GetScoreTime()
-    {
-        return m_scoreTime;
     }
     void Update()
     {
@@ -189,6 +186,10 @@ public class PauseMenu : MonoBehaviour
             if (list[i]) return i;
         }
         return -1;
+    }
+    public void SetScoreTime(ScoreTime scoreTime)
+    {
+        m_scoreTime = scoreTime;
     }
 
     //choiceメニューでのcontinue選択肢

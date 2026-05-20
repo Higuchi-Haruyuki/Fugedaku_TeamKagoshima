@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private PlayerItemSystem m_playerItemSystem;
     private float m_doubleJumpPower = 10f;
     private bool m_isPressdDoubleJump = false;
+    private bool m_isPressdSpaceKeyBeforeFlame = false;
 
     void Start()
     {
@@ -94,69 +95,84 @@ public class PlayerController : MonoBehaviour
             //既に二段ジャンプをしているときは二段ジャンプできないようにする
             if (keyboard.spaceKey.isPressed && !m_isPressdDoubleJump)
             {
-                ItemBase itembase = m_playerItemSystem.CheckItem("二段ジャンプ");
-                //二段ジャンプアイテムをもっているとき
-                if (itembase != null)
+                //前のフレームでスペースキーが押されてないとき
+                if (!m_isPressdSpaceKeyBeforeFlame)
                 {
-                    var doubleJump = itembase as Item_DoubleJump;
-                    //キャストに成功したとき
-                    if (doubleJump != null)
+                    ItemBase itembase = m_playerItemSystem.CheckItem("二段ジャンプ");
+                    //二段ジャンプアイテムをもっているとき
+                    if (itembase != null)
                     {
-                        doubleJump.Use();
-                        DoubleJump(keyboard);
-                        Debug.Log($"二段ジャンプの残り回数{doubleJump.UseCount}");
-                        m_isPressdDoubleJump = true;
+                        var doubleJump = itembase as Item_DoubleJump;
+                        //キャストに成功したとき
+                        if (doubleJump != null)
+                        {
+                            doubleJump.Use();
+                            DoubleJump(keyboard);
+                            Debug.Log($"二段ジャンプの残り回数{doubleJump.UseCount}");
+                            m_isPressdDoubleJump = true;
+                        }
                     }
                 }
             }
-            return; 
+        }
+        else//地面に触れているとき
+        {
+            if (keyboard.spaceKey.isPressed)
+            {
+                chargePower += Time.deltaTime * 10f;
+                chargePower = Mathf.Clamp(chargePower, 0, maxCharge);
+            }
+
+            if (keyboard.spaceKey.wasReleasedThisFrame || (keyboard.spaceKey.isPressed && chargePower >= maxCharge))
+            {
+                float x = 0f;
+                if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
+                {
+                    x = -1f;
+                }
+                if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
+                {
+                    x = 1f;
+                }
+
+                Vector2 jumpDir = new Vector2(x, 1f).normalized;
+
+                float jumpPowerModifier = 1f;
+                ItemBase itembase = m_playerItemSystem.CheckItem("ジャンプ力上昇");
+                //ジャンプ力上昇アイテムをもっているとき
+                if (itembase != null)
+                {
+                    var jumpPowerUp = itembase as Item_JumpPowerup;
+                    //キャストに成功したとき
+                    if (jumpPowerUp != null)
+                    {
+                        jumpPowerUp.Use();
+                        Debug.Log($"ジャンプ力上昇の残り回数{jumpPowerUp.UseCount}");
+                        jumpPowerModifier = jumpPowerUp.m_jumpPower;
+                    }
+                }
+                //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
+                rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
+                //Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
+                chargePower = 0f;
+                //ジャンプ後に二段ジャンプのフラグを戻す
+                m_isPressdDoubleJump = false;
+
+                if (JumpCounter.instance != null)
+                {
+                    JumpCounter.instance.AddJump();
+                }
+            }
         }
         if (keyboard.spaceKey.isPressed)
         {
-            chargePower += Time.deltaTime * 10f;
-            chargePower = Mathf.Clamp(chargePower, 0, maxCharge);
+            m_isPressdSpaceKeyBeforeFlame = true;
         }
-
-        if (keyboard.spaceKey.wasReleasedThisFrame || (keyboard.spaceKey.isPressed && chargePower >= maxCharge))
+        else
         {
-            float x = 0f;
-            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-            {
-                x = -1f; 
-            }
-            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
-            {
-                x = 1f; 
-            }
-
-            Vector2 jumpDir = new Vector2(x, 1f).normalized;
-
-            float jumpPowerModifier = 1f;
-            ItemBase itembase = m_playerItemSystem.CheckItem("ジャンプ力上昇");
-            //ジャンプ力上昇アイテムをもっているとき
-            if (itembase != null)
-            {
-                var jumpPowerUp = itembase as Item_JumpPowerup;
-                //キャストに成功したとき
-                if (jumpPowerUp != null)
-                {
-                    jumpPowerUp.Use();
-                    Debug.Log($"ジャンプ力上昇の残り回数{jumpPowerUp.UseCount}");
-                    jumpPowerModifier = jumpPowerUp.m_jumpPower;
-                }
-            }
-            //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
-            rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
-            //Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
-            chargePower = 0f;
-            //ジャンプ後に二段ジャンプのフラグを戻す
-            m_isPressdDoubleJump = false;
-
-            if (JumpCounter.instance != null)
-            {
-                JumpCounter.instance.AddJump();
-            }
+            m_isPressdSpaceKeyBeforeFlame = false;
         }
+
     }
     //二段ジャンプのジャンプ
     private void DoubleJump(Keyboard keyboard)
@@ -201,7 +217,6 @@ public class PlayerController : MonoBehaviour
     {
         // 地面にいるときは反射しない（壁や天井にぶつかったときだけ）
         if (isGround) return;
-        Debug.Log("壁に当たったよ");
 
         // 衝突した面（最初の接触点）の情報を取得
         ContactPoint2D contact = collision.contacts[0];
