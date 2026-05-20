@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item_JumpPowerup : ItemBase
 {
     [SerializeField] private int m_useCount = 0;
-    public readonly int m_jumpPower = 70;
+    public readonly float m_jumpPower = 1.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
