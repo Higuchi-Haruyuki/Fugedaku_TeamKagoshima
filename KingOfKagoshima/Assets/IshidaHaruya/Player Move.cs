@@ -68,9 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGround) return;
 
-        // ジャンプ溜め中は左右の移動を制限する
-        //いったん仮の条件
-        if (keyboard.spaceKey.isPressed && rb.linearVelocityY <= 0.1f)
+        if (keyboard.spaceKey.isPressed)
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             return;
@@ -93,19 +91,11 @@ public class PlayerController : MonoBehaviour
             chargePower = Mathf.Clamp(chargePower, 0, maxCharge);
         }
 
-        if (keyboard.spaceKey.wasReleasedThisFrame || (keyboard.spaceKey.isPressed && chargePower >= maxCharge))
+        if (keyboard.spaceKey.wasReleasedThisFrame)
         {
             float x = 0f;
-            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-            {
-                Debug.Log("左入力あり");
-                x = -1f; 
-            }
-            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
-            {
-                Debug.Log("右入力あり");
-                x = 1f; 
-            }
+            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) x = -1f;
+            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) x = 1f;
 
             Vector2 jumpDir = new Vector2(x, 1f).normalized;
             Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}");

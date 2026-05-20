@@ -3,8 +3,8 @@ guid: df6aa8fe972060144849d7774e46be8a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7666366490156814550
-    second: GameResult_0
+      213: 1300127613228881543
+    second: Gemini_Generated_Image_61jxmh61jxmh61jx_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameResult_0
+      name: Gemini_Generated_Image_61jxmh61jxmh61jx_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2fae3c9b489b9590800000000000000
-      internalID: -7666366490156814550
+      spriteID: 7861f250d2bfa0210800000000000000
+      internalID: 1300127613228881543
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GameResult_0: -7666366490156814550
+      Gemini_Generated_Image_61jxmh61jxmh61jx_0: 1300127613228881543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
