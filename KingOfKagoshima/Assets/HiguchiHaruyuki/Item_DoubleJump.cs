@@ -11,9 +11,10 @@ public class Item_DoubleJump : ItemBase
         IconPath = "IconPath.png";
         UseCount = m_useCount;
     }
-    //プレイヤー側から呼び出す関数
-    public override void Use()
+    //プレイヤー側から呼び出す関数 
+    public override ItemBase Use()
     {
         base.Use();
+        return this;
     }
 }
