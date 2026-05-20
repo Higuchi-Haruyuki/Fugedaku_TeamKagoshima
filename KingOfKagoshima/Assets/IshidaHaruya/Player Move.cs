@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-[RequireComponent(typeof(PlayerItemSystem))]
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -20,16 +18,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer; // 地面と判定するレイヤー
     public float rayLength = 0.2f; // 足元からどれくらい下にレイを伸ばすか
 
-    //haruyukiが追加 アイテム処理用変数
-    private PlayerItemSystem m_playerItemSystem;
-    private bool m_isDoubleJumped = false;
-    [SerializeField] private float m_doubleJumpPower = 5f; 
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>(); // プレイヤーのコライダーを取得
-        m_playerItemSystem = GetComponent<PlayerItemSystem>();
     }
 
     void Update()
@@ -91,31 +85,7 @@ public class PlayerController : MonoBehaviour
 
     void ChargeJump(Keyboard keyboard)
     {
-        if (!isGround)
-        {
-            //既に二段ジャンプしているときは二段ジャンプしない
-            if(m_isDoubleJumped) return;
-            //二段ジャンプの処理
-            if (keyboard.spaceKey.wasReleasedThisFrame)
-            {
-                Debug.Log("二段ジャンプ！");
-                ItemBase itembase = m_playerItemSystem.CheckItem("二段ジャンプ");
-                //二段ジャンプアイテムをもっているとき
-                if (itembase != null)
-                {
-                    var item_DoubleJump = itembase as Item_DoubleJump;
-                    //キャストに成功したとき
-                    if (item_DoubleJump != null)
-                    {
-                        DoubleJump(keyboard);
-                        item_DoubleJump.Use();
-                        Debug.Log($"二段ジャンプ残り回数:{item_DoubleJump.UseCount}");
-                        m_isDoubleJumped = true;
-                    }
-                }
-            }
-            return; 
-        }
+        if (!isGround) return;
 
         if (keyboard.spaceKey.isPressed)
         {
@@ -138,41 +108,16 @@ public class PlayerController : MonoBehaviour
             }
 
             Vector2 jumpDir = new Vector2(x, 1f).normalized;
-
-            float jumpPowerupModifier = 1;
-            //ジャンプ力上昇処理
-            ItemBase itembase = m_playerItemSystem.CheckItem("ジャンプ力上昇");
-            //二段ジャンプアイテムをもっているとき
-            if (itembase != null)
-            {
-                var item_JumpPowerup = itembase as Item_JumpPowerup;
-                //キャストに成功したとき
-                if (item_JumpPowerup != null)
-                {
-                    DoubleJump(keyboard);
-                    item_JumpPowerup.Use();
-                    Debug.Log($"ジャンプ力上昇残り回数:{item_JumpPowerup.UseCount}");
-                    jumpPowerupModifier = item_JumpPowerup.m_jumpPower;
-                }
-            }
-
-            rb.linearVelocity = jumpDir * chargePower * jumpPowerupModifier;
-
+            Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}");
+            rb.linearVelocity = jumpDir * chargePower;
+            Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
             chargePower = 0f;
-            m_isDoubleJumped = false;
+
+            if (JumpCounter.instance != null)
+            {
+                JumpCounter.instance.AddJump();
+            }
         }
-    }
-
-    //二段ジャンプ用のジャンプ（長押しではなく単押し）
-    private void DoubleJump(Keyboard keyboard)
-    {
-        float x = 0f;
-        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) x = -1f;
-        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) x = 1f;
-
-        Vector2 jumpDir = new Vector2(x, 1f).normalized;
-
-        rb.linearVelocity = jumpDir * m_doubleJumpPower;
     }
     // ★新規追加：壁に衝突した瞬間の処理
     private void OnCollisionEnter2D(Collision2D collision)
