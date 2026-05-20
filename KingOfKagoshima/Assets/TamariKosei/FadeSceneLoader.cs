@@ -16,6 +16,7 @@ public class FadeSceneLoader : MonoBehaviour
         fadePanel.enabled = true;               // パネルを有効化
         float elapsedTime = 0.0f;               // 経過時間を初期化
         Color color = fadePanel.color;
+        Debug.Log("fadeoutCoroutine");
         while (elapsedTime < fadeDuration)
         {
            
@@ -36,6 +37,7 @@ public class FadeSceneLoader : MonoBehaviour
     {
         if (Keyboard.current.enterKey.isPressed && !isPressdEnterKey)
         {
+            Debug.Log("押された");
             StartCoroutine(FadeOutAndLoadScene());
             isPressdEnterKey = true;
         }
