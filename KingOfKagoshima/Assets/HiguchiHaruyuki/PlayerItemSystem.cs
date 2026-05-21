@@ -7,8 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerItemSystem : MonoBehaviour
 {
     [SerializeField] private List<ItemBase> m_itemList;
-    //デバック用
-    private bool m_isPressdSpaceKeyBeforeFlame = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,71 +16,38 @@ public class PlayerItemSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Keyboard.current.aKey.isPressed)
-        {
-            var pos = transform.position;
-            pos.x -= 2 * Time.deltaTime;
-            transform.position = pos;
-        }
-        if (Keyboard.current.dKey.isPressed)
-        {
-            var pos = transform.position;
-            pos.x += 2 * Time.deltaTime;
-            transform.position = pos;
-        }
-        if (Keyboard.current.spaceKey.isPressed)
-        {
-            if (!m_isPressdSpaceKeyBeforeFlame)
-            {
-                int jumpPower = 50;
-                ItemBase itembase = CheckItem("ジャンプ力上昇");
-                //ジャンプ力上昇アイテムをもっているとき
-                if (itembase != null) 
-                { 
-                    var jumpPowerUp = itembase as Item_JumpPowerup; 
-                    //キャストにせいこうしたとき
-                    if (jumpPowerUp != null) 
-                    {
-                        jumpPower = jumpPowerUp.m_jumpPower;
-                    }
-                }
-
-                var pos = transform.position;
-                pos.y += jumpPower * Time.deltaTime;
-                transform.position = pos;
-                m_isPressdSpaceKeyBeforeFlame=true;
-            }
-
-        }
-        else
-        {
-            m_isPressdSpaceKeyBeforeFlame = false;
-        }*/
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("Itemと衝突しました");
             ItemBase item = collision.gameObject.GetComponent<ItemBase>();
             if (m_itemList.Count == 0) m_itemList.Add(item);
             else
             {
+                //見つかったアイテムを保管する変数
+                ItemBase foundItem = null;
                 foreach (ItemBase i in m_itemList)
                 {
-                    //同じアイテムをもっていないときアイテムリストに追加する
-                    if (i.Name != item.Name)
+                    //同じアイテムのインスタンスを代入する
+                    if (i.Name == item.Name)
                     {
-                        m_itemList.Add(item);                    
+                        foundItem = i; 
+                        
+                        item.gameObject.GetComponent<Collider2D>().enabled = false;
+                        item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                        break;               
                     }
-                    //持っているときは既存の使用回数を増加させる
-                    else
-                    {
-                        i.AddUseCount(item.UseCount);
-                    }
-                    item.gameObject.GetComponent<Collider2D>().enabled = false;
-                    item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (foundItem != null)
+                {
+                    //アイテムが見つかている時、使用可能数を増加させる
+                    foundItem.AddUseCount(item.UseCount);
+                }
+                else
+                {
+                    m_itemList.Add(item);
                 }
             }
         }
@@ -93,17 +58,23 @@ public class PlayerItemSystem : MonoBehaviour
         foreach (ItemBase item in m_itemList)
         {
             if(item.Name == itemName)
-            {                
+            {
                 //残り使用回数が0のときアイテムリストから削除する
-                if(item.UseCount == 0)
+                if (item.UseCount == 0)
                 {
                     m_itemList.Remove(item);
-                    Destroy(item);
+                    //Destroy(item);
                     return null;
+                }
+                //残り使用回数が0のときアイテムリストから削除するがインスタンスを返す
+                else if (item.UseCount == 1) 
+                {
+                    m_itemList.Remove(item);
                 }
                 return item; 
             }
         }
         return null;
     }
+    public List<ItemBase> GetItems() => m_itemList;
 }

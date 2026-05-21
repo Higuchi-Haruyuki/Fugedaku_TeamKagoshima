@@ -8,7 +8,7 @@ public class Item_DoubleJump : ItemBase
     {
         Name = "二段ジャンプ";
         Description = "一定回数二段ジャンプができます";
-        IconPath = "IconPath.png";
+        IconPath = "ItemIcon/DoubleJump(kari)";
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数 
@@ -17,4 +17,5 @@ public class Item_DoubleJump : ItemBase
         base.Use();
         return this;
     }
+
 }
