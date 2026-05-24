@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public float maxCharge = 20f;
+    public float jumpPower = 1.2f;
 
     private float chargePower;
     private bool isGround = true;
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     void ChargeJump(Keyboard keyboard)
     {
-        if (!isGround) 
+        if (!isGround)
         {
             //2段ジャンプの処理
             //既に二段ジャンプをしているときは二段ジャンプできないようにする
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
-                rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
+                rb.linearVelocity = jumpDir * chargePower * jumpPower * jumpPowerModifier;
                 //Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
                 chargePower = 0f;
                 //ジャンプ後に二段ジャンプのフラグを戻す
@@ -204,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
         chargePower = m_doubleJumpPower;
         //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
-        rb.linearVelocity = jumpDir * chargePower * jumpPowerModifier;
+        rb.linearVelocity = jumpDir * chargePower * jumpPower * jumpPowerModifier;
         chargePower = 0f;
 
         if (JumpCounter.instance != null)
