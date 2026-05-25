@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -483,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -626,6 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -784,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -957,6 +962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1100,6 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1258,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1416,6 +1424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1589,6 +1598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1747,6 +1757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -1905,6 +1916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -2063,6 +2075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -2206,6 +2219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -2384,6 +2398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -2527,6 +2542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -2804,6 +2820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3019,6 +3036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3192,6 +3210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3345,6 +3364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3518,6 +3538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3676,6 +3697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -3829,6 +3851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -4002,6 +4025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -4160,6 +4184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -4410,6 +4435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -4583,6 +4609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -4726,6 +4753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5016,6 +5044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5159,6 +5188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5317,6 +5347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5580,6 +5611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5833,6 +5865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -5976,6 +6009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -6149,6 +6183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -6292,6 +6327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -6465,6 +6501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -6623,6 +6660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -6766,6 +6804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7004,6 +7043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7147,6 +7187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 20
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7320,6 +7361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7463,6 +7505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7621,6 +7664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7794,6 +7838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -7937,6 +7982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -8110,6 +8156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -8253,6 +8300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -8411,6 +8459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 0.5
+  jumpPower: 1.2
   bounciness: 0.8
   groundLayer:
     serializedVersion: 2
@@ -8587,6 +8636,14 @@ PrefabInstance:
     - target: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298379809636656416, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
+      propertyPath: rayLength
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298379809636656416, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
+      propertyPath: bounciness
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
