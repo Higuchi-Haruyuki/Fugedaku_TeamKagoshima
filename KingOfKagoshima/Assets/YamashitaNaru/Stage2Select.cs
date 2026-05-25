@@ -10,7 +10,7 @@ public class Stage2Selection : MonoBehaviour
         if (Keyboard.current.digit2Key.isPressed)
         {
             // StageSelectシーンへ移動
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("SteageScene2");
         }
     }
 }
