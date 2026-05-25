@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
         float halfWidth = col.bounds.extents.x;
 
         // 左足と右足の位置を計算（少し内側にずらすとより安定します）
-        Vector2 leftFoot = footPos + Vector2.left * (halfWidth * 0.8f);
-        Vector2 rightFoot = footPos + Vector2.right * (halfWidth * 0.8f);
+        Vector2 leftFoot = footPos + Vector2.left * (halfWidth * 0.95f);
+        Vector2 rightFoot = footPos + Vector2.right * (halfWidth * 0.95f);
 
         // デバッグ用：UnityのScene画面に見えないレーザーを赤色で表示する
         Debug.DrawRay(leftFoot, Vector2.down * rayLength, Color.red);
