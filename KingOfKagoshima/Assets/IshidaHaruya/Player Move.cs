@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isGround = true;
 
     // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
-    [Range(0f, 1.5f)] public float bounciness = 0.8f;
+    [Range(0f, 1.5f)] public float bounciness = 1f;
     Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
     public LayerMask groundLayer; // 地面と判定するレイヤー
@@ -37,11 +37,12 @@ public class PlayerController : MonoBehaviour
         if (keyboard == null) return;
 
         // ★毎フレーム、足元にレイを飛ばして接地状態を更新する
-        isGround = CheckGrounded();
-
+        // isGround = CheckGrounded();
+      
         Move(keyboard);
         ChargeJump(keyboard);
         velocityBeforeFlame = rb.linearVelocity;
+
     }
 
     // ★新規追加：レイキャストによる接地判定メソッド
@@ -54,8 +55,8 @@ public class PlayerController : MonoBehaviour
         float halfWidth = col.bounds.extents.x;
 
         // 左足と右足の位置を計算（少し内側にずらすとより安定します）
-        Vector2 leftFoot = footPos + Vector2.left * (halfWidth * 0.95f);
-        Vector2 rightFoot = footPos + Vector2.right * (halfWidth * 0.95f);
+        Vector2 leftFoot = footPos + Vector2.left * (halfWidth * 0.99f);
+        Vector2 rightFoot = footPos + Vector2.right * (halfWidth * 0.99f);
 
         // デバッグ用：UnityのScene画面に見えないレーザーを赤色で表示する
         Debug.DrawRay(leftFoot, Vector2.down * rayLength, Color.red);
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
         float x = 0f;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) x = -1f;
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) x = 1f;
-
+        Debug.Log($"移動入力: {x}");
         rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
                         jumpPowerModifier = jumpPowerUp.m_jumpPower;
                     }
                 }
-                //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
+                Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
                 rb.linearVelocity = jumpDir * chargePower * jumpPower * jumpPowerModifier;
                 //Debug.Log($"ジャンプ後の速度: {rb.linearVelocity}");
                 chargePower = 0f;
@@ -216,6 +217,20 @@ public class PlayerController : MonoBehaviour
     // ★新規追加：壁に衝突した瞬間の処理
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        isGround = false;
+        Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
+        if (collision.gameObject.layer == groundLayer)
+        {
+            Vector3 contactNormal = collision.contacts[0].normal;
+            if (contactNormal == new Vector3(0, 1, 0))
+            {
+                Debug.Log("aaaa");
+                isGround = true;
+            }
+        }
+        
+        
+
         // 地面にいるときは反射しない（壁や天井にぶつかったときだけ）
         if (isGround) return;
 
@@ -228,10 +243,10 @@ public class PlayerController : MonoBehaviour
         // 【重要】真下を向いている法線（＝床）や、斜めすぎる床は除外する
         // wallNormal.y が 0.7 以上の場合は「ほぼ床」とみなして反射処理をスキップ
         if (wallNormal.y > 0.7f) return;
-        //Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
+        Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
         // 現在の速度ベクトルを、壁の法線を基準に反射させる
         Vector2 reflectDir = Vector2.Reflect(velocityBeforeFlame, wallNormal);
-
+        Debug.Log($"反射後の方向: {reflectDir}");
         // 反射ベクトルに勢い（bounciness）をかけて速度を再設定
         rb.linearVelocity = reflectDir * bounciness;
     }
