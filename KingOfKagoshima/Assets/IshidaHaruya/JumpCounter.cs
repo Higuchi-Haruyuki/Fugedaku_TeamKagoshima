@@ -35,7 +35,7 @@ public class JumpCounter : MonoBehaviour
         PlayerPrefs.SetInt("TotalJumpCount", jumpCount);
         PlayerPrefs.Save(); // 確実に保存を確定させる
 
-        Debug.Log($"ジャンプ回数: {jumpCount} 回 (シーンをまたいで保存されました)");
+        //Debug.Log($"ジャンプ回数: {jumpCount} 回 (シーンをまたいで保存されました)");
     }
 
     // データを読み込む処理
