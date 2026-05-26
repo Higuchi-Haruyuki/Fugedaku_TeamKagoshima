@@ -20,6 +20,7 @@ public class IntervalWindZone2D : MonoBehaviour
     {
         // 最初にパーティクルの状態を初期化
         UpdateParticleState();
+        windParticle = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -73,11 +74,17 @@ public class IntervalWindZone2D : MonoBehaviour
         // 風が吹いていない時は何もしない
         if (!isWindBlowing) return;
 
-        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (other.GetComponent<PlayerController>())
         {
-            Vector2 force = windDirection.normalized * windStrength;
-            rb.AddForce(force, ForceMode2D.Force);
+
+            Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                Debug.Log($"{other.gameObject.name}と当たりました");
+                Vector3 force = windDirection.normalized * windStrength;
+                other.transform.position += force;
+            }
+
         }
     }
 }

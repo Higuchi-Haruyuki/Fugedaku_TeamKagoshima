@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         float x = 0f;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) x = -1f;
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) x = 1f;
-        Debug.Log($"移動入力: {x}");
+        //sDebug.Log($"移動入力: {x}");
         rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
             Vector3 contactNormal = collision.contacts[0].normal;
             if (contactNormal == new Vector3(0, 1, 0))
             {
-                Debug.Log("aaaa");
+                //Debug.Log("aaaa");
                 isGround = true;
             }
         }
