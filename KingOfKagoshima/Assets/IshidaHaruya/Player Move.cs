@@ -1,34 +1,38 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    Collider2D col; // プレイヤーのサイズを取得するために追加
+    
 
     public float moveSpeed = 5f;
     public float maxCharge = 20f;
     public float jumpPower = 1.2f;
-
+    public float jumpHeight = 5f;
     private float chargePower;
     private bool isGround = true;
-
+    private Vector2 jumpLimit;
     // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
     [Range(0f, 1.5f)] public float bounciness = 1f;
     Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
-    public LayerMask groundLayer; // 地面と判定するレイヤー
-    public float rayLength = 0.2f; // 足元からどれくらい下にレイを伸ばすか
+    private LayerMask groundLayer; // 地面と判定するレイヤー
+   
 
     private PlayerItemSystem m_playerItemSystem;
     private float m_doubleJumpPower = 10f;
     private bool m_isPressdDoubleJump = false;
     private bool m_isPressdSpaceKeyBeforeFlame = false;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>(); // プレイヤーのコライダーを取得
+       
         m_playerItemSystem = GetComponent<PlayerItemSystem>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        groundLayer = LayerMask.NameToLayer("Ground");
     }
 
     void Update()
@@ -36,39 +40,24 @@ public class PlayerController : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
-        // ★毎フレーム、足元にレイを飛ばして接地状態を更新する
-        // isGround = CheckGrounded();
+        
       
         Move(keyboard);
         ChargeJump(keyboard);
         velocityBeforeFlame = rb.linearVelocity;
 
+        if (isGround)
+        {
+            spriteRenderer.color = Color.red;
+
+        }
+        else
+        {
+            spriteRenderer.color = Color.green;
+        }
     }
 
-    // ★新規追加：レイキャストによる接地判定メソッド
-    bool CheckGrounded()
-    {
-        // プレイヤーの足元の中心座標を計算
-        Vector2 footPos = new Vector2(col.bounds.center.x, col.bounds.min.y);
-
-        // 崖っぷち対策：プレイヤーの横幅の半分のサイズを取得
-        float halfWidth = col.bounds.extents.x;
-
-        // 左足と右足の位置を計算（少し内側にずらすとより安定します）
-        Vector2 leftFoot = footPos + Vector2.left * (halfWidth * 0.99f);
-        Vector2 rightFoot = footPos + Vector2.right * (halfWidth * 0.99f);
-
-        // デバッグ用：UnityのScene画面に見えないレーザーを赤色で表示する
-        Debug.DrawRay(leftFoot, Vector2.down * rayLength, Color.red);
-        Debug.DrawRay(rightFoot, Vector2.down * rayLength, Color.red);
-
-        // 左足、または右足の真下に「groundLayer」があるかチェック
-        bool hitLeft = Physics2D.Raycast(leftFoot, Vector2.down, rayLength, groundLayer);
-        bool hitRight = Physics2D.Raycast(rightFoot, Vector2.down, rayLength, groundLayer);
-
-        // どちらか一方が地面に当たっていれば true を返す
-        return hitLeft || hitRight;
-    }
+   
 
     void Move(Keyboard keyboard)
     {
@@ -214,10 +203,9 @@ public class PlayerController : MonoBehaviour
             JumpCounter.instance.AddJump();
         }
     }
-    // ★新規追加：壁に衝突した瞬間の処理
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        isGround = false;
+        
         Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
         if (collision.gameObject.layer == groundLayer)
         {
@@ -228,6 +216,17 @@ public class PlayerController : MonoBehaviour
                 isGround = true;
             }
         }
+    }
+    private void  OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == groundLayer)
+        {
+            isGround = false;
+        }
+    }
+    // ★新規追加：壁に衝突した瞬間の処理
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         
         
 
