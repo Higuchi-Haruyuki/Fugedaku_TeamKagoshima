@@ -7,8 +7,8 @@ public class IntervalWindZone2D : MonoBehaviour
     public Vector2 windDirection = Vector2.right;
 
     [Header("時間の設定（秒）")]
-    public float windOnDuration = 3f;  // 風が吹いている時間
-    public float windOffDuration = 2f; // 風が止まっている時間
+    public float windOnDuration = 2f;  // 風が吹いている時間
+    public float windOffDuration = 3f; // 風が止まっている時間
 
     private bool isWindBlowing = true; // 現在風が吹いているか
     private float timer = 0f;
@@ -49,8 +49,8 @@ public class IntervalWindZone2D : MonoBehaviour
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            Vector2 force = windDirection.normalized * windStrength;
-            rb.AddForce(force, ForceMode2D.Force);
+            Vector3 force = windDirection.normalized * windStrength;
+            other.transform.position += force;
         }
     }
 }
