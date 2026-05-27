@@ -195,6 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   maxCharge: 12
-  jumpPower: 5
+  jumpPower: 2.5
   jumpHeight: 5
   bounciness: 0.04

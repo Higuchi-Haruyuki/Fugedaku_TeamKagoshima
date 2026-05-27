@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         float x = 0f;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) x = -1f;
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) x = 1f;
-        Debug.Log($"移動入力: {x}");
+        //Debug.Log($"移動入力: {x}");
         rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -206,13 +206,13 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         
-        Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
+       // Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
         if (collision.gameObject.layer == groundLayer)
         {
             Vector3 contactNormal = collision.contacts[0].normal;
             if (contactNormal == new Vector3(0, 1, 0))
             {
-                Debug.Log("aaaa");
+            //    Debug.Log("aaaa");
                 isGround = true;
             }
         }
@@ -227,26 +227,22 @@ public class PlayerController : MonoBehaviour
     // ★新規追加：壁に衝突した瞬間の処理
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        
 
-        // 地面にいるときは反射しない（壁や天井にぶつかったときだけ）
+
+
         if (isGround) return;
 
-        // 衝突した面（最初の接触点）の情報を取得
-        ContactPoint2D contact = collision.contacts[0];
+        // ★ここを追加：もし衝突した点（contacts）が1つも無ければ、処理をスキップする
+        if (collision.contacts == null || collision.contacts.Length == 0) return;
 
-        // 壁の法線ベクトル（壁が向いている正面の向き）
+        // 安全が確認できたら、今まで通り処理を行う
+        ContactPoint2D contact = collision.contacts[0];
         Vector2 wallNormal = contact.normal;
 
-        // 【重要】真下を向いている法線（＝床）や、斜めすぎる床は除外する
-        // wallNormal.y が 0.7 以上の場合は「ほぼ床」とみなして反射処理をスキップ
+        // 天井や床（上向きの面）は除外する
         if (wallNormal.y > 0.7f) return;
-        Debug.Log($"壁の法線: {wallNormal}, 速度: {velocityBeforeFlame}");
-        // 現在の速度ベクトルを、壁の法線を基準に反射させる
+
         Vector2 reflectDir = Vector2.Reflect(velocityBeforeFlame, wallNormal);
-        Debug.Log($"反射後の方向: {reflectDir}");
-        // 反射ベクトルに勢い（bounciness）をかけて速度を再設定
         rb.linearVelocity = reflectDir * bounciness;
     }
 }

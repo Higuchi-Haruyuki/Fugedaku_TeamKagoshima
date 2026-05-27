@@ -1,57 +1,57 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JumpCounter : MonoBehaviour
 {
-    // どこからでもこのスクリプトを呼び出せるようにする仕組み（シングルトン）
-    public static JumpCounter instance;
-
-    // 現在のジャンプ回数（他のスクリプトからは読み取りだけできるように設定）
-    public int jumpCount { get; private set; }
+    public static JumpCounter instance; // どこからでも呼び出せるようにする合言葉
+    public int jumpCount { get; private set; } // 現在のジャンプ回数を数えるカウンター
+    private string currentStageKey = "Stage1_Jumps"; // 保存する箱の名前（初期値）
 
     void Awake()
     {
-        // シーンを切り替えても、この保存オブジェクトが消えないようにする
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // シーンをまたいでも残す設定
+            DontDestroyOnLoad(gameObject); // ★超重要：次のステージ（シーン）に切り替わっても、このオブジェクトを消さないで残す！
 
-            // ゲーム開始時に、過去に保存されたデータを読み込む
-            LoadJumpCount();
+            // シーンが切り替わったときに、自動でお掃除（リセット）する機能をUnityに登録する
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            // すでに存在している場合は重複して増えないように消す
-            Destroy(gameObject);
+            Destroy(gameObject); // すでに基地があるなら、2つ目は邪魔なので消す
         }
     }
+    // 新しいステージ（シーン）が読み込まれた瞬間に、Unityが自動でここを実行します
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 1. 今開いたステージ名に合わせて、保存する箱の名前を新しく作り直す
+        // （例：Stage1を開いたら「Stage1_Jumps」、Stage2を開いたら「Stage2_Jumps」）
+        currentStageKey = scene.name + "_Jumps";
 
-    // ジャンプ回数を1増やして保存するメソッド
+        // 2. 新しいステージが始まったので、手元のカウンターの数字を「0」にリセットする！
+        jumpCount = 0;
+
+        // 3. パソコンに保存されているデータも、一度「0」に上書きしてキレイにする
+        PlayerPrefs.SetInt(currentStageKey, 0);
+        PlayerPrefs.Save(); // 確実にセーブを確定させる
+
+        Debug.Log($"【{scene.name}】が開始されました。このステージのカウントを0から開始します。");
+    }
+    // プレイヤーがジャンプした瞬間に、外（PlayerController）から呼び出される命令
     public void AddJump()
     {
-        jumpCount++;
+        jumpCount++; // 手元のカウンターの数字を 1 つ増やす（足し算）
 
-        // PlayerPrefsを使ってパソコンやスマホに数値を保存
-        PlayerPrefs.SetInt("TotalJumpCount", jumpCount);
-        PlayerPrefs.Save(); // 確実に保存を確定させる
-
-        //Debug.Log($"ジャンプ回数: {jumpCount} 回 (シーンをまたいで保存されました)");
-    }
-
-    // データを読み込む処理
-    private void LoadJumpCount()
-    {
-        // 過去に一度も保存されていない場合は「0」からスタートします
-        jumpCount = PlayerPrefs.GetInt("TotalJumpCount", 0);
-        Debug.Log($"過去のデータを読み込みました。現在のジャンプ総数: {jumpCount} 回");
-    }
-
-    // テスト用：もし回数を0にリセットしたい時に呼び出す機能
-    public void ResetJumpCount()
-    {
-        jumpCount = 0;
-        PlayerPrefs.SetInt("TotalJumpCount", 0);
+        // 今のステージ専用の箱（currentStageKey）に、増えた数字を書き込んでパソコンにセーブする
+        PlayerPrefs.SetInt(currentStageKey, jumpCount);
         PlayerPrefs.Save();
-        Debug.Log("ジャンプ回数をリセットしました");
+
+        Debug.Log($"{currentStageKey} のジャンプ回数: {jumpCount} 回 (保存完了)");
+    }
+    void OnDestroy()
+    {
+        // このスクリプト（基地）が万が一消されるときは、登録したお掃除の監視を解除する
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
