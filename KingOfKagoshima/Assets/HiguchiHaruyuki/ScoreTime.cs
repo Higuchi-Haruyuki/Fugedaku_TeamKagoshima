@@ -25,13 +25,37 @@ public class ScoreTime
         return string.Format("{0:D2}h{1:D2}m{2:D2}s{3:D3}ms",
             Hours, Minutes, Seconds, Milliseconds);
     }
-    //ステージのタイムを最速タイムに保存
-    public void SaveFastestTime(int stageNumber)
+    public bool Compare(ScoreTime scoreTime)
     {
-        PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeHours", Hours);
-        PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeMinutes", Minutes);
-        PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeSeconds", Seconds);
-        PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeMilliseconds", Milliseconds);
+        if (Hours > scoreTime.Hours) return true;
+        else if (Hours < scoreTime.Hours) return false;
+        if(Minutes > scoreTime.Minutes) return true;
+        else if (Minutes < scoreTime.Minutes) return false;
+        if (Seconds > scoreTime.Seconds) return true;
+        else if (Seconds < scoreTime.Seconds) return false;
+        if (Milliseconds > scoreTime.Milliseconds) return true;
+        else if (Milliseconds < scoreTime.Milliseconds) return false;
+        return true;
+    }
+    //ステージのタイムを現在の最速タイムと比較して早いほうを保存し、更新されたらtrueを返す関数
+    public bool SaveFastestTime(int stageNumber)
+    {
+        ScoreTime currentHSco = new ScoreTime();
+
+        currentHSco.Hours = PlayerPrefs.GetInt($"Stage{stageNumber}FastestTimeHours");
+        currentHSco.Minutes = PlayerPrefs.GetInt($"Stage{stageNumber}FastestTimeMinutes");
+        currentHSco.Seconds = PlayerPrefs.GetInt($"Stage{stageNumber}FastestTimeSeconds");
+        currentHSco.Milliseconds = PlayerPrefs.GetInt($"Stage{stageNumber}FastestTimeMilliseconds");
+
+        if (Compare(currentHSco))
+        {
+            PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeHours", Hours);
+            PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeMinutes", Minutes);
+            PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeSeconds", Seconds);
+            PlayerPrefs.SetInt($"Stage{stageNumber}FastestTimeMilliseconds", Milliseconds);
+            return true;
+        }
+        return false;
     }
     //ステージのタイムを最速タイムから取得
     public void LoadFastestTime(int stageNumber)

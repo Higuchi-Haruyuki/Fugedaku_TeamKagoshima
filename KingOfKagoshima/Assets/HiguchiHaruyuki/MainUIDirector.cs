@@ -4,49 +4,57 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 public class MainUIDirector : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_timerText;
-    [SerializeField] private GameObject m_player;
+    [SerializeField] private int _stageNumber = 1;
+    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private GameObject _player;
 
-    [SerializeField] private GameObject m_itemsParent;
-    [SerializeField] private GameObject m_itemDisplayUIPrefab;
+    [SerializeField] private GameObject _itemsParent;
+    [SerializeField] private GameObject _itemDisplayUIPrefab;
+    [SerializeField] private ClearManager _clearManager;
     //アイテム表示UIの1つ目のオフセット
-    [SerializeField] private Vector2 m_initialOffset;
-    private List<GameObject> m_itemUIList;
-    private ScoreTime m_scoreTime;
-    private List<ItemBase> m_playerItems;
-    private List<int> m_itemUseCountBeforeCall;
-    private int itemCountBeforeCall = 0;
+    [SerializeField] private Vector2 _initialOffset;
+    private List<GameObject> _itemUIList;
+    private ScoreTime _scoreTime;
+    private List<ItemBase> _playerItems;
+    private List<int> _itemUseCountBeforeCall;
+    private int _itemCountBeforeCall = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_playerItems = m_player.GetComponent<PlayerItemSystem>().GetItems();
+        _playerItems = _player.GetComponent<PlayerItemSystem>().GetItems();
+        _clearManager.OnClear += OnClear; 
         DisplayItem();
+    }
+    private void OnDisable()
+    {
+        _clearManager.OnClear -= OnClear;
     }
     public void SetScoreTime(ScoreTime scoreTime)
     {
-        m_scoreTime = scoreTime;
+        _scoreTime = scoreTime;
     }
     // Update is called once per frame
     void Update()
     {
-        m_timerText.SetText(m_scoreTime?.ToString());
+        _timerText.SetText(_scoreTime?.ToString());
         //アイテム数に変化があったとき（プレイヤーがアイテムを取得または消失したとき）
-        if (m_playerItems.Count != itemCountBeforeCall)
+        if (_playerItems.Count != _itemCountBeforeCall)
         {
-            var childCount = m_itemsParent.transform.childCount;
+            var childCount = _itemsParent.transform.childCount;
             for (int i = 0; i < childCount; i++)
             {
-                var child = m_itemsParent.transform.GetChild(i);
+                var child = _itemsParent.transform.GetChild(i);
                 Destroy(child.gameObject);
             }
-            m_itemUIList = new(); 
-            m_itemUseCountBeforeCall = new();
-            itemCountBeforeCall = 0;
+            _itemUIList = new(); 
+            _itemUseCountBeforeCall = new();
+            _itemCountBeforeCall = 0;
             //描画し直す
             DisplayItem();
         }
@@ -54,16 +62,16 @@ public class MainUIDirector : MonoBehaviour
     }
     void DisplayItem()
     {
-        itemCountBeforeCall = m_playerItems.Count;
-        for (int i = 0; i < m_playerItems.Count; i++)
+        _itemCountBeforeCall = _playerItems.Count;
+        for (int i = 0; i < _playerItems.Count; i++)
         {
-            var offset = m_initialOffset + new Vector2(0,-100 * i);
-            var itemUI = Instantiate(m_itemDisplayUIPrefab,m_itemsParent.transform);
+            var offset = _initialOffset + new Vector2(0,-100 * i);
+            var itemUI = Instantiate(_itemDisplayUIPrefab,_itemsParent.transform);
             itemUI.transform.localPosition = offset;
-            m_itemUIList.Add(itemUI);
-            var item = m_playerItems[i];
+            _itemUIList.Add(itemUI);
+            var item = _playerItems[i];
             //使用可能回数を保存する
-            m_itemUseCountBeforeCall.Add(item.UseCount);
+            _itemUseCountBeforeCall.Add(item.UseCount);
             //アイコンの設定
             var image = itemUI.GetComponentInChildren<Image>();
             image.sprite = Resources.Load<Sprite>($"{item.IconPath}");
@@ -75,15 +83,24 @@ public class MainUIDirector : MonoBehaviour
     //プレイヤーがアイテムを使用していたら描画し直す
     private void CheckChangeItemUseCount()
     {
-        for (int i = 0; i < m_playerItems.Count; i++)
+        for (int i = 0; i < _playerItems.Count; i++)
         {
             //以前保存されたときと使用可能回数に変化があったとき
-            if(m_playerItems[i].UseCount != m_itemUseCountBeforeCall[i])
+            if(_playerItems[i].UseCount != _itemUseCountBeforeCall[i])
             {
-                var text = m_itemUIList[i].GetComponentInChildren<TextMeshProUGUI>();
-                text.SetText($"残り{m_playerItems[i].UseCount}回");
-                m_itemUseCountBeforeCall[i] = m_playerItems[i].UseCount;
+                var text = _itemUIList[i].GetComponentInChildren<TextMeshProUGUI>();
+                text.SetText($"残り{_playerItems[i].UseCount}回");
+                _itemUseCountBeforeCall[i] = _playerItems[i].UseCount;
             }
         }
+    }
+    private void OnClear()
+    {
+        //時間の保存
+        _scoreTime.SaveTime(_stageNumber);
+        //最速タイムの保存
+        _scoreTime.SaveFastestTime(_stageNumber);
+        //シーンのロード
+        SceneManager.LoadScene("resultScene");
     }
 }
