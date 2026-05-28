@@ -243,6 +243,7 @@ public class PlayerController : MonoBehaviour
         if (wallNormal.y > 0.7f) return;
 
         Vector2 reflectDir = Vector2.Reflect(velocityBeforeFlame, wallNormal);
+        Debug.Log($"reflectDir{reflectDir}.bounciness{bounciness}");
         rb.linearVelocity = reflectDir * bounciness;
     }
 }
