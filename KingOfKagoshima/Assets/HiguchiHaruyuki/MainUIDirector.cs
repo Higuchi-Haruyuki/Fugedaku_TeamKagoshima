@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
@@ -16,14 +17,18 @@ public class MainUIDirector : MonoBehaviour
     [SerializeField] private GameObject _itemsParent;
     [SerializeField] private GameObject _itemDisplayUIPrefab;
     [SerializeField] private ClearManager _clearManager;
+    [SerializeField] private Image fadePanel;
     //アイテム表示UIの1つ目のオフセット
     [SerializeField] private Vector2 _initialOffset;
+    // フェードの完了にかかる時間
+    [SerializeField] private float fadeDuration = 5.0f; 
     private List<GameObject> _itemUIList;
     private ScoreTime _scoreTime;
     private List<ItemBase> _playerItems;
     private List<int> _itemUseCountBeforeCall;
     private int _itemCountBeforeCall = 0;
-    
+    private bool isTimerStop = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,7 +47,8 @@ public class MainUIDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timerText.SetText(_scoreTime?.ToString());
+        if(!isTimerStop)
+            _timerText.SetText(_scoreTime?.ToString());
         //アイテム数に変化があったとき（プレイヤーがアイテムを取得または消失したとき）
         if (_playerItems.Count != _itemCountBeforeCall)
         {
@@ -94,13 +100,34 @@ public class MainUIDirector : MonoBehaviour
             }
         }
     }
+     
+    public IEnumerator FadeOutAndLoadScene(string sceneName)
+    {
+        fadePanel.enabled = true;               // パネルを有効化
+        float elapsedTime = 0.0f;               // 経過時間を初期化
+        Color color = fadePanel.color;
+        while (elapsedTime < fadeDuration)
+        {
+
+            elapsedTime += Time.deltaTime;                           // 経過時間を増やす                        
+            float t = Mathf.Clamp01(elapsedTime / fadeDuration);     // フェードの進行度を計算  
+            float i = Mathf.Lerp(0, 1, t);   // パネルの色を変更してフェードアウト
+            color.a = i;
+            fadePanel.color = color;
+            yield return null;                                       // 1フレーム待機
+        }
+        color.a = 1;
+        fadePanel.color = color;
+        SceneManager.LoadScene(sceneName);
+    }
     private void OnClear()
     {
+        isTimerStop = true;
         //時間の保存
         _scoreTime.SaveTime(_stageNumber);
         //最速タイムの保存
         _scoreTime.SaveFastestTime(_stageNumber);
         //シーンのロード
-        SceneManager.LoadScene("resultScene");
+        StartCoroutine(FadeOutAndLoadScene("HaruyukiResultScene"));
     }
 }
