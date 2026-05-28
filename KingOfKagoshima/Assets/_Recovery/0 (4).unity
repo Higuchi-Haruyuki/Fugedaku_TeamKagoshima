@@ -131,10 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.1458514
@@ -190,9 +186,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 396550154}
-    - targetCorrespondingSourceObject: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 396550158}
   m_SourcePrefab: {fileID: 100100000, guid: e8233250951dd9042bc6313287e2278d, type: 3}
 --- !u!1 &396550153 stripped
 GameObject:
@@ -213,21 +206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IntervalWindZone2D
   windStrength: 5
   windDirection: {x: 1, y: 0}
-  windOnDuration: 2
-  windOffDuration: 3
---- !u!114 &396550158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396550153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810709dc8a596714a827593f43a99184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IceFloor
-  slipperiness: 0.999
+  windOnDuration: 3
+  windOffDuration: 2
 --- !u!1 &475585703
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,11 +223,11 @@ GameObject:
   - component: {fileID: 475585704}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &475585704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1021,7 +1001,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 5
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1166,8 +1146,8 @@ ParticleSystem:
           m_RotationOrder: 4
     arc:
       value: 360
-      mode: 3
-      spread: 1
+      mode: 0
+      spread: 0
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -5277,28 +5257,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &707767406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
-  m_PrefabInstance: {fileID: 1256765946}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &707767413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707767406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d643c375a4fe504d872eb40eb00115f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Yamashitacontorore
-  moveSpeed: 5
-  maxCharge: 20
-  jumpPower: 1.2
-  jumpHeight: 5
-  bounciness: 1
 --- !u!1001 &839467538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5408,18 +5366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8298379809636656416, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 707767413}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
 --- !u!1001 &1775955862
 PrefabInstance:
