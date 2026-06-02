@@ -12,6 +12,8 @@ public class Yamashitacontorore : MonoBehaviour
     public float jumpHeight = 5f;
     private float chargePower;
     private bool isGround = true;
+    private bool isIceGround = false;
+    public float slipperiness = 0.97f;
     private Vector2 jumpLimit;
     // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
     [Range(0f, 1.5f)] public float bounciness = 1f;
@@ -73,16 +75,35 @@ public class Yamashitacontorore : MonoBehaviour
 
         float x = 0f;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-        { 
-
+        {
             x = -1f; 
         }
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) 
-        { 
+        {
             x = 1f; 
         }
-        //Debug.Log($"移動入力: {x}");
-        rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+        //移動キーをおしていないとき
+        if(!keyboard.dKey.isPressed && !keyboard.rightArrowKey.isPressed && !keyboard.aKey.isPressed && !keyboard.leftArrowKey.isPressed)
+        {
+            if (isIceGround == true)
+            {
+                var playerVelocityOnSlip = rb.linearVelocity;
+                // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
+                playerVelocityOnSlip.x *= slipperiness;
+                // 速度を更新（ジャンプ力などのY軸の速度は変えない）
+                rb.linearVelocity = playerVelocityOnSlip;
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+            }
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+        }
+
+
     }
 
     void ChargeJump(Keyboard keyboard)
@@ -221,6 +242,12 @@ public class Yamashitacontorore : MonoBehaviour
             {
                 //    Debug.Log("aaaa");
                 isGround = true;
+                if (collision.gameObject.GetComponent<IceFloor>())
+                {
+                    isIceGround = true;
+                }
+
+                
             }
         }
     }
@@ -229,6 +256,10 @@ public class Yamashitacontorore : MonoBehaviour
         if (collision.gameObject.layer == groundLayer)
         {
             isGround = false;
+            if (collision.gameObject.GetComponent<IceFloor>())
+            {
+                isIceGround = false;
+            }
         }
     }
     // ★新規追加：壁に衝突した瞬間の処理
