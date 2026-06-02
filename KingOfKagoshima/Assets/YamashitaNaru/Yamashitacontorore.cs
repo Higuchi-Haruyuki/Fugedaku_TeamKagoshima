@@ -12,6 +12,8 @@ public class Yamashitacontorore : MonoBehaviour
     public float jumpHeight = 5f;
     private float chargePower;
     private bool isGround = true;
+    private bool isIceGround = false;
+    public float slipperiness = 0.97f;
     private Vector2 jumpLimit;
     // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
     [Range(0f, 1.5f)] public float bounciness = 1f;
@@ -74,12 +76,11 @@ public class Yamashitacontorore : MonoBehaviour
 
         float x = 0f;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-        { 
-
+        {
             x = -1f; 
         }
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) 
-        { 
+        {
             x = 1f; 
         }
         //キー入力をしていないとき
