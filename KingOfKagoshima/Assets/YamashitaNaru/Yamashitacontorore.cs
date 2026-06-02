@@ -20,8 +20,6 @@ public class Yamashitacontorore : MonoBehaviour
     Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
     private LayerMask groundLayer; // 地面と判定するレイヤー
-    private bool isIceGround = false;
-    public float slipperiness = 0.97f;
 
     private PlayerItemSystem m_playerItemSystem;
     private float m_doubleJumpPower = 10f;
