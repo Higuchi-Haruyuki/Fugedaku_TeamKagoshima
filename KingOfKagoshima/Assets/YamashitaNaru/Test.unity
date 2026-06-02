@@ -133,11 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.1458514
+      value: -15.774242
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalScale.y
@@ -145,11 +145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -189,9 +189,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 396550154}
-    - targetCorrespondingSourceObject: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 396550158}
   m_SourcePrefab: {fileID: 100100000, guid: e8233250951dd9042bc6313287e2278d, type: 3}
 --- !u!1 &396550153 stripped
@@ -199,22 +196,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 134360913090702897, guid: e8233250951dd9042bc6313287e2278d, type: 3}
   m_PrefabInstance: {fileID: 283675069}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &396550154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396550153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4b65f39d20d7744b0e4d4c3a92ca04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IntervalWindZone2D
-  windStrength: 5
-  windDirection: {x: 1, y: 0}
-  windOnDuration: 2
-  windOffDuration: 3
 --- !u!114 &396550158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810709dc8a596714a827593f43a99184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceFloor
-  slipperiness: 0.999
 --- !u!1 &475585703
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &475585704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5298,6 +5278,7 @@ MonoBehaviour:
   maxCharge: 20
   jumpPower: 1.2
   jumpHeight: 5
+  slipperiness: 1
   bounciness: 1
 --- !u!1001 &839467538
 PrefabInstance:
@@ -5366,11 +5347,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924943667552919724, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 924943667552919724, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 924943667552919724, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
       propertyPath: m_LocalPosition.z
