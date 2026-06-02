@@ -18,7 +18,8 @@ public class Yamashitacontorore : MonoBehaviour
     Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
     private LayerMask groundLayer; // 地面と判定するレイヤー
-
+    private bool isIceGround = false;
+    public float slipperiness = 0.97f;
 
     private PlayerItemSystem m_playerItemSystem;
     private float m_doubleJumpPower = 10f;
@@ -81,8 +82,32 @@ public class Yamashitacontorore : MonoBehaviour
         { 
             x = 1f; 
         }
-        //Debug.Log($"移動入力: {x}");
-        rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+        //キー入力をしていないとき
+        if(!(Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed ||
+                    Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed))
+        {
+            //かつ　氷の地面に立っているとき
+            if(isIceGround)
+            {
+                Debug.Log($"滑っているよ{rb.linearVelocity}");
+                var playerVelocityOnSlip = rb.linearVelocity;
+                // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
+                playerVelocityOnSlip.x *= slipperiness;
+
+                // 速度を更新（ジャンプ力などのY軸の速度は変えない）
+                rb.linearVelocity = playerVelocityOnSlip;
+            }
+            //かつ　立っていないとき
+            else
+            {
+                rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+            }
+        }
+        //キー入力をしているとき
+        else
+        {
+            rb.linearVelocity = new Vector2(x * moveSpeed, rb.linearVelocity.y);
+        }
     }
 
     void ChargeJump(Keyboard keyboard)
@@ -221,6 +246,10 @@ public class Yamashitacontorore : MonoBehaviour
             {
                 //    Debug.Log("aaaa");
                 isGround = true;
+                if(collision.gameObject.GetComponent<IceFloor>())
+                {
+                    isIceGround = true;
+                }
             }
         }
     }
@@ -229,6 +258,10 @@ public class Yamashitacontorore : MonoBehaviour
         if (collision.gameObject.layer == groundLayer)
         {
             isGround = false;
+            if (collision.gameObject.GetComponent<IceFloor>())
+            {
+                isIceGround = false;
+            }
         }
     }
     // ★新規追加：壁に衝突した瞬間の処理
