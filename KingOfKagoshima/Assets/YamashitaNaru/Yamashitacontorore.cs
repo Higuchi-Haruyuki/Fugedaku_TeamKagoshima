@@ -88,7 +88,7 @@ public class Yamashitacontorore : MonoBehaviour
             //かつ　氷の地面に立っているとき
             if(isIceGround)
             {
-                Debug.Log($"滑っているよ{rb.linearVelocity}");
+               // Debug.Log($"滑っているよ{rb.linearVelocity}");
                 var playerVelocityOnSlip = rb.linearVelocity;
                 // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
                 playerVelocityOnSlip.x *= slipperiness;
