@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     private float chargePower;
     private bool isGround = true;
     private Vector2 jumpLimit;
-    // ★追加：壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
-    [Range(0f, 1.5f)] public float bounciness = 1f;
+    // ★追加：壁反射時の反発係数(1.0で勢いを維持、0.8などで少し減速)
+    [Range(0f, 1.5f)] public float bounciness = 1.0f;
     Vector2 velocityBeforeFlame = Vector2.zero;
     [Header("接地判定の設定")]
     private LayerMask groundLayer; // 地面と判定するレイヤー
