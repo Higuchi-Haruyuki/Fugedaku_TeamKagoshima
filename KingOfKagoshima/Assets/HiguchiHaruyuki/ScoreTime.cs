@@ -8,6 +8,10 @@ public class ScoreTime
     public int Seconds { get; set; }
     public int Milliseconds { get; set; }
     private float m_seconds;
+    public float GetSeconds()
+    {
+        return m_seconds;
+    }
     public void AddTime(float time)
     {
         m_seconds += time;

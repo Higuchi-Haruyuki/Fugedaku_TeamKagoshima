@@ -128,6 +128,6 @@ public class MainUIDirector : MonoBehaviour
         //最速タイムの保存
         _scoreTime.SaveFastestTime(_stageNumber);
         //シーンのロード
-        StartCoroutine(FadeOutAndLoadScene("HaruyukiResultScene"));
+        StartCoroutine(FadeOutAndLoadScene("resultScene"));
     }
 }
