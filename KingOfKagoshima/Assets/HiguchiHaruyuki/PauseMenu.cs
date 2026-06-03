@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
     private ScoreTime m_scoreTime;
     //
     public Action OnGiveup;
+    public Action OnBreakGame;
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -161,8 +162,31 @@ public class PauseMenu : MonoBehaviour
                 if (m_currentMenu == 'c')
                 {
                     int indexTrue = FindIndexTrue(m_isChoiceMenuCheckBoxList);
-                    if (indexTrue == 0) Continue();
-                    else if (indexTrue == 1) Giveup();
+                    switch (indexTrue)
+                    {
+                        case 0:
+                            {
+                                Continue();
+                                break;
+                            }
+                        case 1:
+                            {
+                                KeyConfig();
+                                break;
+                            }
+                        case 2:
+                            {
+                                BreakGame();
+                                break;
+                            }
+                        case 3:
+                            {
+                                Giveup();
+                                break;
+                            }
+                        default:
+                            break;
+                    }
                 }
                 else if (m_currentMenu == 'g')
                 {
@@ -201,7 +225,18 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         m_currentMenu = 'c';
     }
-
+    //choiceメニューでのKeyConfig選択肢
+    void KeyConfig()
+    {
+        //操作設定確認する
+        Debug.Log("KeyConfig");
+    }
+    //choiceメニューでのBreakGame選択肢
+    void BreakGame()
+    {
+        //ゲームをセーブして中断する
+        Debug.Log("BreakGame");
+    }
     //choiceメニューでのgiveup選択肢
     void Giveup()
     {

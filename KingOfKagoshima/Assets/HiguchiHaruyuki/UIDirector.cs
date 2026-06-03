@@ -3,57 +3,75 @@ using UnityEngine.InputSystem;
 
 public class UIDirector : MonoBehaviour
 {
-    [SerializeField] private Canvas m_mainCanvas;
-    [SerializeField] private Canvas m_pauseCanvas;
+    [SerializeField] private Canvas _mainCanvas;
+    [SerializeField] private Canvas _pauseCanvas;
     [SerializeField] private const int STAGENUMBER = 1;
-    private ScoreTime m_scoreTime;
-    private bool m_isPressdEscapeKeyBeforeFlame = false;
-    private PauseMenu m_pauseMenu;
-    private bool m_isTimerStop = false;
+    [SerializeField] private SaveManager _saveManager;
+    private ScoreTime _scoreTime;
+    private bool _isPressdEscapeKeyBeforeFlame = false;
+    private PauseMenu _pauseMenu;
+    private bool _isTimerStop = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_mainCanvas.enabled = true;
-        m_pauseCanvas.enabled = false;
-        m_pauseMenu = m_pauseCanvas.GetComponent<PauseMenu>();
-        m_scoreTime = new();
-        m_mainCanvas.GetComponent<MainUIDirector>().SetScoreTime(m_scoreTime);
-        m_pauseMenu.GetComponent<PauseMenu>().SetScoreTime(m_scoreTime);
+        _mainCanvas.enabled = true;
+        _pauseCanvas.enabled = false;
+        _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
+        _scoreTime = new();
+        _mainCanvas.GetComponent<MainUIDirector>().SetScoreTime(_scoreTime);
+        _pauseMenu.GetComponent<PauseMenu>().SetScoreTime(_scoreTime);
         //Giveupイベントの購読
-        m_pauseMenu.OnGiveup += (() => 
+        _pauseMenu.OnGiveup += (() => 
         { 
-            m_isTimerStop = true;
-            m_scoreTime.SaveTime(STAGENUMBER);
+            _isTimerStop = true;
+            _scoreTime.SaveTime(STAGENUMBER);
+        });
+        _pauseMenu.OnBreakGame += (() => 
+        {
+            BreakGame();
         });
 
     }
     // Update is called once per frame
     void Update()
     {
-        if(m_isTimerStop) return;
+        if(_isTimerStop) return;
 
         //タイマーに時間を追加
-        m_scoreTime.AddTime(Time.deltaTime);
+        _scoreTime.AddTime(Time.deltaTime);
 
         //ESCAPEキーが押されたとき、ポーズ画面を表示する処理
         if (Keyboard.current.escapeKey.isPressed)
         {
             //1つ前のフレームで入力されていなかったとき
-            if (!m_isPressdEscapeKeyBeforeFlame)
+            if (!_isPressdEscapeKeyBeforeFlame)
             {
-                m_isPressdEscapeKeyBeforeFlame = true;
+                _isPressdEscapeKeyBeforeFlame = true;
                 //Canvasの状態を入れ替える
-                m_pauseCanvas.enabled = !m_pauseCanvas.enabled;
+                _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
                 //ポーズキャンバスが有効なら時間を止めておく
-                if(m_pauseCanvas.enabled) Time.timeScale = 0.0f;
+                if(_pauseCanvas.enabled) Time.timeScale = 0.0f;
                 else Time.timeScale = 1.0f;
             }
         }
         else
         {
             //1つ前のフレームで入力されていたらフラグをfalseに戻す
-            if (m_isPressdEscapeKeyBeforeFlame) m_isPressdEscapeKeyBeforeFlame = false;
+            if (_isPressdEscapeKeyBeforeFlame) _isPressdEscapeKeyBeforeFlame = false;
         }
+    }
+    void BreakGame()
+    {
+        _isTimerStop = true;
+        SaveData data = new();
+        data.Time = _scoreTime.GetSeconds();
+        data.FallCount = 10;//kari
+        data.JumpCount = 10; // kari
+        _saveManager.SaveJson(data);
+    }
+    private void OnDestroy()
+    {
+        BreakGame();
     }
 }
