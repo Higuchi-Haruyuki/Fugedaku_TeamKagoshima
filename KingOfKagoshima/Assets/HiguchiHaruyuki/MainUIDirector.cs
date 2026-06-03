@@ -10,35 +10,27 @@ using UnityEngine.UI;
 using static UnityEditor.Progress;
 public class MainUIDirector : MonoBehaviour
 {
-    [SerializeField] private int _stageNumber = 1;
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private GameObject _player;
 
     [SerializeField] private GameObject _itemsParent;
     [SerializeField] private GameObject _itemDisplayUIPrefab;
-    [SerializeField] private ClearManager _clearManager;
     [SerializeField] private Image fadePanel;
     //アイテム表示UIの1つ目のオフセット
     [SerializeField] private Vector2 _initialOffset;
     // フェードの完了にかかる時間
-    [SerializeField] private float fadeDuration = 5.0f; 
+    [SerializeField] private float fadeDuration = 5.0f;
     private List<GameObject> _itemUIList;
     private ScoreTime _scoreTime;
     private List<ItemBase> _playerItems;
     private List<int> _itemUseCountBeforeCall;
     private int _itemCountBeforeCall = 0;
-    private bool isTimerStop = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _playerItems = _player.GetComponent<PlayerItemSystem>().GetItems();
-        _clearManager.OnClear += OnClear; 
         DisplayItem();
-    }
-    private void OnDisable()
-    {
-        _clearManager.OnClear -= OnClear;
     }
     public void SetScoreTime(ScoreTime scoreTime)
     {
@@ -47,8 +39,7 @@ public class MainUIDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isTimerStop)
-            _timerText.SetText(_scoreTime?.ToString());
+        _timerText.SetText(_scoreTime?.ToString());
         //アイテム数に変化があったとき（プレイヤーがアイテムを取得または消失したとき）
         if (_playerItems.Count != _itemCountBeforeCall)
         {
@@ -119,15 +110,5 @@ public class MainUIDirector : MonoBehaviour
         color.a = 1;
         fadePanel.color = color;
         SceneManager.LoadScene(sceneName);
-    }
-    private void OnClear()
-    {
-        isTimerStop = true;
-        //時間の保存
-        _scoreTime.SaveTime(_stageNumber);
-        //最速タイムの保存
-        _scoreTime.SaveFastestTime(_stageNumber);
-        //シーンのロード
-        StartCoroutine(FadeOutAndLoadScene("resultScene"));
     }
 }

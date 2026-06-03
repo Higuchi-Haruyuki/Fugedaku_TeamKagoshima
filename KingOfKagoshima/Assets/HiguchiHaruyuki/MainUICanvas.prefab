@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7913347134472062715}
   - component: {fileID: 3068224545135735312}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,12 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0580209594b87d41944efb34d8de5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainUIDirector
-  _stageNumber: 1
   _timerText: {fileID: 1627095717413152860}
   _player: {fileID: 0}
   _itemsParent: {fileID: 6255258592804247747}
   _itemDisplayUIPrefab: {fileID: 4961639472238696460, guid: e0bbaaa9b3d6dab46a6ef51b3f0a131d, type: 3}
-  _clearManager: {fileID: 0}
   fadePanel: {fileID: 3068224545135735312}
   _initialOffset: {x: 0, y: 0}
   fadeDuration: 1

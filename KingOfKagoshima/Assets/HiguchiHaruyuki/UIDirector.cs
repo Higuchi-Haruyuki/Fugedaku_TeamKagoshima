@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 public class UIDirector : MonoBehaviour
 {
     [SerializeField] private Canvas _mainCanvas;
     [SerializeField] private Canvas _pauseCanvas;
-    [SerializeField] private const int STAGENUMBER = 1;
     [SerializeField] private SaveManager _saveManager;
+    [SerializeField] private ClearManager _clearManager;
+    [SerializeField] private int _stageNumber = 1;
+    [SerializeField] private Image _fadePanel;
+    [SerializeField]private float _fadeDuration = 1;
     private ScoreTime _scoreTime;
     private bool _isPressdEscapeKeyBeforeFlame = false;
     private PauseMenu _pauseMenu;
-    private bool _isTimerStop = false;
+    private bool _isTimerStop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,19 +23,18 @@ public class UIDirector : MonoBehaviour
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
         _scoreTime = new();
-        _mainCanvas.GetComponent<MainUIDirector>().SetScoreTime(_scoreTime);
-        _pauseMenu.GetComponent<PauseMenu>().SetScoreTime(_scoreTime);
+        _mainCanvas.GetComponent<MainUIDirector>()?.SetScoreTime(_scoreTime);
         //Giveupイベントの購読
-        _pauseMenu.OnGiveup += (() => 
-        { 
-            _isTimerStop = true;
-            _scoreTime.SaveTime(STAGENUMBER);
-        });
-        _pauseMenu.OnBreakGame += (() => 
-        {
-            BreakGame();
-        });
+        _pauseMenu.OnGiveup += OnGiveup;
+        _pauseMenu.OnBreakGame += OnBreakGame;
+        _clearManager.OnClear += OnClear;
 
+    }
+    private void OnDisable()
+    {
+        _pauseMenu.OnGiveup -= OnGiveup;
+        _pauseMenu.OnBreakGame -= OnBreakGame;
+        _clearManager.OnClear -= OnClear;
     }
     // Update is called once per frame
     void Update()
@@ -61,17 +65,55 @@ public class UIDirector : MonoBehaviour
             if (_isPressdEscapeKeyBeforeFlame) _isPressdEscapeKeyBeforeFlame = false;
         }
     }
-    void BreakGame()
+    void OnGiveup()
     {
         _isTimerStop = true;
-        SaveData data = new();
-        data.Time = _scoreTime.GetSeconds();
-        data.FallCount = 10;//kari
-        data.JumpCount = 10; // kari
+        StartCoroutine(FadeOutAndLoadScene("StageSelect"));
+    }
+    void OnBreakGame()
+    {
+        _isTimerStop = true;
+        SaveData data = new()
+        {
+            Time = _scoreTime.GetSeconds(),
+            PlayerPos = transform.position,
+            FallCount = 10,//kari
+            JumpCount = 10 // kari
+        };
         _saveManager.SaveJson(data);
+        StartCoroutine(FadeOutAndLoadScene("StageSelect"));
+    }
+    void OnClear()
+    {
+        _isTimerStop = true;
+        //時間の保存
+        _scoreTime.SaveTime(_stageNumber);
+        //最速タイムの保存
+        _scoreTime.SaveFastestTime(_stageNumber);
+        //シーンのロード
+        StartCoroutine(FadeOutAndLoadScene("HaruyukiResultScene"));
     }
     private void OnDestroy()
     {
-        BreakGame();
+        OnBreakGame();
+    }
+    public IEnumerator FadeOutAndLoadScene(string sceneName)
+    {
+        _fadePanel.enabled = true;               // パネルを有効化
+        float elapsedTime = 0.0f;               // 経過時間を初期化
+        Color color = _fadePanel.color;
+        while (elapsedTime < _fadeDuration)
+        {
+            Debug.Log("coroutine");
+            elapsedTime += Time.unscaledDeltaTime;                           // 経過時間を増やす                        
+            float t = Mathf.Clamp01(elapsedTime / _fadeDuration);     // フェードの進行度を計算  
+            float i = Mathf.Lerp(0, 1, t);   // パネルの色を変更してフェードアウト
+            color.a = i;
+            _fadePanel.color = color;
+            yield return null;                                       // 1フレーム待機
+        }
+        color.a = 1;
+        _fadePanel.color = color;
+        SceneManager.LoadScene(sceneName);
     }
 }
