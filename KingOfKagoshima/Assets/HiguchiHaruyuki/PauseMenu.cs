@@ -11,93 +11,122 @@ using System;
 public class PauseMenu : MonoBehaviour
 {
     //SerializeField付きprivateメンバ変数
-    [SerializeField] private GameObject m_giveupMenu;
-    [SerializeField] private List<GameObject> m_choiceMenuCheckBoxList;
-    [SerializeField] private List<GameObject> m_giveupMenuCheckBoxList;
+    [SerializeField] private GameObject _giveupMenu;
+    [SerializeField] private GameObject _keyConfigMenu;
+    [SerializeField] private GameObject _breakGameMenu;
+    [SerializeField] private List<GameObject> _choiceMenuCheckBoxList;
+    [SerializeField] private List<GameObject> _giveupMenuCheckBoxList;
+    [SerializeField] private List<GameObject> _breakGameMenuCheckBoxList;
 
     //privateメンバ変数
-    private Canvas m_pauseCanvas;
-    private bool m_isPressdWKeyBeforeFlame = false;
-    private bool m_isPressdSKeyBeforeFlame = false;
-    private bool m_isPressdSpaceKeyBeforeFlame = false;
-    private char m_currentMenu = 'c';
-    private List<bool> m_isChoiceMenuCheckBoxList = new();
-    private List<bool> m_isGiveupMenuCheckBoxList = new();
-    private ScoreTime m_scoreTime;
+    private Canvas _pauseCanvas;
+    private bool _isPressdWKeyBeforeFlame = false;
+    private bool _isPressdSKeyBeforeFlame = false;
+    private bool _isPressdSpaceKeyBeforeFlame = false;
+    private char _currentMenu = 'c';
+    private List<bool> _isChoiceMenuCheckBoxList = new();
+    private List<bool> _isGiveupMenuCheckBoxList = new();
+    private List<bool> _isBreakGameMenuCheckBoxList = new();
     //
     public Action OnGiveup;
     public Action OnBreakGame;
     void Start()
     {
         Application.targetFrameRate = 60;
-        m_pauseCanvas = GetComponent<Canvas>();
-        m_giveupMenu.SetActive(false);
+        _pauseCanvas = GetComponent<Canvas>();
+        _giveupMenu.SetActive(false);
 
         //choiceメニューに関する初期化処理
-        for (int i = 0; i < m_choiceMenuCheckBoxList.Count; i++)
+        for (int i = 0; i < _choiceMenuCheckBoxList.Count; i++)
         {
             if (i == 0)
             {
                 //最初の要素だけtrue
-                m_isChoiceMenuCheckBoxList.Add(true);
+                _isChoiceMenuCheckBoxList.Add(true);
                 //最初の要素だけアクティブにする
-                m_choiceMenuCheckBoxList[i].SetActive(true);
+                _choiceMenuCheckBoxList[i].SetActive(true);
                 continue;
             }
-            m_isChoiceMenuCheckBoxList.Add(false);
-            m_choiceMenuCheckBoxList[i].SetActive(false);
+            _isChoiceMenuCheckBoxList.Add(false);
+            _choiceMenuCheckBoxList[i].SetActive(false);
         }
         //giveupメニューに関する初期化処理
-        for (int i = 0; i < m_giveupMenuCheckBoxList.Count; i++)
+        for (int i = 0; i < _giveupMenuCheckBoxList.Count; i++)
         {
             if (i == 0)
             {
                 //最初の要素だけtrue
-                m_isGiveupMenuCheckBoxList.Add(true);
+                _isGiveupMenuCheckBoxList.Add(true);
                 //最初の要素だけアクティブにする
-                m_giveupMenuCheckBoxList[i].SetActive(true);
+                _giveupMenuCheckBoxList[i].SetActive(true);
                 continue;
             }
-            m_isGiveupMenuCheckBoxList.Add(false);
-            m_giveupMenuCheckBoxList[i].SetActive(false);
-
+            _isGiveupMenuCheckBoxList.Add(false);
+            _giveupMenuCheckBoxList[i].SetActive(false);
+        }
+        //breakGameメニューに関する初期化処理
+        for (int i = 0; i < _breakGameMenuCheckBoxList.Count; i++)
+        {
+            if (i == 0)
+            {
+                //最初の要素だけtrue
+                _isBreakGameMenuCheckBoxList.Add(true);
+                //最初の要素だけアクティブにする
+                _breakGameMenuCheckBoxList[i].SetActive(true);
+                continue;
+            }
+            _isBreakGameMenuCheckBoxList.Add(false);
+            _breakGameMenuCheckBoxList[i].SetActive(false);
         }
     }
     void Update()
     {
-        if (!m_pauseCanvas.enabled) return;
+        if (!_pauseCanvas.enabled) return;
         //Wキーが押されたとき、一つ上の項目に入力が移動する処理
         if (Keyboard.current.wKey.isPressed)
         {
             //1つ前のフレームで入力されていなかったとき
-            if (!m_isPressdWKeyBeforeFlame)
+            if (!_isPressdWKeyBeforeFlame)
             {
-                m_isPressdWKeyBeforeFlame = true;
+                _isPressdWKeyBeforeFlame = true;
                 //choiceメニューがアクティブなとき
-                if (m_currentMenu == 'c')
+                if (_currentMenu == 'c')
                 {
-                    var indexTrue = FindIndexTrue(m_isChoiceMenuCheckBoxList);
+                    var indexTrue = FindIndexTrue(_isChoiceMenuCheckBoxList);
                     //今選択されている項目が一番上にないとき
                     if (indexTrue != 0)
                     {
-                        m_isChoiceMenuCheckBoxList[indexTrue] = false;
-                        m_isChoiceMenuCheckBoxList[indexTrue - 1] = true;
-                        m_choiceMenuCheckBoxList[indexTrue].SetActive(false);
-                        m_choiceMenuCheckBoxList[indexTrue - 1].SetActive(true);
+                        _isChoiceMenuCheckBoxList[indexTrue] = false;
+                        _isChoiceMenuCheckBoxList[indexTrue - 1] = true;
+                        _choiceMenuCheckBoxList[indexTrue].SetActive(false);
+                        _choiceMenuCheckBoxList[indexTrue - 1].SetActive(true);
                     }
 
                 }
                 //giveupメニューがアクティブなとき
-                else if (m_currentMenu == 'g')
+                else if (_currentMenu == 'g')
                 {
-                    var indexTrue = FindIndexTrue(m_isGiveupMenuCheckBoxList);
+                    var indexTrue = FindIndexTrue(_isGiveupMenuCheckBoxList);
                     //今選択されている項目が一番上にないとき
                     if (indexTrue != 0)
                     {
-                        m_isGiveupMenuCheckBoxList[indexTrue] = false;
-                        m_isGiveupMenuCheckBoxList[indexTrue - 1] = true;
-                        m_giveupMenuCheckBoxList[indexTrue].SetActive(false);
-                        m_giveupMenuCheckBoxList[indexTrue - 1].SetActive(true);
+                        _isGiveupMenuCheckBoxList[indexTrue] = false;
+                        _isGiveupMenuCheckBoxList[indexTrue - 1] = true;
+                        _giveupMenuCheckBoxList[indexTrue].SetActive(false);
+                        _giveupMenuCheckBoxList[indexTrue - 1].SetActive(true);
+                    }
+                }
+                //breakGameメニューがアクティブなとき
+                else if (_currentMenu == 'b')
+                {
+                    var indexTrue = FindIndexTrue(_isBreakGameMenuCheckBoxList);
+                    //今選択されている項目が一番上にないとき
+                    if (indexTrue != 0)
+                    {
+                        _isBreakGameMenuCheckBoxList[indexTrue] = false;
+                        _isBreakGameMenuCheckBoxList[indexTrue - 1] = true;
+                        _breakGameMenuCheckBoxList[indexTrue].SetActive(false);
+                        _breakGameMenuCheckBoxList[indexTrue - 1].SetActive(true);
                     }
                 }
             }
@@ -105,41 +134,54 @@ public class PauseMenu : MonoBehaviour
         else
         {
             //1つ前のフレームで入力されていたらフラグをfalseに戻す
-            if (m_isPressdWKeyBeforeFlame) m_isPressdWKeyBeforeFlame = false;
+            if (_isPressdWKeyBeforeFlame) _isPressdWKeyBeforeFlame = false;
         }
 
         //Sキーが押されたとき、一つ下の項目に入力が移動する処理
         if (Keyboard.current.sKey.isPressed)
         {
             //1つ前のフレームで入力されていなかったとき
-            if (!m_isPressdSKeyBeforeFlame)
+            if (!_isPressdSKeyBeforeFlame)
             {
-                m_isPressdSKeyBeforeFlame = true;
+                _isPressdSKeyBeforeFlame = true;
                 //choiceメニューがアクティブなとき
-                if (m_currentMenu == 'c')
+                if (_currentMenu == 'c')
                 {
-                    var indexTrue = FindIndexTrue(m_isChoiceMenuCheckBoxList);
+                    var indexTrue = FindIndexTrue(_isChoiceMenuCheckBoxList);
                     //今選択されている項目が一番下にないとき
-                    if (indexTrue != m_isChoiceMenuCheckBoxList.Count - 1)
+                    if (indexTrue != _isChoiceMenuCheckBoxList.Count - 1)
                     {
-                        m_isChoiceMenuCheckBoxList[indexTrue] = false;
-                        m_isChoiceMenuCheckBoxList[indexTrue + 1] = true;
-                        m_choiceMenuCheckBoxList[indexTrue].SetActive(false);
-                        m_choiceMenuCheckBoxList[indexTrue + 1].SetActive(true);
+                        _isChoiceMenuCheckBoxList[indexTrue] = false;
+                        _isChoiceMenuCheckBoxList[indexTrue + 1] = true;
+                        _choiceMenuCheckBoxList[indexTrue].SetActive(false);
+                        _choiceMenuCheckBoxList[indexTrue + 1].SetActive(true);
                     }
 
                 }
                 //giveupメニューがアクティブなとき
-                else if (m_currentMenu == 'g')
+                else if (_currentMenu == 'g')
                 {
-                    var indexTrue = FindIndexTrue(m_isGiveupMenuCheckBoxList);
+                    var indexTrue = FindIndexTrue(_isGiveupMenuCheckBoxList);
                     //今選択されている項目が一番下にないとき
-                    if (indexTrue != m_isGiveupMenuCheckBoxList.Count - 1)
+                    if (indexTrue != _isGiveupMenuCheckBoxList.Count - 1)
                     {
-                        m_isGiveupMenuCheckBoxList[indexTrue] = false;
-                        m_isGiveupMenuCheckBoxList[indexTrue + 1] = true;
-                        m_giveupMenuCheckBoxList[indexTrue].SetActive(false);
-                        m_giveupMenuCheckBoxList[indexTrue + 1].SetActive(true);
+                        _isGiveupMenuCheckBoxList[indexTrue] = false;
+                        _isGiveupMenuCheckBoxList[indexTrue + 1] = true;
+                        _giveupMenuCheckBoxList[indexTrue].SetActive(false);
+                        _giveupMenuCheckBoxList[indexTrue + 1].SetActive(true);
+                    }
+                }
+                //breakGameメニューがアクティブなとき
+                else if (_currentMenu == 'b')
+                {
+                    var indexTrue = FindIndexTrue(_isBreakGameMenuCheckBoxList);
+                    //今選択されている項目が一番下にないとき
+                    if (indexTrue != _isBreakGameMenuCheckBoxList.Count - 1)
+                    {
+                        _isBreakGameMenuCheckBoxList[indexTrue] = false;
+                        _isBreakGameMenuCheckBoxList[indexTrue + 1] = true;
+                        _breakGameMenuCheckBoxList[indexTrue].SetActive(false);
+                        _breakGameMenuCheckBoxList[indexTrue + 1].SetActive(true);
                     }
                 }
             }
@@ -147,21 +189,21 @@ public class PauseMenu : MonoBehaviour
         else
         {
             //1つ前のフレームで入力されていたらフラグをfalseに戻す
-            if (m_isPressdSKeyBeforeFlame) m_isPressdSKeyBeforeFlame = false;
+            if (_isPressdSKeyBeforeFlame) _isPressdSKeyBeforeFlame = false;
         }
 
         //SPACEキーが押されたとき、今選択されている項目を決定する
         if (Keyboard.current.spaceKey.isPressed)
         {
             //1つ前のフレームで入力されていなかったとき
-            if (!m_isPressdSpaceKeyBeforeFlame)
+            if (!_isPressdSpaceKeyBeforeFlame)
             {
-                m_isPressdSpaceKeyBeforeFlame = true;
+                _isPressdSpaceKeyBeforeFlame = true;
 
                 //現在のメニューの状態や選択状態で呼び出す関数を変える
-                if (m_currentMenu == 'c')
+                if (_currentMenu == 'c')
                 {
-                    int indexTrue = FindIndexTrue(m_isChoiceMenuCheckBoxList);
+                    int indexTrue = FindIndexTrue(_isChoiceMenuCheckBoxList);
                     switch (indexTrue)
                     {
                         case 0:
@@ -176,7 +218,7 @@ public class PauseMenu : MonoBehaviour
                             }
                         case 2:
                             {
-                                BreakGame();
+                                OpenBreakGameMenu();
                                 break;
                             }
                         case 3:
@@ -188,18 +230,30 @@ public class PauseMenu : MonoBehaviour
                             break;
                     }
                 }
-                else if (m_currentMenu == 'g')
+                else if (_currentMenu == 'g')
                 {
-                    int indexTrue = FindIndexTrue(m_isGiveupMenuCheckBoxList);
+                    int indexTrue = FindIndexTrue(_isGiveupMenuCheckBoxList);
                     if (indexTrue == 0) No();
                     else if (indexTrue == 1) Yes();
+                }
+                else if (_currentMenu == 'b')
+                {
+                    int indexTrue = FindIndexTrue(_isBreakGameMenuCheckBoxList);
+                    if (indexTrue == 0) ReturnPauseMenu();
+                    else if (indexTrue == 1) BreakGame();
+                }
+                else if (_currentMenu == 'k')
+                {
+                    //ポーズメニューに戻る
+                    _keyConfigMenu.SetActive(false);
+                    _currentMenu = 'c';
                 }
             }
         }
         else
         {
             //1つ前のフレームで入力されていたらフラグをfalseに戻す
-            if (m_isPressdSpaceKeyBeforeFlame) m_isPressdSpaceKeyBeforeFlame = false;
+            if (_isPressdSpaceKeyBeforeFlame) _isPressdSpaceKeyBeforeFlame = false;
         }
     }
     //List<bool>の中で1番最初のtrueのインデックスを返す
@@ -211,55 +265,61 @@ public class PauseMenu : MonoBehaviour
         }
         return -1;
     }
-    public void SetScoreTime(ScoreTime scoreTime)
-    {
-        m_scoreTime = scoreTime;
-    }
-
     //choiceメニューでのcontinue選択肢
     void Continue()
     {
         //pauseメニューを閉じる処理
-        m_pauseCanvas.enabled = false;
-        m_giveupMenu.SetActive(false);
+        _pauseCanvas.enabled = false;
+        _giveupMenu.SetActive(false);
         Time.timeScale = 1.0f;
-        m_currentMenu = 'c';
+        _currentMenu = 'c';
     }
     //choiceメニューでのKeyConfig選択肢
     void KeyConfig()
     {
         //操作設定確認する
-        Debug.Log("KeyConfig");
+        _keyConfigMenu.SetActive(true);
+        _currentMenu = 'k';
     }
     //choiceメニューでのBreakGame選択肢
-    void BreakGame()
+    void OpenBreakGameMenu()
     {
         //ゲームをセーブして中断する
-        Debug.Log("BreakGame");
+        _breakGameMenu.SetActive(true);
+        _currentMenu = 'b';
     }
     //choiceメニューでのgiveup選択肢
     void Giveup()
     {
         //giveupメニューを開く
-        m_giveupMenu.SetActive(true);
-        m_currentMenu = 'g';
+        _giveupMenu.SetActive(true);
+        _currentMenu = 'g';
     }
 
     //giveupメニューでのYes選択肢
     void Yes()
     {
         //giveupしてメインシーンを終了する
-        Debug.Log("GIVEUP!!!");
         OnGiveup?.Invoke();
-        SceneManager.LoadScene("StageSelect");
     }
 
     //giveupメニューでのNo選択肢
     void No()
     {
         //giveupメニューを閉じてchoiceメニューに戻る
-        m_giveupMenu.SetActive(false);
-        m_currentMenu = 'c';
+        _giveupMenu.SetActive(false);
+        _currentMenu = 'c';
+    }
+    //breakGameメニューでのpauseに戻る選択肢
+    void ReturnPauseMenu()
+    {
+        _breakGameMenu.SetActive(false);
+        _currentMenu = 'c';
+    }
+    //breakGameメニューでのゲームを中断する選択肢
+    void BreakGame()
+    {
+        OnBreakGame?.Invoke();
     }
 
 }
