@@ -5278,9 +5278,8 @@ MonoBehaviour:
   maxCharge: 20
   jumpPower: 1.2
   jumpHeight: 5
-  slipperiness: 1
+  slipperiness: 1.005
   bounciness: 1
-  slipperiness: 1
 --- !u!1001 &839467538
 PrefabInstance:
   m_ObjectHideFlags: 0

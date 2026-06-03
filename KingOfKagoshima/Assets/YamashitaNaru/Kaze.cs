@@ -25,7 +25,7 @@ public class IntervalWindZone2D : MonoBehaviour
             {
                 isWindBlowing = false;
                 timer = 0f;
-                Debug.Log("風が止まりました");
+                //Debug.Log("風が止まりました");
             }
         }
         // 風が止まっている時
@@ -35,7 +35,7 @@ public class IntervalWindZone2D : MonoBehaviour
             {
                 isWindBlowing = true;
                 timer = 0f;
-                Debug.Log("風が吹き始めました");
+              //  Debug.Log("風が吹き始めました");
             }
         }
     }
