@@ -73,12 +73,19 @@ public class UIDirector : MonoBehaviour
     void OnBreakGame()
     {
         _isTimerStop = true;
+        _scoreTime.SaveTime(_stageNumber);
+        ScoreTime stage1Time = new();
+        stage1Time.LoadTime(1);
+        ScoreTime stage2Time = new();
+        stage2Time.LoadTime(2);
+
         SaveData data = new()
         {
-            Time = _scoreTime.GetSeconds(),
-            PlayerPos = transform.position,
-            FallCount = 10,//kari
-            JumpCount = 10 // kari
+            Stage1Time = stage1Time.GetSeconds(),
+            Stage1PlayerPos = transform.position,
+            Stage1FallCount = 10,//kari
+            Stage1JumpCount = 10 // kari
+
         };
         _saveManager.SaveJson(data);
         StartCoroutine(FadeOutAndLoadScene("StageSelect"));
