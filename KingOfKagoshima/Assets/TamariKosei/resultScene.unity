@@ -322,8 +322,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278254591
+  m_fontColor: {r: 1, g: 0.9829891, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -612,8 +612,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255103
-  m_fontColor: {r: 1, g: 0.9931487, b: 0, a: 1}
+    rgba: 4281401599
+  m_fontColor: {r: 1, g: 0, b: 0.19297409, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1102,7 +1102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847aed1aa8ad49e4b891c18a38828bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowResult
+  stageNum: 1
   jumpText: {fileID: 1374649366}
+  timeText: {fileID: 0}
 --- !u!1 &1613870964
 GameObject:
   m_ObjectHideFlags: 0
