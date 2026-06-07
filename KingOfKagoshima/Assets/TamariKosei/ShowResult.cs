@@ -15,7 +15,7 @@ public  class ShowResult : MonoBehaviour
         // (※一度もジャンプしていない場合は 0 が表示されます)
         int totalJumps = PlayerPrefs.GetInt("TotalJumpCount", 0);
 
-        ScoreTime scoreTime = new();
+        Score scoreTime = new();
         scoreTime.LoadTime(stageNum);
 
         // 画面のテキストを書き換える

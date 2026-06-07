@@ -21,5 +21,9 @@ public class ClearManager : MonoBehaviour
         {
             OnClear?.Invoke();
         }
+        if (collision.gameObject.GetComponent<Haruyuki_PlayerController>())
+        {
+            OnClear?.Invoke();
+        }
     }
 }

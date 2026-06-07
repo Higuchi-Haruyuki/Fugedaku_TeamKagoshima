@@ -76,5 +76,33 @@ public class PlayerItemSystem : MonoBehaviour
         }
         return null;
     }
+    //型引数でアイテムの型を受け取り、所持しているならそのインスタンスを返す
+    public T CheckItem<T>() where T : ItemBase
+    {
+        foreach (ItemBase item in m_itemList)
+        {
+            if (item is T castedItem)
+            {
+                //残り使用回数が0のときアイテムリストから削除する
+                if (castedItem.UseCount == 0)
+                {
+                    m_itemList.Remove(castedItem);
+                    //Destroy(item);
+                    return null;
+                }
+                //残り使用回数が0のときアイテムリストから削除するがインスタンスを返す
+                else if (castedItem.UseCount == 1)
+                {
+                    m_itemList.Remove(castedItem);
+                }
+                return castedItem;
+            }
+            else
+            {
+
+            }
+        }
+        return null;
+    }
     public List<ItemBase> GetItems() => m_itemList;
 }

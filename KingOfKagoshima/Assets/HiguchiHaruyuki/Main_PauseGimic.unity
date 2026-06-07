@@ -273,6 +273,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
   m_PrefabInstance: {fileID: 1857607339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &961936923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961936916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1533836dfb00e2445970f32a5b9d556a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Haruyuki_PlayerController
+  _moveSpeed: 5
+  _maxCharge: 60
+  _jumpPower: 1.2
+  _jumpHeight: 5
+  _jumpPowerModifier: 0.25
+  _bounciness: 1
+  _slipperiness: 1
+  _fallDistance: 6
+  _isJumpPowerUpEffectOnDoubleJump: 0
+  _doubleJumpPower: 60
 --- !u!1 &1346880627
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +306,9 @@ GameObject:
   - component: {fileID: 1346880630}
   - component: {fileID: 1346880629}
   - component: {fileID: 1346880628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: IceGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,10 +579,14 @@ PrefabInstance:
       propertyPath: jumpPower
       value: 2.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8298379809636656416, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2819273416667615200, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 961936923}
   m_SourcePrefab: {fileID: 100100000, guid: fa22421ea9136ec4097ac8d01ca4a116, type: 3}
 --- !u!114 &2051934467 stripped
 MonoBehaviour:
@@ -738,6 +764,10 @@ PrefabInstance:
       propertyPath: _clearManager
       value: 
       objectReference: {fileID: 1609165030}
+    - target: {fileID: 8548766751054932708, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
+      propertyPath: _playerContorller
+      value: 
+      objectReference: {fileID: 961936923}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
