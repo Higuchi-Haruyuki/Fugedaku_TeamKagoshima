@@ -1398,8 +1398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HaruyukiShowResult
   stageNum: 1
-  jumpText: {fileID: 1374649366}
-  timeText: {fileID: 972090206}
+  _jumpText: {fileID: 1374649366}
+  _timeText: {fileID: 972090206}
+  _fallText: {fileID: 135480042}
 --- !u!1 &1830832904
 GameObject:
   m_ObjectHideFlags: 0

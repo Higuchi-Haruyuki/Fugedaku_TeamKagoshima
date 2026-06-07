@@ -18,7 +18,7 @@ public class MainUIDirector : MonoBehaviour
     //アイテム表示UIの1つ目のオフセット
     [SerializeField] private Vector2 _initialOffset;
     private List<GameObject> _itemUIList;
-    private ScoreTime _scoreTime;
+    private Score _scoreTime;
     private List<ItemBase> _playerItems;
     private List<int> _itemUseCountBeforeCall;
     private int _itemCountBeforeCall = 0;
@@ -29,7 +29,7 @@ public class MainUIDirector : MonoBehaviour
         _playerItems = _player.GetComponent<PlayerItemSystem>().GetItems();
         DisplayItem();
     }
-    public void SetScoreTime(ScoreTime scoreTime)
+    public void SetScoreTime(Score scoreTime)
     {
         _scoreTime = scoreTime;
     }
