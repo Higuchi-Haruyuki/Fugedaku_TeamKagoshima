@@ -7,7 +7,6 @@ public class UIDirector : MonoBehaviour
 {
     [SerializeField] private Canvas _mainCanvas;
     [SerializeField] private Canvas _pauseCanvas;
-    [SerializeField] private SaveManager _saveManager;
     [SerializeField] private ClearManager _clearManager;
     [SerializeField] private Haruyuki_PlayerController _playerContorller;
     [SerializeField] private int _stageNumber = 1;
@@ -17,7 +16,6 @@ public class UIDirector : MonoBehaviour
     private bool _isPressdEscapeKeyBeforeFlame = false;
     private PauseMenu _pauseMenu;
     private bool _isTimerStop;
-    private int _fastestDataIndex;
     private SaveData _loadFastestData;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +23,6 @@ public class UIDirector : MonoBehaviour
         _mainCanvas.enabled = true;
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
-        _score = new();
         _mainCanvas.GetComponent<MainUIDirector>()?.SetScoreTime(_score);
         //Giveupイベントの購読
         _pauseMenu.OnGiveup += OnGiveup;
@@ -34,8 +31,10 @@ public class UIDirector : MonoBehaviour
         _playerContorller.OnJump += OnJump;
         _playerContorller.OnFall += OnFall;
         //最速タイムをロードする
-        _fastestDataIndex = _stageNumber - 1 + 2;
-        _loadFastestData = _saveManager.LoadJson(_fastestDataIndex);
+        if(_stageNumber == 1)
+            _loadFastestData = SaveManager.LoadJson(SaveManager.GetPath(SaveFile.Stage1FastestTimeData));
+        else if(_stageNumber == 2)
+            _loadFastestData = SaveManager.LoadJson(SaveManager.GetPath(SaveFile.Stage2FastestTimeData));
 
     }
     private void OnDisable()
@@ -76,9 +75,21 @@ public class UIDirector : MonoBehaviour
             if (_isPressdEscapeKeyBeforeFlame) _isPressdEscapeKeyBeforeFlame = false;
         }
     }
+    public void SetScore(SaveData data)
+    {
+        _score = new();
+        _score.AddTime(data.Time);
+        _score.JumpCount = data.JumpCount;
+        _score.FallCount = data.FallCount;
+    }
+    public void SetStageNum(int num)
+    {
+        _stageNumber = num;
+    }
     void OnGiveup()
     {
         _isTimerStop = true;
+
         StartCoroutine(FadeOutAndLoadScene("StageSelect"));
     }
     void OnBreakGame()
@@ -92,7 +103,11 @@ public class UIDirector : MonoBehaviour
             FallCount = _score.FallCount,
             JumpCount = _score.JumpCount,
         };
-        _saveManager.SaveJson(data,_stageNumber - 1);
+        if (_stageNumber == 1)
+            SaveManager.SaveJson(data, SaveManager.GetPath(SaveFile.Stage1SaveData));
+        else if (_stageNumber == 2)
+            SaveManager.SaveJson(data, SaveManager.GetPath(SaveFile.Stage2SaveData));
+
         StartCoroutine(FadeOutAndLoadScene("StageSelect"));
     }
     void OnClear()
@@ -105,7 +120,7 @@ public class UIDirector : MonoBehaviour
         //今回のほうが早いとき
         //最速タイムに値が入っていないとき(最初のクリア)も考慮しておく
         float currentFastestTime = _loadFastestData.Time;
-        if(_score.GetSeconds() < currentFastestTime && currentFastestTime <= 0.0f)
+        if((_score.GetSeconds() < currentFastestTime) || (currentFastestTime <= 0.0f))
         {
             SaveData data = new() {
                 StageNum = _stageNumber,
@@ -113,8 +128,12 @@ public class UIDirector : MonoBehaviour
                 JumpCount = _score.JumpCount,
                 FallCount = _score.FallCount,
             };
+            Debug.Log(data.ToString());
             currentFastestTime = _score.GetSeconds();
-            _saveManager.SaveJson(data, _fastestDataIndex);
+            if (_stageNumber == 1)
+                SaveManager.SaveJson(data,SaveManager.GetPath(SaveFile.Stage1FastestTimeData));
+            else if (_stageNumber == 2)
+               SaveManager.SaveJson(data,SaveManager.GetPath(SaveFile.Stage2FastestTimeData));
         }
         
         Score fastestTime = new();
@@ -132,10 +151,6 @@ public class UIDirector : MonoBehaviour
     { 
         _score.FallCount++;
         Debug.Log($"落下回数{_score.FallCount}");
-    }
-    private void OnDestroy()
-    {
-        OnBreakGame();
     }
     public IEnumerator FadeOutAndLoadScene(string sceneName)
     {
