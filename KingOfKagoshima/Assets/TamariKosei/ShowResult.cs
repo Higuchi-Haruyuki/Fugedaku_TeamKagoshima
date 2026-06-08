@@ -3,29 +3,30 @@ using UnityEngine;
 
 public  class ShowResult : MonoBehaviour
 {
-    public int stageNum = 1;
     // Unityの画面上のテキスト（TextMeshPro）を割り当てる枠
-    public TextMeshProUGUI jumpText;
-    public TextMeshProUGUI timeText;
-
+    public TextMeshProUGUI _jumpText;
+    public TextMeshProUGUI _timeText;
+    public TextMeshProUGUI _fallText;
 
     void Start()
     {
-        // 過去に保存されたデータをPlayerPrefsから直接読み込む
-        // (※一度もジャンプしていない場合は 0 が表示されます)
-        int totalJumps = PlayerPrefs.GetInt("TotalJumpCount", 0);
 
-        Score scoreTime = new();
-        scoreTime.LoadTime(stageNum);
-
+        Score score = new();
+        score.LoadAll();
+        Score fastestScore = new();
+        fastestScore.LoadFastestTime();
         // 画面のテキストを書き換える
-        if (jumpText != null)
+        if (_jumpText != null)
         {
-            jumpText.text = "ジャンプ回数: " + totalJumps + " 回";
+            _jumpText.text = "ジャンプ回数: " + score.JumpCount + " 回";
         }
-        if (timeText != null)
+        if (_timeText != null)
         {
-            timeText.text = "タイム: " + scoreTime.ToString() + " s";
+            _timeText.text = "タイム: " + score.ToString();
+        }
+        if (_fallText != null)
+        {
+            _fallText.text = "落下回数: " + score.FallCount + " 回";
         }
     }
 }

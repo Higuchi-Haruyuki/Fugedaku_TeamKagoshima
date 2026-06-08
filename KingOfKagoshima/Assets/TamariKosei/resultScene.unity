@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00037813, y: -133.45526}
-  m_SizeDelta: {x: 505.68, y: 91.6903}
+  m_AnchoredPosition: {x: 216.1, y: -125.794556}
+  m_SizeDelta: {x: 1075.9, y: 91.6903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135480042
 MonoBehaviour:
@@ -580,8 +580,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: 130}
-  m_SizeDelta: {x: 505.6783, y: 95.2857}
+  m_AnchoredPosition: {x: 216.09735, y: 137.6607}
+  m_SizeDelta: {x: 1075.8739, y: 95.2857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972090206
 MonoBehaviour:
@@ -987,8 +987,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00038146973, y: -5.6607}
-  m_SizeDelta: {x: 505.68, y: 83.9642}
+  m_AnchoredPosition: {x: 216.1, y: 2}
+  m_SizeDelta: {x: 1075.9, y: 83.9642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374649366
 MonoBehaviour:
@@ -1102,9 +1102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847aed1aa8ad49e4b891c18a38828bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowResult
-  stageNum: 1
-  jumpText: {fileID: 1374649366}
-  timeText: {fileID: 0}
+  _jumpText: {fileID: 1374649366}
+  _timeText: {fileID: 972090206}
+  _fallText: {fileID: 135480042}
 --- !u!1 &1613870964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2999878, y: 7}
+  m_AnchoredPosition: {x: 7.800415, y: 10}
   m_SizeDelta: {x: 13.000635, y: 3.7997253}
   m_Pivot: {x: 0.6, y: 1.31}
 --- !u!114 &1613870966
