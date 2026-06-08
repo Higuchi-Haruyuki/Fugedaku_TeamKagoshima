@@ -137,19 +137,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalScale.x
-      value: -15.774242
+      value: -9.57812
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2941475
+      value: 1.4872957
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11
+      value: -2.9879
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.77
+      value: -2.1734
       objectReference: {fileID: 0}
     - target: {fileID: 8542602052836708289, guid: e8233250951dd9042bc6313287e2278d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5278,7 +5278,7 @@ MonoBehaviour:
   maxCharge: 20
   jumpPower: 1.2
   jumpHeight: 5
-  slipperiness: 1.005
+  slipperiness: 1
   bounciness: 1
 --- !u!1001 &839467538
 PrefabInstance:
