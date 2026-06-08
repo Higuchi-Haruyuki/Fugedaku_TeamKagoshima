@@ -9,4 +9,8 @@ public class SaveData
     public Vector3 PlayerPos;
     public int JumpCount;
     public int FallCount;
+    public override string ToString()
+    {
+        return $"STAGENUM: {StageNum}, TIME: {Time}, PLAYERPOS: {PlayerPos}, JUMPCOUNT: {JumpCount}, FALLCOUNT: {FallCount}";
+    }
 }
