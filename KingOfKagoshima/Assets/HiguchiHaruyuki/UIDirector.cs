@@ -23,6 +23,10 @@ public class UIDirector : MonoBehaviour
         _mainCanvas.enabled = true;
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
+        if (_score == null )
+        {
+            _score = new Score();
+        }
         _mainCanvas.GetComponent<MainUIDirector>()?.SetScoreTime(_score);
         //Giveupイベントの購読
         _pauseMenu.OnGiveup += OnGiveup;
