@@ -190,7 +190,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
             if (_isIceGround)
             {
                 Debug.Log($"滑っているよ{_rb.linearVelocity}");
-                var playerVelocityOnSlip = _rb.linearVelocity;
+                var playerVelocityOnSlip = _velocityBeforeFlame;
                 // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
                 playerVelocityOnSlip.x *= _slipperiness;
 
