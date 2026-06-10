@@ -13,6 +13,7 @@ public class FadeSceneLoader : MonoBehaviour
     }
     public IEnumerator FadeOutAndLoadScene()
     {
+        float elapesedTime = 0f;
         fadePanel.enabled = true;               // パネルを有効化
         float elapsedTime = 0.0f;               // 経過時間を初期化
         Color color = fadePanel.color;
@@ -24,7 +25,7 @@ public class FadeSceneLoader : MonoBehaviour
             float i = Mathf.Lerp(0, 1, t);   // パネルの色を変更してフェードアウト
             color.a = i;
             fadePanel.color = color;
-            yield return null;                                       // 1フレーム待機
+            yield return null;   // 1フレーム待機
         }
         color.a = 1;
         fadePanel.color = color;
