@@ -7,10 +7,13 @@ public class Haruyuki_PlayerController : MonoBehaviour
 
     [Header("プレイヤーのステータス")]
     public float _moveSpeed = 5f;
+    public float _minCharge = 10f;
     public float _maxCharge = 20f;
     public float _jumpPower = 1.2f;
-    public float _jumpHeight = 5f;
-    [SerializeField] private float _jumpPowerModifier = 0.25f;
+    public float _minJumpAngle = 30f;
+    public float _maxJumpAngle = 70f;
+    private const float _jumpPowerModifier = 0.20f;
+    private float _jumpChargeX = 0f;
     private float _chargePower;
     Vector2 _velocityBeforeFlame = Vector2.zero;
 
@@ -116,6 +119,10 @@ public class Haruyuki_PlayerController : MonoBehaviour
         {
             x = 1f;
         }
+        if(keyboard.spaceKey.isPressed)
+        {
+            x = 0f;
+        }
         if(!_isIceGround || x !=0)
         {
             _rb.linearVelocity = new Vector2(x * _moveSpeed, _rb.linearVelocity.y);
@@ -124,23 +131,21 @@ public class Haruyuki_PlayerController : MonoBehaviour
     }
     void Jump(Keyboard keyboard,float chargePower,float jumpPowerModifier)
     {
-        float x = 0f;
-        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
-        {
-            x = -1f;
-        }
-        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
-        {
-            x = 1f;
-        }
-        Vector2 jumpDir = Vector2.up;
-
-        //Debug.Log($"ジャンプ方向: {jumpDir}, チャージ力: {_chargePower}, ジャンプ力補正{jumpPowerModifier}");
-        jumpDir *= chargePower * _jumpPower * jumpPowerModifier * _jumpPowerModifier;
-        //ジャンプ角度60度
-        var targetVec = new Vector2(x, Mathf.Sqrt(3)).normalized;
-        var proj = Vector2.Dot(jumpDir, targetVec) * targetVec;
-        _rb.linearVelocity = proj;
+        SetJumpChargeX(keyboard);
+        var power = chargePower + _minCharge;
+        float jumpPower = Mathf.Min(power,_maxCharge) * _jumpPower * jumpPowerModifier * _jumpPowerModifier;
+        //Debug.Log($"ジャンプ: {jumpPower}, チャージ力: {chargePower}, ジャンプ力補正{jumpPowerModifier}");
+        var temp = chargePower / _maxCharge;
+        var angle = Mathf.Lerp(_minJumpAngle, _maxJumpAngle, temp);
+        Debug.Log($"power: {power}, angle:{angle}");
+        var cos = Mathf.Cos(angle * Mathf.Deg2Rad) * _jumpChargeX;
+        var sin = Mathf.Sin(angle * Mathf.Deg2Rad);
+        Debug.Log($"cos: {cos}, sin: {sin}");
+        var targetVec = new Vector2(cos, sin).normalized;
+        //Debug.Log($"targetVec: {targetVec}");
+        var jumpVec = targetVec * jumpPower;
+        _rb.linearVelocity = jumpVec;
+        _jumpChargeX = 0f;
         OnJump?.Invoke();
     }
     void CheckChargeing(Keyboard keyboard)
@@ -157,7 +162,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
         }
         _isChargeJump = false;
     }
-    void ChargeJump(Keyboard keyboard)
+    void ChargeJump(Keyboard keyboard)　　　　　　　　 
     {
         //地面に触れているとき
         if (_isGround)
@@ -165,6 +170,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
             //ジャンプキーを離したときまたはチャージ値が最大チャージ値を超えたときにジャンプする
             if (keyboard.spaceKey.wasReleasedThisFrame || (keyboard.spaceKey.isPressed && _chargePower >= _maxCharge))
             {
+                SetJumpChargeX(keyboard);
                 //ジャンプ力上昇アイテムの処理 所持しているなら使用して補正をかける
                 float jumpPowerModifier = 1f;
                 var jumpPowerUp = _playerItemSystem.CheckItem<Item_JumpPowerup>();
@@ -173,10 +179,22 @@ public class Haruyuki_PlayerController : MonoBehaviour
 
                 Jump(keyboard, _chargePower,jumpPowerModifier);
 
-                _chargePower = 0f;
+                _chargePower = 0.0f;
                 //ジャンプ後に二段ジャンプのフラグを戻す
                 _isPressdDoubleJump = false;
             }
+        }
+    }
+
+    void SetJumpChargeX(Keyboard keyboard)
+    {
+        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed)
+        {
+            _jumpChargeX = -1f;
+        }
+        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed)
+        {
+            _jumpChargeX = 1f;
         }
     }
     //地面を滑る処理
@@ -189,7 +207,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
             //かつ　氷の地面に立っているとき
             if (_isIceGround)
             {
-                Debug.Log($"滑っているよ{_rb.linearVelocity}");
+                //Debug.Log($"滑っているよ{_rb.linearVelocity}");
                 var playerVelocityOnSlip = _velocityBeforeFlame;
                 // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
                 playerVelocityOnSlip.x *= _slipperiness;
