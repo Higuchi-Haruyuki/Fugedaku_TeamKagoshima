@@ -85,6 +85,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
         }
 
         //デバッグ用に視覚的に地面にいるかわかりやすくする
+#if false
         if (_isGround)
         {
             _sr.color = Color.red;
@@ -94,6 +95,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
             _sr.color = Color.green;
         }
 
+#endif
         if (keyboard.spaceKey.isPressed)
         {
             _isPressdSpaceKeyBeforeFlame = true;
