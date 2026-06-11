@@ -8,7 +8,7 @@ public class UIDirector : MonoBehaviour
     [SerializeField] private Canvas _mainCanvas;
     [SerializeField] private Canvas _pauseCanvas;
     [SerializeField] private ClearManager _clearManager;
-    [SerializeField] private Haruyuki_PlayerController _playerContorller;
+    [SerializeField] private PlayerController _playerContorller;
     [SerializeField] private int _stageNumber = 1;
     [SerializeField] private Image _fadePanel;
     [SerializeField] private float _fadeDuration = 1;

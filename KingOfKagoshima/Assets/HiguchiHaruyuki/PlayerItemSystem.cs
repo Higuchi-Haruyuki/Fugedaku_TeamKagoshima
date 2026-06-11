@@ -90,7 +90,7 @@ public class PlayerItemSystem : MonoBehaviour
                     //Destroy(item);
                     return null;
                 }
-                //残り使用回数が0のときアイテムリストから削除するがインスタンスを返す
+                //残り使用回数が1のときアイテムリストから削除するがインスタンスを返す
                 else if (castedItem.UseCount == 1)
                 {
                     m_itemList.Remove(castedItem);

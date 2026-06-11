@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8187757611820778884}
   - component: {fileID: 3774303435241447019}
-  - component: {fileID: 6619297838060007050}
-  - component: {fileID: 1218638380158321750}
+  - component: {fileID: 5044161471598069133}
   - component: {fileID: 6221845074440662238}
+  - component: {fileID: 6619297838060007050}
   - component: {fileID: 4501287355024488108}
+  - component: {fileID: 2175559772305563937}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -95,6 +96,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5044161471598069133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710951149552418738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8de64fca82965a469312f5099ca41ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  _moveSpeed: 3
+  _minCharge: 10
+  _maxCharge: 60
+  _jumpPower: 2.1
+  _minJumpAngle: 10
+  _maxJumpAngle: 70
+  _bounciness: 0.69
+  _slipperiness: 0.97
+  _isJumpPowerUpEffectOnDoubleJump: 0
+  _doubleJumpPower: 10
+  _fallDistance: 6
+--- !u!114 &6221845074440662238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710951149552418738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd933515b3e8a24abb03b3f17620008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerItemSystem
+  m_itemList: []
 --- !u!61 &6619297838060007050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,7 +162,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -141,41 +178,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1218638380158321750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710951149552418738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1533836dfb00e2445970f32a5b9d556a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Haruyuki_PlayerController
-  _moveSpeed: 5
-  _maxCharge: 60
-  _jumpPower: 1.2
-  _jumpHeight: 5
-  _jumpPowerModifier: 0.25
-  _bounciness: 1
-  _slipperiness: 1
-  _fallDistance: 6
-  _isJumpPowerUpEffectOnDoubleJump: 0
-  _doubleJumpPower: 60
---- !u!114 &6221845074440662238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710951149552418738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd933515b3e8a24abb03b3f17620008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerItemSystem
-  m_itemList: []
 --- !u!50 &4501287355024488108
 Rigidbody2D:
   serializedVersion: 5
@@ -203,3 +205,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &2175559772305563937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710951149552418738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e612ce0889a9408abbc455e1731c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputSystem

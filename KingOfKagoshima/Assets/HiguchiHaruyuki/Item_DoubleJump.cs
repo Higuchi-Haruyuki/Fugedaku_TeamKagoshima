@@ -12,10 +12,14 @@ public class Item_DoubleJump : ItemBase
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数 
-    public override ItemBase Use()
+    public static bool UseItem(PlayerItemSystem playerItemSystem)
     {
-        base.Use();
-        return this;
+        if (playerItemSystem.CheckItem<Item_DoubleJump>() is var doubleJump && doubleJump != null)
+        {
+            doubleJump.Use();
+            return true;
+        }
+        return false;
     }
 
 }

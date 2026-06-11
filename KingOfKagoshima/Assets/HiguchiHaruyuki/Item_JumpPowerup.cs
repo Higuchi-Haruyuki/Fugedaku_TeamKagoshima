@@ -15,11 +15,14 @@ public class Item_JumpPowerup : ItemBase
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数
-    public override ItemBase Use()
-    {
-        base.Use();
-        return this;
-    }
 
+    public static float UseItem(PlayerItemSystem playerItemSystem)
+    {
+        //所持しているなら使用して補正をかける
+        var jumpPowerUp = playerItemSystem.CheckItem<Item_JumpPowerup>();
+        jumpPowerUp?.Use();
+        float jumpPowerModifier = jumpPowerUp == null ? 1 : jumpPowerUp.m_jumpPower;
+        return jumpPowerModifier;
+    }
     
 }
