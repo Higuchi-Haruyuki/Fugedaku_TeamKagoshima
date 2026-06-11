@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Haruyuki_PlayerController : MonoBehaviour
+public class Haruyuki_PlayerControllerTrigger : MonoBehaviour
 {
 
     [Header("プレイヤーのステータス")]
@@ -247,6 +247,7 @@ public class Haruyuki_PlayerController : MonoBehaviour
 
                         _isPressdDoubleJump = true;
                     }
+                    
                 }
             }
         }
@@ -258,7 +259,12 @@ public class Haruyuki_PlayerController : MonoBehaviour
         // Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
         if (collision.gameObject.layer == _groundLayer)
         {
-            Vector3 contactNormal = collision.contacts[0].normal;
+            //衝突点の取得
+            var contactPoint = collision.contacts[0];
+            //法線ベクトルを取得
+            Vector3 contactNormal = contactPoint.normal;
+            float penetration = contactPoint.separation;
+
             if (contactNormal == new Vector3(0, 1, 0))
             {
                 _isGround = true;
