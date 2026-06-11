@@ -1192,8 +1192,8 @@ GameObject:
   - component: {fileID: 1660456723}
   - component: {fileID: 1660456722}
   - component: {fileID: 1660456721}
-  - component: {fileID: 1660456725}
   - component: {fileID: 1660456726}
+  - component: {fileID: 1660456727}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1288,7 +1288,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!82 &1660456725
+--- !u!114 &1660456726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660456720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a966af0d77d7ecb44b96a1b577e21549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeSceneLoader
+  fadePanel: {fileID: 1613870966}
+  fadeDuration: 1
+  isPressdEnterKey: 0
+--- !u!82 &1660456727
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1385,21 +1400,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1660456726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660456720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a966af0d77d7ecb44b96a1b577e21549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FadeSceneLoader
-  fadePanel: {fileID: 1613870966}
-  fadeDuration: 1
-  isPressdEnterKey: 0
 --- !u!1 &1830832904
 GameObject:
   m_ObjectHideFlags: 0
