@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Stage1Selection : MonoBehaviour
 {
     private readonly Vector2 kSelectPos = new Vector2(0, 0);
-    private readonly Vector2 kDontSelectPos = new Vector2(-800, 0);
+    private readonly Vector2 kDontSelectPos = new Vector2(-1000, 0);
 
     bool m_isSelect = true;
 
@@ -41,5 +41,11 @@ public class Stage1Selection : MonoBehaviour
         {
             transform.localPosition = Vector2.Lerp(transform.localPosition, kDontSelectPos, 0.01f);
         }
+        if (Keyboard.current.enterKey.wasPressedThisFrame && m_isSelect)
+        {
+            SceneManager.LoadScene("StageScene1");
+        }
+
+
     }
 }
