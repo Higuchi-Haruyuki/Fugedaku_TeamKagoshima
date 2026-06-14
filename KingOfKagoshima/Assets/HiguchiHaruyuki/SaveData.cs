@@ -3,6 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
+    //ステージの番号
     public int StageNum;
     //中断中のプレイのデータ
     public float Time;

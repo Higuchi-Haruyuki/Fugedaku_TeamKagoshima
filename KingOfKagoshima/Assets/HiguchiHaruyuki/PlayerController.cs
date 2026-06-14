@@ -2,12 +2,13 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInputSystem))]
 [RequireComponent(typeof(PlayerItemSystem))]
+[RequireComponent(typeof(PlayerStateManager))]
 
 public class PlayerController : MonoBehaviour
 {
     //<SerializeField>
+    [SerializeField]private PlayerInputSystem _inputSystem;
     [Header("プレイヤーのステータス")]
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _minCharge = 10f;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     //地面に触れているか
     private bool _isGround = true;
     //今ジャンプをためているか
-    private bool _isChargeJump = false;
+    private bool _isJumpCharge = false;
     //今落下中か
     private bool _isFallen = false;
     //氷の地面にたっているか
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     //<コンポーネントの変数>
     private PlayerItemSystem _itemSystem;
-    private PlayerInputSystem _inputSystem;   
+    private PlayerStateManager _stateManager;
     private Rigidbody2D _rb;
     private Collider2D _col;
 
@@ -66,12 +67,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         _rb = GetComponent<Rigidbody2D>();
         _itemSystem = GetComponent<PlayerItemSystem>();
-        _inputSystem = GetComponent<PlayerInputSystem>();
+        _stateManager = GetComponent<PlayerStateManager>();
         _col = GetComponent<Collider2D>();
         _groundLayer = LayerMask.NameToLayer("Ground");
+        //プレイヤーの状態を設定する
+        _stateManager.CurrentState = PlayerState.Idle;
     }
 
     void Update()
@@ -108,17 +110,60 @@ public class PlayerController : MonoBehaviour
         //前のフレームでの速度を保存しておく
         _velocityBeforeFlame = _rb.linearVelocity;
 
+        //プレイヤーの状態の処理
+        //ジャンプチャージ中
+        //ジャンプチャージ中のフラグがtrueのときで地面に足がついているとき
+        if(_isJumpCharge && _isGround)
+        {
+            _stateManager.CurrentState = PlayerState.JumpCharge;
+        }
+        //ジャンプ中
+        //速度ベクトルが上方向で地面についていないとき
+        else if(_rb.linearVelocityY > 0 && !_isGround)
+        {
+            _stateManager.CurrentState = PlayerState.Jump;
+        }
+        //落下中
+        //速度ベクトルが下方向で地面についていないとき
+        else if ( _rb.linearVelocityY <= 0 && !_isGround)
+        {
+            _stateManager.CurrentState = PlayerState.Fall;
+        }
+        //移動中
+        //速度ベクトルが0ではないとき で 地面についているとき で 氷の地面についていないとき
+        else if( _rb.linearVelocityX != 0 && _isGround && !_isIceGround)
+        {
+            _stateManager.CurrentState = PlayerState.Move;
+        }
+        //待機中
+        //速度ベクトルが0 か 移動キーを押下してないとき で地面についているとき
+        else if(( _rb.linearVelocityX == 0 || !_inputSystem.IsPressedMoveKey()) && _isGround)
+        {
+            _stateManager.CurrentState = PlayerState.Idle;
+        }
+
+        //移動方向に回転させてみる
+        if (_rb.linearVelocityX > 0)
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        if( _rb.linearVelocityX < 0)
+        {
+            transform.rotation = Quaternion.Euler(new(0, 180, 0));
+        }
+
     }
     void CheckChargeing()
     {
         if (_inputSystem.IsPressedJumpKey())
         {
+            //ジャンプ力をためる処理
             _chargePower++;
             _chargePower = Mathf.Clamp(_chargePower, 0, _maxCharge);
-            _isChargeJump = true;
+            _isJumpCharge = true;
             return;
         }
-        _isChargeJump = false;
+        _isJumpCharge = false;
     }
 
     void Move()
@@ -128,14 +173,13 @@ public class PlayerController : MonoBehaviour
         if (_inputSystem.IsPressedLeftKey()) x = -1;
         if (_inputSystem.IsPressedRightKey()) x = 1f;
 
-        //ジャンプため中は入力無効
-        if(_isChargeJump) x = 0f;
+        //氷の地面に入力なしでたっているときは処理をしない
+        if (_isIceGround && x == 0) return;
 
-        //氷の地面に入力なしでたっているとき以外
-        if(!_isIceGround || x !=0)
-        {
-            _rb.linearVelocity = new Vector2(x * _moveSpeed, _rb.linearVelocity.y);
-        }
+        //ジャンプため中は入力無効
+        if(_isJumpCharge) x = 0f;
+
+        _rb.linearVelocity = new Vector2(x * _moveSpeed, _rb.linearVelocity.y);
 
     }
     void Jump(float chargePower,float jumpPowerModifier)

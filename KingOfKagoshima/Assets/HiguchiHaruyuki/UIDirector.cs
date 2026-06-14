@@ -9,11 +9,11 @@ public class UIDirector : MonoBehaviour
     [SerializeField] private Canvas _pauseCanvas;
     [SerializeField] private ClearManager _clearManager;
     [SerializeField] private PlayerController _playerContorller;
+    [SerializeField] private PlayerInputSystem _inputSystem;
     [SerializeField] private int _stageNumber = 1;
     [SerializeField] private Image _fadePanel;
     [SerializeField] private float _fadeDuration = 1;
-    private Score _score;
-    private bool _isPressdEscapeKeyBeforeFlame = false;
+    private Score _data;
     private PauseMenu _pauseMenu;
     private bool _isTimerStop;
     private SaveData _loadFastestData;
@@ -23,11 +23,11 @@ public class UIDirector : MonoBehaviour
         _mainCanvas.enabled = true;
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
-        if (_score == null )
+        if (_data == null )
         {
-            _score = new Score();
+            _data = new Score();
         }
-        _mainCanvas.GetComponent<MainUIDirector>()?.SetScoreTime(_score);
+        _mainCanvas.GetComponent<MainUIDirector>()?.SetScoreTime(_data);
         //Giveupイベントの購読
         _pauseMenu.OnGiveup += OnGiveup;
         _pauseMenu.OnBreakGame += OnBreakGame;
@@ -56,35 +56,26 @@ public class UIDirector : MonoBehaviour
         if(_isTimerStop) return;
 
         //タイマーに時間を追加
-        _score.AddTime(Time.deltaTime);
+        _data.AddTime(Time.deltaTime);
 
+        _pauseMenu.SetInfoWindowText(_data);
         //ESCAPEキーが押されたとき、ポーズ画面を表示する処理
-        if (Keyboard.current.escapeKey.isPressed)
+        if (_inputSystem.IsPressedThisFlameEscapeKey())
         {
-            //1つ前のフレームで入力されていなかったとき
-            if (!_isPressdEscapeKeyBeforeFlame)
-            {
-                _isPressdEscapeKeyBeforeFlame = true;
-                //Canvasの状態を入れ替える
-                _pauseCanvas.enabled = !_pauseCanvas.enabled;
+            //Canvasの状態を入れ替える
+            _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
-                //ポーズキャンバスが有効なら時間を止めておく
-                if(_pauseCanvas.enabled) Time.timeScale = 0.0f;
-                else Time.timeScale = 1.0f;
-            }
-        }
-        else
-        {
-            //1つ前のフレームで入力されていたらフラグをfalseに戻す
-            if (_isPressdEscapeKeyBeforeFlame) _isPressdEscapeKeyBeforeFlame = false;
+            //ポーズキャンバスが有効なら時間を止めておく
+            if (_pauseCanvas.enabled) Time.timeScale = 0.0f;
+            else Time.timeScale = 1.0f;
         }
     }
-    public void SetScore(SaveData data)
+    public void SetData(SaveData data)
     {
-        _score = new();
-        _score.AddTime(data.Time);
-        _score.JumpCount = data.JumpCount;
-        _score.FallCount = data.FallCount;
+        _data = new();
+        _data.AddTime(data.Time);
+        _data.JumpCount = data.JumpCount;
+        _data.FallCount = data.FallCount;
     }
     public void SetStageNum(int num)
     {
@@ -96,44 +87,54 @@ public class UIDirector : MonoBehaviour
 
         StartCoroutine(FadeOutAndLoadScene("StageSelect"));
     }
-    void OnBreakGame()
+    void OnBreakGame(int num)
     {
         _isTimerStop = true;
         SaveData data = new()
         {
             StageNum = _stageNumber,
-            Time = _score.GetSeconds(),
-            PlayerPos = transform.position,
-            FallCount = _score.FallCount,
-            JumpCount = _score.JumpCount,
+            Time = _data.GetSeconds(),
+            PlayerPos = _playerContorller.transform.position,
+            FallCount = _data.FallCount,
+            JumpCount = _data.JumpCount,
         };
         if (_stageNumber == 1)
             SaveManager.SaveJson(data, SaveManager.GetPath(SaveFile.Stage1SaveData));
         else if (_stageNumber == 2)
             SaveManager.SaveJson(data, SaveManager.GetPath(SaveFile.Stage2SaveData));
-
-        StartCoroutine(FadeOutAndLoadScene("StageSelect"));
+        if(num == 0)
+        {
+            StartCoroutine(FadeOutAndLoadScene("StageSelect"));
+        }
+        else if(num == 1)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+#else
+    Application.Quit();//ゲームプレイ終了
+#endif
+        }
     }
     void OnClear()
     {
         _isTimerStop = true;
         //時間の保存
-        _score.SaveAll();
+        _data.SaveAll();
         //Debug.Log($"TIME: {_score.ToString()},JUMP: {_score.JumpCount}, FALL: {_score.FallCount}");
         //最速タイムの保存
         //今回のほうが早いとき
         //最速タイムに値が入っていないとき(最初のクリア)も考慮しておく
         float currentFastestTime = _loadFastestData.Time;
-        if((_score.GetSeconds() < currentFastestTime) || (currentFastestTime <= 0.0f))
+        if((_data.GetSeconds() < currentFastestTime) || (currentFastestTime <= 0.0f))
         {
             SaveData data = new() {
                 StageNum = _stageNumber,
-                Time = _score.GetSeconds(),
-                JumpCount = _score.JumpCount,
-                FallCount = _score.FallCount,
+                Time = _data.GetSeconds(),
+                JumpCount = _data.JumpCount,
+                FallCount = _data.FallCount,
             };
             Debug.Log(data.ToString());
-            currentFastestTime = _score.GetSeconds();
+            currentFastestTime = _data.GetSeconds();
             if (_stageNumber == 1)
                 SaveManager.SaveJson(data,SaveManager.GetPath(SaveFile.Stage1FastestTimeData));
             else if (_stageNumber == 2)
@@ -146,15 +147,20 @@ public class UIDirector : MonoBehaviour
         //シーンのロード
         StartCoroutine(FadeOutAndLoadScene("HaruyukiResultScene"));
     }
-    void OnJump() 
+    void OnJump()
     {
-        _score.JumpCount++;
-        Debug.Log($"ジャンプ回数{_score.JumpCount}");
+        if (!_pauseCanvas.enabled)
+        {
+            _data.JumpCount++;
+            Debug.Log($"ジャンプ回数{_data.JumpCount}");
+        }
     }
     void OnFall() 
-    { 
-        _score.FallCount++;
-        Debug.Log($"落下回数{_score.FallCount}");
+    {
+        if (!_pauseCanvas.enabled)
+        { _data.FallCount++;
+            Debug.Log($"落下回数{_data.FallCount}");
+        }
     }
     public IEnumerator FadeOutAndLoadScene(string sceneName)
     {
