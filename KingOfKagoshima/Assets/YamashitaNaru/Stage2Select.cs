@@ -4,20 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class Stage2Selection : MonoBehaviour
 {
-    private readonly Vector2 kSelectPos = new Vector2(0, 0);
-    private readonly Vector2 kDontSelectPos = new Vector2(1000, 0);
+    [SerializeField]
+    private float speed = 0.01f;
+    [SerializeField] private PlayerInputSystem inputSystem;
+    private readonly Vector2 kSelectPos = new Vector2(1000, 0);
+    private readonly Vector2 kDontSelectPos = new Vector2(0, 0);
 
     bool m_isSelect = false;
 
     private void Start()
     {
-        transform.localPosition = kDontSelectPos;
+        transform.localPosition = kSelectPos;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Enterキーが押された瞬間
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (inputSystem.IsPressedRightKey())
         {
             // StageSelectシーンへ移動
             //SceneManager.LoadScene("StageScene1");
@@ -25,7 +28,7 @@ public class Stage2Selection : MonoBehaviour
             m_isSelect = false;
 
         }
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (inputSystem.IsPressedLeftKey())
         {
             // StageSelectシーンへ移動
             //SceneManager.LoadScene("StageScene1");
@@ -35,15 +38,17 @@ public class Stage2Selection : MonoBehaviour
 
         if (m_isSelect)
         {
-            transform.localPosition = Vector2.Lerp(transform.localPosition, kSelectPos, 0.01f);
+            Debug.Log("選択中");
+            transform.localPosition = Vector2.Lerp(transform.localPosition, kSelectPos, speed);
         }
         else
         {
-            transform.localPosition = Vector2.Lerp(transform.localPosition, kDontSelectPos, 0.01f);
+            Debug.Log("選択中じゃない");
+            transform.localPosition = Vector2.Lerp(transform.localPosition, kDontSelectPos, speed);
         }
-        if (Keyboard.current.enterKey.wasPressedThisFrame && m_isSelect)
+        if (inputSystem.IsPressedThisFlameJumpKey() && m_isSelect)
         {
-            // ※もしステージ2用のシーン名があるなら、ここを "StageScene2" などに変更してください
+
             SceneManager.LoadScene("SteageScene2tamari 1");
         }
     }

@@ -2,11 +2,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Stage1Selection : MonoBehaviour
+public class Save1 : MonoBehaviour
 {
     [SerializeField]
     private float speed = 0.01f;
-    [SerializeField] private PlayerInputSystem inputSystem;
     private readonly Vector2 kSelectPos = new Vector2(0, 0);
     private readonly Vector2 kDontSelectPos = new Vector2(-1000, 0);
 
@@ -20,7 +19,7 @@ public class Stage1Selection : MonoBehaviour
     void FixedUpdate()
     {
         // Enterキーが押された瞬間
-        if (inputSystem.IsPressedLeftKey()) 
+        if (Keyboard.current.leftArrowKey.isPressed)
         {
             // StageSelectシーンへ移動
             //SceneManager.LoadScene("StageScene1");
@@ -28,7 +27,7 @@ public class Stage1Selection : MonoBehaviour
             m_isSelect = true;
 
         }
-        if (inputSystem.IsPressedRightKey())
+        if (Keyboard.current.rightArrowKey.isPressed)
         {
             // StageSelectシーンへ移動
             //SceneManager.LoadScene("StageScene1");
@@ -36,7 +35,7 @@ public class Stage1Selection : MonoBehaviour
             m_isSelect = false;
         }
 
-        if(m_isSelect)
+        if (m_isSelect)
         {
             transform.localPosition = Vector2.Lerp(transform.localPosition, kSelectPos, speed);
         }
@@ -44,12 +43,10 @@ public class Stage1Selection : MonoBehaviour
         {
             transform.localPosition = Vector2.Lerp(transform.localPosition, kDontSelectPos, speed);
         }
-        if (inputSystem.IsPressedThisFlameJumpKey() && m_isSelect)
+        if (Keyboard.current.enterKey.wasPressedThisFrame && m_isSelect)
         {
-            Debug.Log("PressEnter");
-            SceneManager.LoadScene("StageScene1");
+         //   SceneManager.LoadScene("StageScene1");
         }
-       
 
 
     }
