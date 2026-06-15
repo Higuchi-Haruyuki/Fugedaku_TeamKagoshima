@@ -11,6 +11,7 @@ public class FadeSceneLoader : MonoBehaviour
     private AudioSource bgmAudioSource;
     private void Start()
     {
+        bgmAudioSource = GetComponent<AudioSource>();
     }
     public IEnumerator FadeOutAndLoadScene()
     {
@@ -37,7 +38,7 @@ public class FadeSceneLoader : MonoBehaviour
         color.a = 1;
         fadePanel.color = color;
         bgmAudioSource.volume = 0.0f;
-     //   bgmAudioSource.Stop();
+        bgmAudioSource.Stop();
         SceneManager.LoadScene("StageSelect");
     }
 
