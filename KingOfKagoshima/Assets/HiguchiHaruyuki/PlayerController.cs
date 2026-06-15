@@ -273,9 +273,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <param name="contactPoint">衝突点情報が入った変数</param>
     /// <param name="contactNormal">法線ベクトル</param>
-    private void PushBack(Vector3 normal, float distance)
+    private void PushBack(Vector3 normal, float distance, string tag)
     {
-        Debug.Log($"2D 法線: {normal}, めり込み量: {distance}");
+        if (tag == "NoPushBack") return;
+        //Debug.Log($"2D 法線: {normal}, めり込み量: {distance}");
         transform.position += distance * normal.normalized;
         //下方向に落下しているとき かつ プレイヤーから伸びる法線ベクトルが下方向を向いているとき 速度を0にする
         if(_rb.linearVelocityY < 0.0f && normal.y < 0.0f)
@@ -295,7 +296,7 @@ public class PlayerController : MonoBehaviour
         if (distance2D.isOverlapped)
         {
             //押し戻し処理
-            PushBack(normal,distance);
+            PushBack(normal,distance,collision.tag);
         }
         //ぶつかったオブジェクトが地面のとき
         if (collision.gameObject.layer == _groundLayer)
@@ -333,7 +334,7 @@ public class PlayerController : MonoBehaviour
         if (distance2D.isOverlapped)
         {
             //押し戻し処理
-            PushBack(normal, distance);
+            PushBack(normal, distance, collision.tag);
         }
 
         //地面の上にいるときはこれ以降の処理をしない
@@ -341,6 +342,9 @@ public class PlayerController : MonoBehaviour
 
         // 床は除外する
         if (normal.y < 0.0f) return;
+
+        //押し戻し判定をしないオブジェクトには処理をしない
+        if (collision.CompareTag("NoPushBack")) return;
 
         Vector2 reflectDir = Vector2.Reflect(_velocityBeforeFlame, normal);
         _rb.linearVelocity = reflectDir * _bounciness;

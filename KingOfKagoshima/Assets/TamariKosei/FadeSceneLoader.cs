@@ -31,7 +31,7 @@ public class FadeSceneLoader : MonoBehaviour
 
             bgmAudioSource.volume = Mathf.Lerp(startVolume, 0f, t);            
             startVolume = i;
-            bgmAudioSource.volume = startVolume;
+           // bgmAudioSource.volume = startVolume;
 
             yield return null;   // 1フレーム待機
         }
