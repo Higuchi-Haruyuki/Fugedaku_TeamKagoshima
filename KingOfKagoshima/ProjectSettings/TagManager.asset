@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Wall
   - IceGround
+  - NoPushBack
   layers:
   - Default
   - TransparentFX
