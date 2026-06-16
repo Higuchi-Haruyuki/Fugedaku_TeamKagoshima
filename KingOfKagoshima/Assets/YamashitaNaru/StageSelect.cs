@@ -32,14 +32,17 @@ public class StageSelect : MonoBehaviour
         }
         SetIndex(temp);
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, _textPos[_index].position + _playerToCamera, _speed);
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (_inputSystem.IsPressedThisFlameJumpKey())
         {
+            Debug.Log("ステージ位置に移動するよ！0");
             if (_index == 0)
             {
+                Debug.Log("ステージ位置に移動するよ！1");
                 SceneManager.LoadScene("StageScene1");
             }
             else if (_index > 0)
             {
+                Debug.Log("ステージ位置に移動するよ！2");
                 SceneManager.LoadScene("SteageScene2tamari 1");
             }
         }
