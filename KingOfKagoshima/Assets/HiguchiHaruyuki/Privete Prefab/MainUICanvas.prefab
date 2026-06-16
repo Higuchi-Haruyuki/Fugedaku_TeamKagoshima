@@ -87,7 +87,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4646175047681435531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainUIDirector
   _timerText: {fileID: 1627095717413152860}
+  _heightText: {fileID: 7686586632758517250}
   _player: {fileID: 0}
   _itemsParent: {fileID: 6255258592804247747}
   _itemDisplayUIPrefab: {fileID: 4961639472238696460, guid: e0bbaaa9b3d6dab46a6ef51b3f0a131d, type: 3}
