@@ -31,6 +31,7 @@ public class AreaBGMTrigger : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            GetAudioSource.Stop();
             if (collider.GetComponent<Rigidbody2D>().linearVelocityY > 0)
             {
                 if (GetAudioSource.clip == climbingBGM && GetAudioSource.isPlaying)
@@ -64,6 +65,6 @@ public class AreaBGMTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
