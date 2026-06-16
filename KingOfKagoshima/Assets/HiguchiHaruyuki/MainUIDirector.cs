@@ -11,8 +11,8 @@ using static UnityEditor.Progress;
 public class MainUIDirector : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private TextMeshProUGUI _heightText;
     [SerializeField] private GameObject _player;
-
     [SerializeField] private GameObject _itemsParent;
     [SerializeField] private GameObject _itemDisplayUIPrefab;
     //アイテム表示UIの1つ目のオフセット
@@ -53,6 +53,33 @@ public class MainUIDirector : MonoBehaviour
             DisplayItem();
         }
         CheckChangeItemUseCount();
+    }
+    /// <summary>
+    /// 標高を設定する
+    /// </summary>
+    /// <param name="height"></param>
+    public void SetHeight(int height)
+    {
+        _heightText.SetText($"--- {height}m ---");
+    }
+    /// <summary>
+    /// 標高を表示する。引数で指定した秒数後に非表示になる
+    /// </summary>
+    /// <param name="second"></param>
+    public void DisplayHeight(int second)
+    {
+        StartCoroutine(DisplayHeightCoroutine(second));
+    }
+    private IEnumerator DisplayHeightCoroutine(int second)
+    {
+        _heightText.enabled = true;
+        float timer = 0.0f;
+        while(timer < second)
+        {
+            timer+= Time.deltaTime;
+            yield return null;
+        }
+        _heightText.enabled = false;
     }
     void DisplayItem()
     {

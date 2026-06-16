@@ -27,6 +27,7 @@ public class PlayerStateManager : MonoBehaviour
             //プレイヤーの状態が変化したとき
             if (value != _currentState)
             {
+                Debug.Log($"Player State Changed: {_currentState} -> {value}");
                 _currentState = value;
                 PlayAnimation(_currentState);
             }

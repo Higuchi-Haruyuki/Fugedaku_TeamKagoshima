@@ -130,8 +130,8 @@ public class PlayerController : MonoBehaviour
             _stateManager.CurrentState = PlayerState.Fall;
         }
         //移動中
-        //速度ベクトルが0ではないとき で 地面についているとき で 氷の地面についていないとき
-        else if( _rb.linearVelocityX != 0 && _isGround && !_isIceGround)
+        //移動キーをおしているとき で 地面についているとき で 氷の地面についていないとき
+        else if(_inputSystem.IsPressedMoveKey() && _isGround)
         {
             _stateManager.CurrentState = PlayerState.Move;
         }
