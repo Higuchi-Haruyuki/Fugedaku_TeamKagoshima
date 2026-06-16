@@ -840,6 +840,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a423a57590e2024787b040151151ef4, type: 3}
+--- !u!1 &143080541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143080543}
+  - component: {fileID: 143080542}
+  m_Layer: 0
+  m_Name: PlayerInputSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &143080542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143080541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0e612ce0889a9408abbc455e1731c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputSystem
+--- !u!4 &143080543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143080541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.43728, y: 102.18415, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &143801804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5246490907516237953, guid: 9a423a57590e2024787b040151151ef4, type: 3}
@@ -3128,6 +3172,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
+      propertyPath: _inputSystem
+      value: 
+      objectReference: {fileID: 143080542}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -3142,11 +3190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.49
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.34
+      value: 112.44
       objectReference: {fileID: 0}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5595,7 +5643,6 @@ GameObject:
   - component: {fileID: 710872282}
   - component: {fileID: 710872281}
   - component: {fileID: 710872285}
-  - component: {fileID: 710872284}
   m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
@@ -5625,7 +5672,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710872279}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -5648,7 +5695,7 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -14406,51 +14453,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!66 &710872284
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710872279}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 710872279}
 --- !u!50 &710872285
 Rigidbody2D:
   serializedVersion: 5
@@ -46426,3 +46428,4 @@ SceneRoots:
   - {fileID: 2095294100}
   - {fileID: 1309816556}
   - {fileID: 455908540}
+  - {fileID: 143080543}
