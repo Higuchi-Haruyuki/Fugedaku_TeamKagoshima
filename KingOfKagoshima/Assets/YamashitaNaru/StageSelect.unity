@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8613847}
+  - component: {fileID: 8613848}
   m_Layer: 0
   m_Name: Stage1
   m_TagString: Untagged
@@ -152,6 +153,23 @@ Transform:
   - {fileID: 653156291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8613848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
+  menuTexts:
+  - {fileID: 1518890938}
+  - {fileID: 653156292}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &85113496
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 283822792}
+  - component: {fileID: 283822793}
   m_Layer: 0
   m_Name: Stage2
   m_TagString: Untagged
@@ -235,6 +254,23 @@ Transform:
   - {fileID: 664017142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283822793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283822791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
+  menuTexts:
+  - {fileID: 1217668351}
+  - {fileID: 664017143}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &488715577
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +374,6 @@ GameObject:
   - component: {fileID: 653156291}
   - component: {fileID: 653156293}
   - component: {fileID: 653156292}
-  - component: {fileID: 653156294}
   m_Layer: 0
   m_Name: Save1
   m_TagString: Untagged
@@ -511,22 +546,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &653156294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653156290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
-  menuTexts:
-  - {fileID: 0}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &664017141
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +559,7 @@ GameObject:
   - component: {fileID: 664017143}
   - component: {fileID: 664017145}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (TMP)2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +756,7 @@ GameObject:
   - component: {fileID: 1217668351}
   - component: {fileID: 1217668353}
   m_Layer: 0
-  m_Name: StageText
+  m_Name: StageText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1032,6 @@ GameObject:
   - component: {fileID: 1518890937}
   - component: {fileID: 1518890939}
   - component: {fileID: 1518890938}
-  - component: {fileID: 1518890940}
   m_Layer: 0
   m_Name: StageText
   m_TagString: Untagged
@@ -1184,23 +1202,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1518890940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518890936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
-  menuTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1917686587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1214,7 @@ GameObject:
   - component: {fileID: 1917686588}
   m_Layer: 0
   m_Name: InputManager
-  m_TagString: Untagged
+  m_TagString: PlayerInputSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
