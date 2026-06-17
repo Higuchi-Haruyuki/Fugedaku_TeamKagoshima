@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private float _chargePower;
     Vector2 _velocityBeforeFlame = Vector2.zero;
 
+    //デバッグ用
+    private string _lastLogMessage = string.Empty;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -276,7 +278,12 @@ public class PlayerController : MonoBehaviour
     private void PushBack(Vector3 normal, float distance, string tag)
     {
         if (tag == "NoPushBack") return;
-        //Debug.Log($"2D 法線: {normal}, めり込み量: {distance}");
+        var log = $"2D 法線: {normal}, めり込み量: {distance}";
+        if(log != _lastLogMessage)
+        {
+            Debug.Log(log);
+            _lastLogMessage = log ;
+        }
         transform.position += distance * normal.normalized;
         //下方向に落下しているとき かつ プレイヤーから伸びる法線ベクトルが下方向を向いているとき 速度を0にする
         if(_rb.linearVelocityY < 0.0f && normal.y < 0.0f)

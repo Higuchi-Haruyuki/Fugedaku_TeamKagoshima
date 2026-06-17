@@ -6,6 +6,7 @@ public enum PlayerState
 
 public class PlayerStateManager : MonoBehaviour
 {
+    [SerializeField] private bool isShowDebugLog = false;
     private static readonly int PlayerIdleHash = Animator.StringToHash("Player_Idle");
     private static readonly int PlayerMoveHash = Animator.StringToHash("Player_Move");
     private static readonly int PlayerJumpChargeHash = Animator.StringToHash("Player_JumpCharge");
@@ -27,7 +28,8 @@ public class PlayerStateManager : MonoBehaviour
             //プレイヤーの状態が変化したとき
             if (value != _currentState)
             {
-                Debug.Log($"Player State Changed: {_currentState} -> {value}");
+                if(isShowDebugLog)
+                    Debug.Log($"プレイヤーの状態が変化した！: {_currentState} -> {value}");
                 _currentState = value;
                 PlayAnimation(_currentState);
             }

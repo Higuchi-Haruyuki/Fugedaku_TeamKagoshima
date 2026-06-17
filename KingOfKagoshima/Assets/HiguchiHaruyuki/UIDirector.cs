@@ -152,14 +152,15 @@ public class UIDirector : MonoBehaviour
         if (!_pauseCanvas.enabled)
         {
             _data.JumpCount++;
-            Debug.Log($"ジャンプ回数{_data.JumpCount}");
+            //Debug.Log($"ジャンプ回数{_data.JumpCount}");
         }
     }
     void OnFall() 
     {
         if (!_pauseCanvas.enabled)
-        { _data.FallCount++;
-            Debug.Log($"落下回数{_data.FallCount}");
+        { 
+            _data.FallCount++;
+           // Debug.Log($"落下回数{_data.FallCount}");
         }
     }
     public IEnumerator FadeOutAndLoadScene(string sceneName)
