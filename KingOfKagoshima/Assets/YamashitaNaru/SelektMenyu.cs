@@ -3,7 +3,7 @@ using TMPro;
 
 public class TextMenu : MonoBehaviour
 {
-    public TextMeshProUGUI[] menuTexts;
+    public TextMeshPro[] menuTexts;
 
     public Color normalColor = Color.white;
     public Color selectedColor = Color.yellow;
