@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 public class MainUIDirector : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;

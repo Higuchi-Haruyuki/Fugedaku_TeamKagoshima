@@ -1,7 +1,8 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Game.Attribute;
 [RequireComponent(typeof(PlayerItemSystem))]
 [RequireComponent(typeof(PlayerStateManager))]
 
@@ -33,22 +34,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _fallDistance = 6.0f;
 
     //<フラグ>
+    [Header("フラグ")]
     //二段ジャンプが許可されているか(アイテムの所持状況は考慮しない)
-    private bool _isEnableDoubleJump = false;
+    [SerializeField, ReadOnly] private bool _isEnableDoubleJump = false;
     //地面に触れているか
-    private bool _isGround = true;
+    [SerializeField, ReadOnly] private bool _isGround = true;
     //今ジャンプをためているか
-    private bool _isJumpCharge = false;
+    [SerializeField, ReadOnly] private bool _isJumpCharge = false;
     //今落下中か
-    private bool _isFallen = false;
+    [SerializeField, ReadOnly]private bool _isFallen = false;
     //氷の地面にたっているか
-    private bool _isIceGround = false;
+    [SerializeField, ReadOnly] private bool _isIceGround = false;
+    //このフレームでジャンプするか
+    [SerializeField, ReadOnly] private bool _isJump = false;
 
     //<コンポーネントの変数>
     private PlayerItemSystem _itemSystem;
     private PlayerStateManager _stateManager;
     private Rigidbody2D _rb;
-    private Collider2D _col;
 
     //<イベント>
     public Action OnJump;
@@ -65,32 +68,28 @@ public class PlayerController : MonoBehaviour
     private float _chargePower;
     Vector2 _velocityBeforeFlame = Vector2.zero;
 
-    //デバッグ用
-    private string _lastLogMessage = string.Empty;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _itemSystem = GetComponent<PlayerItemSystem>();
         _stateManager = GetComponent<PlayerStateManager>();
-        _col = GetComponent<Collider2D>();
         _groundLayer = LayerMask.NameToLayer("Ground");
         //プレイヤーの状態を設定する
         _stateManager.CurrentState = PlayerState.Idle;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
+
+        Move();
+        CheckChargeing();
+        ChargeJump();
+        SlipIceGround();
         //地面の上に立っているとき
         if(_isGround)
         {
-            CheckChargeing();
-            Move();
-            //氷の地面に立っているとき
-            if(_isIceGround) SlipIceGround();
-            ChargeJump();
-
             //落下回数に関する処理
             _lastGroundY = transform.position.y;
             _isFallen = false;
@@ -155,8 +154,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
     void CheckChargeing()
     {
+        if (!_isGround) return;
         if (_inputSystem.IsPressedJumpKey())
         {
             //ジャンプ力をためる処理
@@ -170,6 +171,10 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+
+        if (!_isGround) return;
+        if (_isJump) return;
+
         float x = 0f;
 
         if (_inputSystem.IsPressedLeftKey()) x = -1;
@@ -179,10 +184,9 @@ public class PlayerController : MonoBehaviour
         if (_isIceGround && x == 0) return;
 
         //ジャンプため中は入力無効
-        if(_isJumpCharge) x = 0f;
+        if(_isJumpCharge) x = 0;
 
         _rb.linearVelocity = new Vector2(x * _moveSpeed, _rb.linearVelocity.y);
-
     }
     void Jump(float chargePower,float jumpPowerModifier)
     {
@@ -202,10 +206,14 @@ public class PlayerController : MonoBehaviour
         var sin = Mathf.Sin(angle * Mathf.Deg2Rad);
         var targetVec = new Vector2(cos, sin).normalized;
 
+        //Debug.Log($"angle: {angle}, targetVec: {targetVec}, jumpChargeX: {_jumpChargeX}");
         //ジャンプ力と乗算してベクトルをだす
         var jumpVec = targetVec * jumpPower;
 
         _rb.linearVelocity = jumpVec;
+
+        _isJump = true;
+        _isGround = false;
 
         _jumpChargeX = 0f;
         OnJump?.Invoke();
@@ -216,6 +224,8 @@ public class PlayerController : MonoBehaviour
         //ジャンプキーを離したときまたはチャージ値が最大チャージ値を超えたときにジャンプする
         if (_inputSystem.IsReleasedJumpKey() || _chargePower >= _maxCharge)
         {
+            if (!_isGround) return;
+
             SetJumpChargeX();
             //ジャンプ力上昇アイテムの処理 所持しているなら使用して補正をかける
             float jumpPowerModifier = 1f;
@@ -227,6 +237,10 @@ public class PlayerController : MonoBehaviour
             //ジャンプ後に二段ジャンプのフラグを戻す
             _isEnableDoubleJump = true;
         }
+        else
+        {
+            _isJump = false;
+        }
     }
     /// <summary>
     /// ジャンプため中にジャンプの向きの入力を受け付ける関数
@@ -235,10 +249,12 @@ public class PlayerController : MonoBehaviour
     {
         if (_inputSystem.IsPressedLeftKey()) _jumpChargeX = -1;
         if (_inputSystem.IsPressedRightKey()) _jumpChargeX = 1f;
+        
     }
     //地面を滑る処理
     void SlipIceGround()
     {
+        if (!_isGround || !_isIceGround) return;
         //キー入力をしていないとき
         if (!_inputSystem.IsPressedMoveKey())
         {
@@ -270,46 +286,37 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     /// <summary>
-    /// 押し戻す処理
+    /// 指定したベクトルを法線ベクトルとして持っているならtrueを返す
     /// </summary>
-    /// <param name="contactPoint">衝突点情報が入った変数</param>
-    /// <param name="contactNormal">法線ベクトル</param>
-    private void PushBack(Vector3 normal, float distance, string tag)
+    /// <param name="collision"></param>
+    /// <param name="vec"></param>
+    /// <returns></returns>
+    bool HasNormalVector(Collision2D collision,Vector2 vec)
     {
-        if (tag == "NoPushBack") return;
-        var log = $"2D 法線: {normal}, めり込み量: {distance}";
-        if(log != _lastLogMessage)
+#if false
+        var log = "\n";
+        foreach(var contact in collision.contacts)
         {
-            Debug.Log(log);
-            _lastLogMessage = log ;
+            log += $"法線: {contact.normal}\n";
         }
-        transform.position += distance * normal.normalized;
-        //下方向に落下しているとき かつ プレイヤーから伸びる法線ベクトルが下方向を向いているとき 速度を0にする
-        if(_rb.linearVelocityY < 0.0f && normal.y < 0.0f)
+        Debug.Log(log);
+#endif
+        foreach (var contact in collision.contacts)
         {
-            _rb.linearVelocityY = 0.0f;
+            //ほぼ一緒なら一緒とみなす
+            var diff = contact.normal - vec;
+            var minDiff = Mathf.Min(diff.x, diff.y);
+            if (minDiff < 0.01f) return true;
         }
-
-    }
-    //Triggerオンにしてるとき用
-    private void OnTriggerStay2D(Collider2D collision)
+        return false;
+    }    
+    void CheckIsGround(Collision2D collision)
     {
-        ColliderDistance2D distance2D = Physics2D.Distance(_col, collision);
-
-        Vector3 normal = distance2D.normal;
-        float distance = distance2D.distance;
-
-        if (distance2D.isOverlapped)
-        {
-            //押し戻し処理
-            PushBack(normal,distance,collision.tag);
-        }
-        //ぶつかったオブジェクトが地面のとき
         if (collision.gameObject.layer == _groundLayer)
         {
-            //法線ベクトルが下方向を向いているとき
-            if (normal == new Vector3(0, -1.0f, 0))
+            if (HasNormalVector(collision, new(0, 1.00f)))
             {
                 _isGround = true;
                 if (collision.gameObject.CompareTag("IceGround"))
@@ -319,62 +326,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == _groundLayer)
-        {
-            _isGround = false;
-            if (collision.gameObject.CompareTag("IceGround"))
-            {
-                _isIceGround = false;
-            }
-        }
-    }
-    // ★新規追加：壁に衝突した瞬間の処理
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        ColliderDistance2D distance2D = Physics2D.Distance(_col, collision);
-
-        Vector3 normal = distance2D.normal;
-        float distance = distance2D.distance;
-
-        if (distance2D.isOverlapped)
-        {
-            //押し戻し処理
-            PushBack(normal, distance, collision.tag);
-        }
-
-        //地面の上にいるときはこれ以降の処理をしない
-        if (_isGround) return;
-
-        // 床は除外する
-        if (normal.y < 0.0f) return;
-
-        //押し戻し判定をしないオブジェクトには処理をしない
-        if (collision.CompareTag("NoPushBack")) return;
-
-        Vector2 reflectDir = Vector2.Reflect(_velocityBeforeFlame, normal);
-        _rb.linearVelocity = reflectDir * _bounciness;
-    }
-
-    //Triggerオフにしてるとき用
-#if true
     private void OnCollisionStay2D(Collision2D collision)
     {
-
-        // Debug.Log($"衝突したオブジェクトのレイヤー: {collision.gameObject.layer}, 地面レイヤー: {groundLayer}");
-        if (collision.gameObject.layer == _groundLayer)
-        {
-            Vector3 contactNormal = collision.contacts[0].normal;
-            if (contactNormal == new Vector3(0, 1, 0))
-            {
-                _isGround = true;
-                if (collision.gameObject.CompareTag("IceGround"))
-                {
-                    _isIceGround = true;
-                }
-            }
-        }
+        CheckIsGround(collision);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -387,16 +341,15 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    // ★新規追加：壁に衝突した瞬間の処理
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
+        // もし衝突した点（contacts）が1つも無ければ、処理をスキップする
+        if (collision.contacts == null || collision.contacts.Length == 0) return;
+
+        CheckIsGround(collision);
 
         if (_isGround) return;
 
-        // ★ここを追加：もし衝突した点（contacts）が1つも無ければ、処理をスキップする
-        if (collision.contacts == null || collision.contacts.Length == 0) return;
-
-        // 安全が確認できたら、今まで通り処理を行う
         ContactPoint2D contact = collision.contacts[0];
         Vector2 wallNormal = contact.normal;
 
@@ -406,5 +359,4 @@ public class PlayerController : MonoBehaviour
         Vector2 reflectDir = Vector2.Reflect(_velocityBeforeFlame, wallNormal);
         _rb.linearVelocity = reflectDir * _bounciness;
     }
-#endif
 }
