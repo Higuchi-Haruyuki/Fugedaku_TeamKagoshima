@@ -415,6 +415,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1710951149552418738, guid: 599185126acab714c869f39b382d4fe7, type: 3}
   m_PrefabInstance: {fileID: 52656957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &876758961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
+  m_PrefabInstance: {fileID: 52656957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876758955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8de64fca82965a469312f5099ca41ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1127695733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1896,7 @@ PrefabInstance:
     - target: {fileID: 6297502317135021533, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 876758955}
     - target: {fileID: 8114847757934780649, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1981,7 +1992,7 @@ PrefabInstance:
     - target: {fileID: 8548766751054932708, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: _playerContorller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 876758961}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
