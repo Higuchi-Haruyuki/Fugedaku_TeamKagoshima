@@ -246,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 283822791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 19.94, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -784,9 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage2
-
-'
+  m_text: "Stage2\u6700\u521D\u304B\u3089\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 77decf711a58b914fa48824e95a75681, type: 2}
@@ -1046,7 +1044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage1
+  m_text: "Stage1\u6700\u521D\u304B\u3089"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 77decf711a58b914fa48824e95a75681, type: 2}

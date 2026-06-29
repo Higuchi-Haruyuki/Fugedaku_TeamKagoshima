@@ -43,7 +43,7 @@ public class StageSelect : MonoBehaviour
             else if (_index > 0)
             {
                 Debug.Log("ステージ位置に移動するよ！2");
-                SceneManager.LoadScene("SteageScene2tamari 1");
+                SceneManager.LoadScene("SteageScene2tamari");
             }
         }
     }

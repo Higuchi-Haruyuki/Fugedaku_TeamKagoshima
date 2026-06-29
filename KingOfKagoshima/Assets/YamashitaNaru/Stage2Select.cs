@@ -7,7 +7,7 @@ public class Stage2Selection : MonoBehaviour
     [SerializeField]
     private float speed = 0.01f;
     [SerializeField] private PlayerInputSystem inputSystem;
-    private readonly Vector2 kSelectPos = new Vector2(1000, 0);
+    private readonly Vector2 kSelectPos = new Vector2(100000000, 0);
     private readonly Vector2 kDontSelectPos = new Vector2(0, 0);
 
     bool m_isSelect = false;
