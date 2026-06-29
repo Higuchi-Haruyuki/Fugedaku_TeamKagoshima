@@ -246,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 283822791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 13.84, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.92, y: -4.42}
+  m_AnchoredPosition: {x: 4.03, y: -4.42}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664017143
@@ -761,7 +761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.05, y: -2.33}
+  m_AnchoredPosition: {x: 1.06, y: -2.33}
   m_SizeDelta: {x: 7.6932, y: 2.236}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217668351
@@ -784,9 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage2
-
-'
+  m_text: "Stage2\u6700\u521D\u304B\u3089\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 77decf711a58b914fa48824e95a75681, type: 2}
@@ -1046,7 +1044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage1
+  m_text: "Stage1\u6700\u521D\u304B\u3089"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 77decf711a58b914fa48824e95a75681, type: 2}
