@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private const float _jumpPowerModifier = 0.20f;
     private float _jumpChargeX = 0f;
     private float _chargePower;
-    Vector2 _velocityBeforeFlame = Vector2.zero;
+    Vector2 _velocityBeforeFrame = Vector2.zero;
 
     void Start()
     {
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //前のフレームでの速度を保存しておく
-        _velocityBeforeFlame = _rb.linearVelocity;
+        _velocityBeforeFrame = _rb.linearVelocity;
 
         //プレイヤーの状態の処理
         //ジャンプチャージ中
@@ -157,9 +157,10 @@ public class PlayerController : MonoBehaviour
 
     void CheckChargeing()
     {
-        if (!_isGround) return;
         if (_inputSystem.IsPressedJumpKey())
         {
+            if (!_isGround) return;
+
             //ジャンプ力をためる処理
             _chargePower++;
             _chargePower = Mathf.Clamp(_chargePower, 0, _maxCharge);
@@ -258,7 +259,7 @@ public class PlayerController : MonoBehaviour
         //キー入力をしていないとき
         if (!_inputSystem.IsPressedMoveKey())
         {
-            var playerVelocityOnSlip = _velocityBeforeFlame;
+            var playerVelocityOnSlip = _velocityBeforeFrame;
             // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
             playerVelocityOnSlip.x *= _slipperiness;
 
@@ -307,8 +308,7 @@ public class PlayerController : MonoBehaviour
         {
             //ほぼ一緒なら一緒とみなす
             var diff = contact.normal - vec;
-            var minDiff = Mathf.Min(diff.x, diff.y);
-            if (minDiff < 0.01f) return true;
+            if (diff.x < 0.01f && diff.y < 0.01f) return true;
         }
         return false;
     }    
@@ -348,15 +348,13 @@ public class PlayerController : MonoBehaviour
 
         CheckIsGround(collision);
 
-        if (_isGround) return;
-
         ContactPoint2D contact = collision.contacts[0];
         Vector2 wallNormal = contact.normal;
 
         // 天井や床（上向きの面）は除外する
         if (wallNormal.y > 0.7f) return;
 
-        Vector2 reflectDir = Vector2.Reflect(_velocityBeforeFlame, wallNormal);
+        Vector2 reflectDir = Vector2.Reflect(_velocityBeforeFrame, wallNormal);
         _rb.linearVelocity = reflectDir * _bounciness;
     }
 }
