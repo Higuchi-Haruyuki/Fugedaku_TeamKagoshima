@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+[DefaultExecutionOrder(-100)]
 public class PlayerInputSystem : MonoBehaviour
 {
     //以前のフレームでスペースキーが押されているか
