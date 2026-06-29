@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class TextMenu : MonoBehaviour
 {
@@ -37,12 +38,12 @@ public class TextMenu : MonoBehaviour
 
 
         // 一般的に「Upキー」はリストを上（インデックスを減らす方向）に進めることが多いです
-        if (inputSystem.IsPressedThisFrameUpKey())
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
         {
             selectedIndex = (selectedIndex - 1 + menuTexts.Length) % menuTexts.Length;
             UpdateMenuColors();
         }
-        else if (inputSystem.IsPressedThisFrameDownKey())
+        else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             selectedIndex = (selectedIndex + 1) % menuTexts.Length;
             UpdateMenuColors();
