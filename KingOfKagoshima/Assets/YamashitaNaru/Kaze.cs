@@ -13,6 +13,18 @@ public class IntervalWindZone2D : MonoBehaviour
     private bool isWindBlowing = true; // 現在風が吹いているか
     private float timer = 0f;
 
+    private SpriteRenderer windEffect;
+
+    void Start()
+    {
+        windEffect = GetComponent<SpriteRenderer>();
+
+        windEffect.enabled = isWindBlowing;
+        
+    }
+
+  
+
     void Update()
     {
         // タイマーを進める
@@ -26,6 +38,7 @@ public class IntervalWindZone2D : MonoBehaviour
                 isWindBlowing = false;
                 timer = 0f;
                 //Debug.Log("風が止まりました");
+                windEffect.enabled = false;
             }
         }
         // 風が止まっている時
@@ -35,7 +48,9 @@ public class IntervalWindZone2D : MonoBehaviour
             {
                 isWindBlowing = true;
                 timer = 0f;
-              //  Debug.Log("風が吹き始めました");
+                //  Debug.Log("風が吹き始めました");
+                windEffect.enabled = true;
+
             }
         }
     }
