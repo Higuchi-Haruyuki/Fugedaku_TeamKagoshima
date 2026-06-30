@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c934d805300334e898917cb6730e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntervalWindZone2D
-  windStrength: 1.5
+  windStrength: 1
   windDirection: {x: -1, y: 0}
   windOnDuration: 2
   windOffDuration: 3
