@@ -9,7 +9,6 @@ using Game.Attribute;
 public class PlayerController : MonoBehaviour
 {
     //<SerializeField>
-    [SerializeField]private PlayerInputSystem _inputSystem;
     [Header("プレイヤーのステータス")]
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _minCharge = 10f;
@@ -132,13 +131,18 @@ public class PlayerController : MonoBehaviour
         }
         //移動中
         //移動キーをおしているとき で 地面についているとき で 氷の地面についていないとき
-        else if(_inputSystem.IsPressedMoveKey() && _isGround)
+        else if((Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed
+            || Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
+            && _isGround)
         {
             _stateManager.CurrentState = PlayerState.Move;
         }
         //待機中
         //速度ベクトルが0 か 移動キーを押下してないとき で地面についているとき
-        else if(( _rb.linearVelocityX == 0 || !_inputSystem.IsPressedMoveKey()) && _isGround)
+        else if(( _rb.linearVelocityX == 0 || 
+            !(Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed || 
+            Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)) 
+            && _isGround)
         {
             _stateManager.CurrentState = PlayerState.Idle;
         }
@@ -157,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
     void CheckChargeing()
     {
-        if (_inputSystem.IsPressedJumpKey())
+        if (Keyboard.current.spaceKey.isPressed)
         {
             if (!_isGround) return;
 
@@ -178,8 +182,8 @@ public class PlayerController : MonoBehaviour
 
         float x = 0f;
 
-        if (_inputSystem.IsPressedLeftKey()) x = -1;
-        if (_inputSystem.IsPressedRightKey()) x = 1f;
+        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x = -1;
+        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x = 1f;
 
         //氷の地面に入力なしでたっているときは処理をしない
         if (_isIceGround && x == 0) return;
@@ -223,7 +227,7 @@ public class PlayerController : MonoBehaviour
     void ChargeJump()
     {
         //ジャンプキーを離したときまたはチャージ値が最大チャージ値を超えたときにジャンプする
-        if (_inputSystem.IsReleasedJumpKey() || _chargePower >= _maxCharge)
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame || _chargePower >= _maxCharge)
         {
             if (!_isGround) return;
 
@@ -248,29 +252,31 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void SetJumpChargeX()
     {
-        if (_inputSystem.IsPressedLeftKey()) _jumpChargeX = -1;
-        if (_inputSystem.IsPressedRightKey()) _jumpChargeX = 1f;
+        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _jumpChargeX = -1;
+        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _jumpChargeX = 1f;
         
     }
     //地面を滑る処理
     void SlipIceGround()
     {
         if (!_isGround || !_isIceGround) return;
-        //キー入力をしていないとき
-        if (!_inputSystem.IsPressedMoveKey())
-        {
-            var playerVelocityOnSlip = _velocityBeforeFrame;
-            // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
-            playerVelocityOnSlip.x *= _slipperiness;
 
-            // 速度を更新（ジャンプ力などのY軸の速度は変えない）
-            _rb.linearVelocity = playerVelocityOnSlip;
-        }
+        //キー入力をしていないとき
+        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed
+            || Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) return;
+
+        var playerVelocityOnSlip = _velocityBeforeFrame;
+        // 現在の速度にslipperinessを掛け算して、じわじわとしか減速させない
+        playerVelocityOnSlip.x *= _slipperiness;
+
+        // 速度を更新（ジャンプ力などのY軸の速度は変えない）
+        _rb.linearVelocity = playerVelocityOnSlip;
+
     }
     //二段ジャンプの処理
     void DoubleJump()
     {
-        if (_inputSystem.IsPressedThisFlameJumpKey())
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             //二段ジャンプアイテムを持っているとき
             if (Item_DoubleJump.UseItem(_itemSystem))
