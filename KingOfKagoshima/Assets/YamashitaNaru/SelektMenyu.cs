@@ -10,7 +10,6 @@ public class TextMenu : MonoBehaviour
     public Color selectedColor = Color.yellow;
 
     private int selectedIndex = 0;
-    private PlayerInputSystem inputSystem;
 
     void Start()
     {
@@ -21,29 +20,21 @@ public class TextMenu : MonoBehaviour
             return;
         }
 
-        inputSystem = GameObject.FindGameObjectWithTag("PlayerInputSystem")?.GetComponent<PlayerInputSystem>();
-        if (inputSystem == null)
-        {
-            Debug.LogError("PlayerInputSystem が見つかりません！タグを確認してください。");
-        }
-
         UpdateMenuColors();
     }
 
     void Update()
     {
-        Debug.Log("UPDATE!!");
-        if (inputSystem == null) return;
-        if (menuTexts.Length == 0) { Debug.Log("length == 0"); return; }
+        if (menuTexts.Length == 0) { return; }
 
 
         // 一般的に「Upキー」はリストを上（インデックスを減らす方向）に進めることが多いです
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame)
         {
             selectedIndex = (selectedIndex - 1 + menuTexts.Length) % menuTexts.Length;
             UpdateMenuColors();
         }
-        else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        else if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame)
         {
             selectedIndex = (selectedIndex + 1) % menuTexts.Length;
             UpdateMenuColors();
