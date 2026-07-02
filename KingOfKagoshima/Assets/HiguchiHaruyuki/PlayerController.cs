@@ -314,6 +314,8 @@ public class PlayerController : MonoBehaviour
         {
             //ほぼ一緒なら一緒とみなす
             var diff = contact.normal - vec;
+            diff.x = MathF.Abs(diff.x);
+            diff.y = MathF.Abs(diff.y);
             if (diff.x < 0.01f && diff.y < 0.01f) return true;
         }
         return false;
