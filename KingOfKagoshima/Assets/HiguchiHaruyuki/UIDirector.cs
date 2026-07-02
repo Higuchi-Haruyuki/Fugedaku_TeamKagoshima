@@ -9,7 +9,6 @@ public class UIDirector : MonoBehaviour
     [SerializeField] private Canvas _pauseCanvas;
     [SerializeField] private ClearManager _clearManager;
     [SerializeField] private PlayerController _playerContorller;
-    [SerializeField] private PlayerInputSystem _inputSystem;
     [SerializeField] private int _stageNumber = 1;
     [SerializeField] private Image _fadePanel;
     [SerializeField] private float _fadeDuration = 1;
@@ -60,7 +59,7 @@ public class UIDirector : MonoBehaviour
 
         _pauseMenu.SetInfoWindowText(_data);
         //ESCAPEキーが押されたとき、ポーズ画面を表示する処理
-        if (_inputSystem.IsPressedThisFlameEscapeKey())
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             //Canvasの状態を入れ替える
             _pauseCanvas.enabled = !_pauseCanvas.enabled;
@@ -145,7 +144,7 @@ public class UIDirector : MonoBehaviour
         fastestTime.AddTime(currentFastestTime);
         fastestTime.SaveFastestTime();
         //シーンのロード
-        StartCoroutine(FadeOutAndLoadScene("HaruyukiResultScene"));
+        StartCoroutine(FadeOutAndLoadScene("resultScene"));
     }
     void OnJump()
     {

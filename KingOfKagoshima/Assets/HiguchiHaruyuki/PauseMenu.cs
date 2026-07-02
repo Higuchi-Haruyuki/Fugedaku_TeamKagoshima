@@ -12,7 +12,6 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     //SerializeField付きprivateメンバ変数
-    [SerializeField] private PlayerInputSystem _inputSystem;
     [SerializeField] private GameObject _infoWindow;
     [SerializeField] private GameObject _giveupMenu;
     [SerializeField] private GameObject _keyConfigMenu;
@@ -92,7 +91,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!_pauseCanvas.enabled) return;
         //Wキーが押されたとき、一つ上の項目に入力が移動する処理
-        if (_inputSystem.IsPressedThisFrameUpKey())
+        if (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame)
         {
             //choiceメニューがアクティブなとき
             if (_currentMenu == 'c')
@@ -138,7 +137,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         //Sキーが押されたとき、一つ下の項目に入力が移動する処理
-        if (_inputSystem.IsPressedThisFrameDownKey())
+        if (Keyboard.current.sKey.wasPressedThisFrame || Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             //choiceメニューがアクティブなとき
             if (_currentMenu == 'c')
@@ -183,7 +182,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         //SPACEキーが押されたとき、今選択されている項目を決定する
-        if (_inputSystem.IsPressedThisFlameJumpKey())
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             //現在のメニューの状態や選択状態で呼び出す関数を変える
             if (_currentMenu == 'c')
