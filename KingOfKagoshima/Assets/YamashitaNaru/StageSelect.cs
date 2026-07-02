@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -9,7 +9,8 @@ public class StageSelect : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Vector3 _playerToCamera;
-    [SerializeField] private List<Transform> _textPos;
+    [SerializeField] private List <TextMeshPro> _textList;
+    //カーソル選択肢
     private int _index = 0;
     private Transform _selectedPos;
     public Color normalColor = Color.white;
@@ -18,7 +19,7 @@ public class StageSelect : MonoBehaviour
 
     private void SetIndex(int value)
     {
-        if (value > _textPos.Count - 1) _index = _textPos.Count - 1;
+        if (value > _textList.Count - 1) _index = _textList.Count - 1;
         else if (value < 0) _index = 0;
         else _index = value;
     }
@@ -41,6 +42,9 @@ public class StageSelect : MonoBehaviour
         // --- 上下の移動（0↔2, 1↔3） ---
         if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame)
         {
+            Debug.Log(Keyboard.current.downArrowKey.wasPressedThisFrame);
+              
+
             if (temp == 0 || temp == 1) temp += 2; // 上段なら下へ (+2)
         }
         if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame)
@@ -52,16 +56,17 @@ public class StageSelect : MonoBehaviour
         // 選択が変わったときだけインデックスと色を更新
         if (temp != _index)
         {
-           // _index = temp; // インデックスを更新
-           // UpdateMenuColors(); // 下で作る色変え関数を呼び出す
-        
+            _index = temp; // インデックスを更新
+             UpdateMenuColors(); // 下で作る色変え関数を呼び出す
+        }
+    }
     private void UpdateMenuColors()
     {
-        for (int i = 0; i < _textPos.Count; i++)
+        for (int i = 0; i < _textList.Count; i++)
         {
-            if (_textPos[i] == null) continue;
+            if (_textList[i] == null) continue;
 
-            TextMeshPro text = _textPos[i].GetComponent<TextMeshPro>();
+            TextMeshPro text = _textList[i];
             if (text == null) continue;
 
             if (i == _index)
@@ -74,30 +79,9 @@ public class StageSelect : MonoBehaviour
             }
         }
     }
-} // クラスの閉じカッコ
 
-/*_selectedPos = _textPos[_index];
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, _selectedPos.position + _playerToCamera, _speed);
 
-        // --- ここにあった使っていない Up/Downキーの temp 処理や var children の行は削除 ---
-
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            // (ここに上の①で直したスペースキーの処理が続きます){
-
-            Debug.Log("ステージ位置に移動するよ！0");
-            if (_index == 0)
-            {
-                Debug.Log("ステージ位置に移動するよ！1");
-                SceneManager.LoadScene("StageScene1");
-            }
-            else if (_index > 0)
-            {
-                Debug.Log("ステージ位置に移動するよ！2");
-                SceneManager.LoadScene("SteageScene2tamari");
-            }
-        }
-    }
+  
     void UpdateMenuColors(List<TextMeshPro> texts)
     {
         for (int i = 0; i < texts.Count; i++)
@@ -114,4 +98,4 @@ public class StageSelect : MonoBehaviour
             }
         }
     }
-}*/
+}
