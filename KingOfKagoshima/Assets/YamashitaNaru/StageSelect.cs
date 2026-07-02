@@ -1,4 +1,4 @@
-using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -52,8 +52,8 @@ public class StageSelect : MonoBehaviour
         // 選択が変わったときだけインデックスと色を更新
         if (temp != _index)
         {
-            _index = temp; // インデックスを更新
-            UpdateMenuColors(); // 下で作る色変え関数を呼び出す
+           // _index = temp; // インデックスを更新
+           // UpdateMenuColors(); // 下で作る色変え関数を呼び出す
         
     private void UpdateMenuColors()
     {
@@ -76,7 +76,7 @@ public class StageSelect : MonoBehaviour
     }
 } // クラスの閉じカッコ
 
-_selectedPos = _textPos[_index];
+/*_selectedPos = _textPos[_index];
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, _selectedPos.position + _playerToCamera, _speed);
 
         // --- ここにあった使っていない Up/Downキーの temp 処理や var children の行は削除 ---
@@ -114,4 +114,4 @@ _selectedPos = _textPos[_index];
             }
         }
     }
-}
+}*/
