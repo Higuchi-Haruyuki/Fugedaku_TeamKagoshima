@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8613847}
-  - component: {fileID: 8613848}
   m_Layer: 0
   m_Name: Stage1
   m_TagString: Untagged
@@ -153,23 +152,6 @@ Transform:
   - {fileID: 653156291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8613848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8613846}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
-  menuTexts:
-  - {fileID: 1518890938}
-  - {fileID: 653156292}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &85113496
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +211,6 @@ GameObject:
   m_Component:
   - component: {fileID: 283822792}
   - component: {fileID: 283822793}
-  - component: {fileID: 283822794}
   m_Layer: 0
   m_Name: Stage2
   m_TagString: Untagged
@@ -261,33 +242,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283822791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438561b304586ad4e91a3ffe069c2276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TextMenu
-  menuTexts:
-  - {fileID: 1217668351}
-  - {fileID: 664017143}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
---- !u!114 &283822794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283822791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804a0d2f774e4d04e9686248a2f9d878, type: 3}
+  m_Script: {fileID: 11500000, guid: ba35be7f393a58e41a01b61e1573233e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageSelect
-  _speed: 0
-  _playerToCamera: {x: 0, y: 0, z: 0}
-  _textList: []
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  m_EditorClassIdentifier: Assembly-CSharp::StageSelectCursor
+  _SteageScene2tamari: 
 --- !u!1 &488715577
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.11, y: -3.86}
+  m_AnchoredPosition: {x: 2.27, y: 1.71}
   m_SizeDelta: {x: 19.3899, y: 3.1218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653156292
@@ -437,12 +397,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SAVE
-
-'
+  m_text: "\u7D9A\u304D\u304B\u3089"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
-  m_sharedMaterial: {fileID: 4605579396823638493, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
+  m_sharedMaterial: {fileID: 5617397082899650180, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -539,7 +497,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4605579396823638493, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
+  - {fileID: 5617397082899650180, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -597,7 +555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.03, y: -4.42}
+  m_AnchoredPosition: {x: -7.48, y: -3.33}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664017143
@@ -620,10 +578,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SAVE
+  m_text: "\u7D9A\u304D\u304B\u3089"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
-  m_sharedMaterial: {fileID: 4605579396823638493, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
+  m_sharedMaterial: {fileID: 5617397082899650180, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -720,7 +678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4605579396823638493, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
+  - {fileID: 5617397082899650180, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -778,7 +736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.06, y: -2.33}
+  m_AnchoredPosition: {x: -16.61, y: -3.08}
   m_SizeDelta: {x: 7.6932, y: 2.236}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217668351
@@ -1038,7 +996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.37, y: -3.36}
+  m_AnchoredPosition: {x: -3.28, y: 0.55}
   m_SizeDelta: {x: 10.0766, y: 3.7089}
   m_Pivot: {x: 0.44430235, y: 0.22452655}
 --- !u!114 &1518890938
@@ -1185,57 +1143,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1781310157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1781310159}
-  - component: {fileID: 1781310158}
-  m_Layer: 0
-  m_Name: StageSelect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1781310158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781310157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804a0d2f774e4d04e9686248a2f9d878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StageSelect
-  _speed: 0
-  _playerToCamera: {x: 0, y: 0, z: 0}
-  _textList:
-  - {fileID: 1518890938}
-  - {fileID: 653156292}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
---- !u!4 &1781310159
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781310157}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.16019, y: -0.93376, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1244,5 +1151,4 @@ SceneRoots:
   - {fileID: 1338110031}
   - {fileID: 85113498}
   - {fileID: 8613847}
-  - {fileID: 1781310159}
   - {fileID: 283822792}
