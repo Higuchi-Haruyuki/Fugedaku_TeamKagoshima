@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7939342370724573947}
-  - component: {fileID: 1751337241237333589}
   - component: {fileID: 4486155985257333504}
   - component: {fileID: 7134920131639196085}
   - component: {fileID: 393951748260516650}
+  - component: {fileID: 2477672079438161316}
   m_Layer: 0
   m_Name: wind
   m_TagString: Untagged
@@ -28,29 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8608164619975103310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0012096784, y: 0.9958609, z: -0.08695726, w: 0.026423514}
+  m_LocalRotation: {x: -0.0012141903, y: 0.9958608, z: -0.08695842, w: 0.0264204}
   m_LocalPosition: {x: 3.99, y: 0.82, z: 0}
   m_LocalScale: {x: 1.0073, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 170.03, y: -3.0750122, z: -180.408}
---- !u!114 &1751337241237333589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8608164619975103310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c934d805300334e898917cb6730e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IntervalWindZone2D
-  windStrength: 1
-  windDirection: {x: -1, y: 0}
-  windOnDuration: 2
-  windOffDuration: 3
 --- !u!61 &4486155985257333504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +154,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 0f35e2380968d6646855b5f0fe68f79f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.12, y: 5.12}
@@ -178,3 +162,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2477672079438161316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608164619975103310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d282542b2b6460489a8097cfc520561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wind
+  baseWindDirection: {x: 1, y: 0, z: 0}
+  WindForce: 1
+  cangeInterval: 5
