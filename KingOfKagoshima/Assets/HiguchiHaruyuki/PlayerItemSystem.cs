@@ -7,16 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerItemSystem : MonoBehaviour
 {
     [SerializeField] private List<ItemBase> m_itemList;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     private void OnCollisionStay2D(Collision2D collision)
     {
 

@@ -1,15 +1,16 @@
 using System;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Game.Attribute;
 [RequireComponent(typeof(PlayerItemSystem))]
 [RequireComponent(typeof(PlayerStateManager))]
-
-public class PlayerController : MonoBehaviour
+public class NewPlayerController : MonoBehaviour
 {
     //<SerializeField>
     [Header("プレイヤーのステータス")]
+    //受け取ったプレイヤーの入力
+    [SerializeField, ReadOnly] private float _moveInput = 0;
     //移動速度
     [SerializeField] private float _moveSpeed = 5f;
     //ジャンプの最少溜め量
@@ -22,12 +23,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _minJumpAngle = 30f;
     //ジャンプ時の最大角度
     [SerializeField] private float _maxJumpAngle = 70f;
-    //受け取ったプレイヤーの入力
-    [SerializeField, ReadOnly] private float _moveInput = 0.0f;
-    //ジャンプ溜め時の力
-    [SerializeField,ReadOnly] private float _chargePower = 0.0f;
-    //ジャンプ時のX方向の入力
-    [SerializeField,ReadOnly]private float _jumpChargeX = 0.0f;
 
     [Header("壁にぶつかったときの反射")]
     //壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
@@ -46,18 +41,18 @@ public class PlayerController : MonoBehaviour
 
     //<フラグ>
     [Header("フラグ")]
-    //地面に触れているか
-    [SerializeField, ReadOnly] private bool _isGround = true;
-    //氷の地面にたっているか
-    [SerializeField, ReadOnly] private bool _isIceGround = false;
-    //今ジャンプをためているか
-    [SerializeField, ReadOnly] private bool _isJumpPressed = false;
-    //このフレームでジャンプするか
-    [SerializeField, ReadOnly] private bool _isJump = false;
-    //今回の落下をすでに記録したか
-    [SerializeField, ReadOnly] private bool _isFallenSaved = false;
     //二段ジャンプが許可されているか(アイテムの所持状況は考慮しない)
     [SerializeField, ReadOnly] private bool _isEnableDoubleJump = false;
+    //地面に触れているか
+    [SerializeField, ReadOnly] private bool _isGround = true;
+    //今ジャンプをためているか
+    [SerializeField, ReadOnly] private bool _isJumpPressed = false;
+    //今落下中か
+    [SerializeField, ReadOnly] private bool _isFallen = false;
+    //氷の地面にたっているか
+    [SerializeField, ReadOnly] private bool _isIceGround = false;
+    //このフレームでジャンプするか
+    [SerializeField, ReadOnly] private bool _isJump = false;
 
     //<コンポーネントの変数>
     private PlayerItemSystem _itemSystem;
@@ -75,20 +70,18 @@ public class PlayerController : MonoBehaviour
     //<その他>
     // 地面と判定するレイヤー
     private LayerMask _groundLayer;
-
     //最後に立っていた地面の高さ
     private float _lastGroundY;
-
-    //1フレーム前の速度
-    private Vector2 _velocityBeforeFrame = Vector2.zero;
-
     //インスペクタでの変更の値をわかりやすくするために補正する定数
-    private const float JumpPowerModifier = 0.20f;
+    private const float _jumpPowerModifier = 0.20f;
+    //ジャンプ時のX方向の入力を受け取る。
+    private float _jumpChargeX = 0f;
+    //ジャンプ溜め時の力
+    private float _chargePower;
+    //1フレーム前の速度
+    Vector2 _velocityBeforeFrame = Vector2.zero;
 
-    //その方向を向いていると判定する速度のしきい値
-    private const float VelocityThreshold = 0.1f;
-
-    private List<Vector2> _normalVectors;
+    
 
 
     void Start()
@@ -99,7 +92,6 @@ public class PlayerController : MonoBehaviour
         _groundLayer = LayerMask.NameToLayer("Ground");
         //プレイヤーの状態を設定する
         _stateManager.CurrentState = PlayerState.Idle;
-        _normalVectors = new List<Vector2>();
     }
 
     /// <summary>
@@ -116,19 +108,19 @@ public class PlayerController : MonoBehaviour
         if (_isGround)
         {
             _lastGroundY = transform.position.y;
-            _isFallenSaved = false;
+            _isFallen = false;
         }
-        //まだ落下を記録していないときで、規定の距離以上落下したとき。
-        if (!_isFallenSaved && transform.position.y < (_lastGroundY - _fallDistance))
+        //すでに落下を記録していないときで、規定の距離以上落下したとき。
+        if (!_isFallen && transform.position.y < (_lastGroundY - _fallDistance))
         {
-            _isFallenSaved = true;
+            _isFallen = true;
             //落下イベントの実行(別クラスで数値の保存をする)
             OnFall?.Invoke();
         }
 
         //<二段ジャンプフラグの更新>
         //二段ジャンプフラグがfalseになっているときは、再び地面についてからフラグをtrueにする。
-        if (!_isEnableDoubleJump)
+        if(!_isEnableDoubleJump)
         {
             if (_isGround) _isEnableDoubleJump = true;
         }
@@ -175,15 +167,12 @@ public class PlayerController : MonoBehaviour
         }
 
         //<移動方向に回転>
-        //壁にあたっているなら回転処理を実行しない(プレイヤーのガタツキ防止のため)
-        if (HasNormalVector(new(1.0f, 0.0f)) || HasNormalVector(new(-1.0f, 0.0f))) return;
-
         //X方向の速度が0のときは向きを変更しない。
-        if (_rb.linearVelocityX > VelocityThreshold || _jumpChargeX == 1)
+        if (_rb.linearVelocityX > 0)
         {
             transform.rotation = Quaternion.identity;
         }
-        if (_rb.linearVelocityX < -VelocityThreshold || _jumpChargeX == -1)
+        if (_rb.linearVelocityX < 0)
         {
             transform.rotation = Quaternion.Euler(new(0, 180, 0));
         }
@@ -193,29 +182,27 @@ public class PlayerController : MonoBehaviour
     /// フラグの状態から変更を加える。
     /// </summary>
     void FixedUpdate()
-    {
-        if (_isGround)
-        {
+    { 
+        if(_isGround)
+        { 
             //ジャンプため処理
-            if (_isJumpPressed)
+            if( _isJumpPressed )
             {
                 _chargePower++;
-                _chargePower = Mathf.Clamp(_chargePower, _minCharge, _maxCharge);
+                _chargePower = Mathf.Clamp(_chargePower, 0, _maxCharge);
                 _isJumpPressed = false;
             }
             //ジャンプ処理
-            else if (_isJump)
+            else if(_isJump)
             {
                 Jump();
             }
             else
             {
-
-                //CheckChargeing();
                 //移動処理
                 _rb.linearVelocityX = _moveInput * _moveSpeed;
             }
-        }
+        }       
         //地面の上に立っていないとき
         else
         {
@@ -224,7 +211,7 @@ public class PlayerController : MonoBehaviour
         }
 
         SlipIceGround();
-
+ 
         //前のフレームでの速度を保存しておく
         _velocityBeforeFrame = _rb.linearVelocity;
     }
@@ -237,8 +224,6 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.spaceKey.isPressed)
         {
             if (!_isGround) return;
-            //ジャンプ方向入力の受付
-            SetJumpChargeX();
             _isJumpPressed = true;
         }
     }
@@ -254,7 +239,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _moveInput = 1f;
 
         //氷の地面に入力なしでたっているときは処理をしない
-        //if (_isIceGround && _moveInput == 0) _moveInput = 0;
+        if (_isIceGround && _moveInput == 0) return;
 
         //ジャンプため中は入力無効
         if (_isJumpPressed) _moveInput = 0;
@@ -271,8 +256,8 @@ public class PlayerController : MonoBehaviour
         float jumpPowerModifier = Item_JumpPowerup.UseItem(_itemSystem);
 
         //ジャンプ力の計算
-        float power = _chargePower + _minCharge;
-        float jumpPower = Mathf.Min(power, _maxCharge) * _jumpPower * jumpPowerModifier * JumpPowerModifier;
+        var power = _chargePower + _minCharge;
+        float jumpPower = Mathf.Min(power, _maxCharge) * _jumpPower * jumpPowerModifier * _jumpPowerModifier;
 
         //ジャンプ角度の計算(溜めた割合に応じてジャンプ角度が上昇する)
         //線形補間で角度を出す。
@@ -284,12 +269,9 @@ public class PlayerController : MonoBehaviour
         var sin = Mathf.Sin(angle * Mathf.Deg2Rad);
         var targetVec = new Vector2(cos, sin).normalized;
 
-        Debug.Log($"angle: {angle}, cos: {cos}, sin: {sin}, targetVec: {targetVec}, jumpChargeX: {_jumpChargeX}");
-
+        Debug.Log($"angle: {angle}, targetVec: {targetVec}, jumpChargeX: {_jumpChargeX}");
         //ジャンプ力と乗算してベクトルをだす。
         var jumpVec = targetVec * jumpPower;
-
-        Debug.DrawLine(transform.position, jumpVec, new(255, 0, 0), 3);
 
         _rb.linearVelocity += jumpVec;
 
@@ -325,7 +307,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _jumpChargeX = 1f;
 
     }
-
+    
     /// <summary>
     /// 氷の地面を歩いたときに滑るようにする。
     /// </summary>
@@ -346,9 +328,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// フラグとアイテム所持状況をみてJump関数を実行する関数
-    /// </summary>
+   /// <summary>
+   /// フラグとアイテム所持状況をみてJump関数を実行する関数
+   /// </summary>
     void DoubleJump()
     {
         if (!_isEnableDoubleJump) return;
@@ -371,7 +353,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="collision"></param>
     /// <param name="vec"></param>
     /// <returns></returns>
-    bool HasNormalVector(Vector2 vec)
+    bool HasNormalVector(Collision2D collision, Vector2 vec)
     {
 #if false
         var log = "\n";
@@ -381,10 +363,10 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log(log);
 #endif
-        foreach (var vector in _normalVectors)
+        foreach (var contact in collision.contacts)
         {
             //ほぼ一緒なら一緒とみなす
-            var diff = vector - vec;
+            var diff = contact.normal - vec;
             diff.x = MathF.Abs(diff.x);
             diff.y = MathF.Abs(diff.y);
             if (diff.x < 0.01f && diff.y < 0.01f) return true;
@@ -395,14 +377,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == _groundLayer)
         {
-            //今回の法線ベクトルをメンバ変数に保存。
-            _normalVectors.Clear();
-            foreach(var contact in collision.contacts)
-            {
-                _normalVectors.Add(contact.normal);
-            }
-
-            if (HasNormalVector(new(0, 1.00f)))
+            if (HasNormalVector(collision, new(0, 1.00f)))
             {
                 _isGround = true;
                 if (collision.gameObject.CompareTag("IceGround"))

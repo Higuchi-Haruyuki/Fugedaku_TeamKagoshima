@@ -109,24 +109,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8de64fca82965a469312f5099ca41ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _inputSystem: {fileID: 0}
   _moveSpeed: 3
-  _minCharge: 10
+  _minCharge: 20
   _maxCharge: 60
   _jumpPower: 2.1
-  _minJumpAngle: 10
+  _minJumpAngle: 20
   _maxJumpAngle: 70
+  _moveInput: 0
+  _chargePower: 0
   _bounciness: 0.69
   _slipperiness: 0.97
-  _isJumpPowerUpEffectOnDoubleJump: 0
   _doubleJumpPower: 10
   _fallDistance: 6
-  _isEnableDoubleJump: 0
   _isGround: 0
-  _isJumpCharge: 0
-  _isFallen: 0
   _isIceGround: 0
+  _isJumpPressed: 0
   _isJump: 0
+  _isFallenSaved: 0
+  _isEnableDoubleJump: 0
 --- !u!114 &6221845074440662238
 MonoBehaviour:
   m_ObjectHideFlags: 0
