@@ -131,18 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
-      propertyPath: _minCharge
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
-      propertyPath: _inputSystem
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
-      propertyPath: _minJumpAngle
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.24
@@ -1913,6 +1901,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ec88e5dc365ba4496d1e955c29b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIDirector
+--- !u!1001 &1988339539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2841406805197439712, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_Name
+      value: Item_DoubleJump (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.320181
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4294488
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7234e619236cde459f88ba172594533, type: 3}
 --- !u!1001 &3436743103046402763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2243,7 +2288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2611891753787007675, guid: 0d8ca27a1f37bd94fa7eb03f726f380d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7883923419785134620, guid: 0d8ca27a1f37bd94fa7eb03f726f380d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2305,3 +2350,4 @@ SceneRoots:
   - {fileID: 730162553}
   - {fileID: 1329664097}
   - {fileID: 3436743103046402763}
+  - {fileID: 1988339539}
