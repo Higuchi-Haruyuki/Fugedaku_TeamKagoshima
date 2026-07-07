@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
     //受け取ったプレイヤーの入力
     [SerializeField, ReadOnly] private float _moveInput = 0.0f;
     //ジャンプ溜め時の力
-    [SerializeField,ReadOnly] private float _chargePower = 0.0f;
+    [SerializeField, ReadOnly] private float _chargePower = 0.0f;
     //ジャンプ時のX方向の入力
-    [SerializeField,ReadOnly]private float _jumpChargeX = 0.0f;
+    [SerializeField, ReadOnly] private float _jumpChargeX = 0.0f;
 
     [Header("壁にぶつかったときの反射")]
     //壁反射時の反発係数（1.0で勢いを維持、0.8などで少し減速）
@@ -187,6 +187,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(new(0, 180, 0));
         }
+        //前のフレームでの速度を保存しておく
+        _velocityBeforeFrame = _rb.linearVelocity;
     }
 
     /// <summary>
@@ -225,8 +227,7 @@ public class PlayerController : MonoBehaviour
 
         SlipIceGround();
 
-        //前のフレームでの速度を保存しておく
-        _velocityBeforeFrame = _rb.linearVelocity;
+
     }
 
     /// <summary>
@@ -249,6 +250,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Move()
     {
+        if (!_isGround) return;
+
         _moveInput = 0f;
 
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _moveInput = -1;
@@ -259,6 +262,9 @@ public class PlayerController : MonoBehaviour
 
         //ジャンプため中は入力無効
         if (_isJumpPressed) _moveInput = 0;
+
+        //移動処理
+        //_rb.linearVelocityX = _moveInput * _moveSpeed;
     }
     /// <summary>
     /// 溜められた力やアイテム状況から実際にプレイヤーの速度を変更してジャンプをする。
@@ -398,7 +404,7 @@ public class PlayerController : MonoBehaviour
         {
             //今回の法線ベクトルをメンバ変数に保存。
             _normalVectors.Clear();
-            foreach(var contact in collision.contacts)
+            foreach (var contact in collision.contacts)
             {
                 _normalVectors.Add(contact.normal);
             }
@@ -437,6 +443,7 @@ public class PlayerController : MonoBehaviour
 
         ContactPoint2D contact = collision.contacts[0];
         Vector2 wallNormal = contact.normal;
+
 
         // 天井や床（上向きの面）は除外する
         if (wallNormal.y > 0.7f) return;
