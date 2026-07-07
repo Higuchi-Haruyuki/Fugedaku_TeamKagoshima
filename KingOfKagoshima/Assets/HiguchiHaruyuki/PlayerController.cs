@@ -237,6 +237,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.spaceKey.isPressed)
         {
             if (!_isGround) return;
+            if (_chargePower >= _maxCharge) return;
             //ジャンプ方向入力の受付
             SetJumpChargeX();
             _isJumpPressed = true;
