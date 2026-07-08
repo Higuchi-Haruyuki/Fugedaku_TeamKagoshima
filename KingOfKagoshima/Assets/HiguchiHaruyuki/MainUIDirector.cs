@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -76,6 +76,7 @@ public class MainUIDirector : MonoBehaviour
         while(timer < second)
         {
             timer+= Time.deltaTime;
+
             yield return null;
         }
         _heightText.enabled = false;
