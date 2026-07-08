@@ -43,8 +43,7 @@ public class StageSelectCursor : MonoBehaviour
     /// </summary>
     public void Pressed()
     {
-        //
-
+        Debug.Log("Pressed呼ばれた。sceneName = " + _sceneName);
         SceneManager.LoadScene(_sceneName);
     }
 }

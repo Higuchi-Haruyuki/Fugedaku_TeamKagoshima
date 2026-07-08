@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/YamashitaNaru/StageSelect.unity
     guid: 200fad24436b1ac4caf96a4246214d15
-  - enabled: 1
+  - enabled: 0
     path: Assets/NozoeYuki/StageScene1.unity
     guid: 08b61aaa09c9b0a4d9b7a5caaaff4d8f
   - enabled: 1
     path: Assets/TamariKosei/SteageScene2tamari 1.unity
     guid: 1518e67a7d4a11f498fb534431dc9370
+  - enabled: 1
+    path: Assets/NozoeYuki/StageScene1 1.unity
+    guid: cf04275cf7c6e1f4db6a64f437c55a75
   - enabled: 0
     path: Assets/NozoeYuki/SteageScene2.unity
     guid: 8cccb1dc54f6e94479f8a862c33b6097

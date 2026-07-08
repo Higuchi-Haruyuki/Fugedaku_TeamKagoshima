@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using NUnit.Framework;
 using System.Collections.Generic;
 public enum SaveFile
 {
-    Stage1SaveData,Stage2SaveData,Stage1FastestTimeData,Stage2FastestTimeData
+    None,Stage1SaveData,Stage2SaveData,Stage1FastestTimeData,Stage2FastestTimeData
 }
 
 public class SaveManager
