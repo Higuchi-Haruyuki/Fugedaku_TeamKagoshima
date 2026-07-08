@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926bcf9081513cb47a701a95f381135c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectManeger
+  _stageTextRects: []
+  _slideDuration: 0.3
+  _slideDistance: 800
 --- !u!1 &283822791
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee40bfa07660474b9ae7bc3c51fd56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectCursor
-  _sceneName: 
+  _sceneName: SteageScene2tamari
 --- !u!1 &1338110028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee40bfa07660474b9ae7bc3c51fd56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectCursor
-  _sceneName: 
+  _sceneName: StageScene1 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
