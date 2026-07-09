@@ -16,16 +16,27 @@ public class MainUIDirector : MonoBehaviour
     [SerializeField] private GameObject _itemDisplayUIPrefab;
     //アイテム表示UIの1つ目のオフセット
     [SerializeField] private Vector2 _initialOffset;
+
+    [SerializeField] private Vector2 _jumpChargeBarOffset;
     private List<GameObject> _itemUIList;
     private Score _scoreTime;
     private List<ItemBase> _playerItems;
+    private PlayerController _playerController;
     private List<int> _itemUseCountBeforeCall;
     private int _itemCountBeforeCall = 0;
+    private GameObject _jumpChargeBar;
+    private RectTransform _jumpChargeBarRectTrans;
+    private float _startJumpChargeBarWidth = 0;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _playerItems = _player.GetComponent<PlayerItemSystem>().GetItems();
+        _playerController = _player.GetComponent<PlayerController>();
+        _jumpChargeBar = transform.Find("JumpChargeBar").gameObject;
+        _jumpChargeBarRectTrans = _jumpChargeBar.GetComponent<RectTransform>();
+        _startJumpChargeBarWidth = _jumpChargeBarRectTrans.sizeDelta.x;
         DisplayItem();
     }
     public void SetScoreTime(Score scoreTime)
@@ -52,6 +63,7 @@ public class MainUIDirector : MonoBehaviour
             DisplayItem();
         }
         CheckChangeItemUseCount();
+        DisplayChargeJumpBar();
     }
     /// <summary>
     /// 標高を設定する
@@ -114,5 +126,15 @@ public class MainUIDirector : MonoBehaviour
                 _itemUseCountBeforeCall[i] = _playerItems[i].UseCount;
             }
         }
+    }
+
+    private void DisplayChargeJumpBar()
+    {
+        var temp = _jumpChargeBarRectTrans.sizeDelta;
+        temp.x = _playerController.GetChargeRatio() * _startJumpChargeBarWidth;
+        _jumpChargeBarRectTrans.sizeDelta = temp;
+
+        var targetPos = Camera.main.WorldToScreenPoint(_player.transform.position);
+        _jumpChargeBarRectTrans.position = targetPos + (Vector3)_jumpChargeBarOffset;
     }
 }

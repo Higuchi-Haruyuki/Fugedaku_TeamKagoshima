@@ -179,11 +179,11 @@ public class PlayerController : MonoBehaviour
         if (HasNormalVector(new(1.0f, 0.0f)) || HasNormalVector(new(-1.0f, 0.0f))) return;
 
         //X方向の速度が0のときは向きを変更しない。
-        if (_rb.linearVelocityX > VelocityThreshold || _jumpChargeX == 1)
+        if (_rb.linearVelocityX > VelocityThreshold || (_isJumpPressed && _jumpChargeX == 1))
         {
             transform.rotation = Quaternion.identity;
         }
-        if (_rb.linearVelocityX < -VelocityThreshold || _jumpChargeX == -1)
+        if (_rb.linearVelocityX < -VelocityThreshold || (_isJumpPressed && _jumpChargeX == -1))
         {
             transform.rotation = Quaternion.Euler(new(0, 180, 0));
         }
@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour
                 //CheckChargeing();
                 //移動処理
                 _rb.linearVelocityX = _moveInput * _moveSpeed;
+                _moveInput = 0;
             }
         }
         //地面の上に立っていないとき
@@ -241,6 +242,7 @@ public class PlayerController : MonoBehaviour
             //ジャンプ方向入力の受付
             SetJumpChargeX();
             _isJumpPressed = true;
+            _moveInput = 0.0f;
         }
     }
 
@@ -254,8 +256,6 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _moveInput = -1;
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _moveInput = 1f;
 
-        //氷の地面に入力なしでたっているときは処理をしない
-        //if (_isIceGround && _moveInput == 0) _moveInput = 0;
 
         //ジャンプため中は入力無効
         if (_isJumpPressed) _moveInput = 0;
@@ -315,6 +315,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!_isGround) return;
             _isJump = true;
+            _moveInput = 0.0f;
         }
     }
     /// <summary>
@@ -412,6 +413,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public float GetChargeRatio()
+    {
+        return (_chargePower - _minCharge) / (_maxCharge - _minCharge);
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
