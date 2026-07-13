@@ -12,7 +12,8 @@ public class StageSelectCursor : MonoBehaviour
     TextMeshPro _textMeshPro;
 
     [SerializeField] string _sceneName;//ロードするシーン
-
+    [SerializeField] SaveFile _saveFile;
+    [SerializeField] bool _isNewGame;
     Color _defaultColor;//元の色を保存
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +44,12 @@ public class StageSelectCursor : MonoBehaviour
     /// </summary>
     public void Pressed()
     {
+        //新しく始めるときは新しくファイルを上書きする。
+        if (_isNewGame) 
+        {
+            SaveData saveData = new();
+            SaveManager.SaveJson(saveData, SaveManager.GetPath(_saveFile));
+        }
         Debug.Log("Pressed呼ばれた。sceneName = " + _sceneName);
         SceneManager.LoadScene(_sceneName);
     }
