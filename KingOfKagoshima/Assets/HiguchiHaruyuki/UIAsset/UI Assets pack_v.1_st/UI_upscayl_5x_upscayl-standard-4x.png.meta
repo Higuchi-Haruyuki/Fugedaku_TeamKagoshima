@@ -1,0 +1,5512 @@
+fileFormatVersion: 2
+guid: 099bc6e97d19ef9408bff33868a72695
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4102246782904751697
+    second: UI_upscayl_5x_upscayl-standard-4x_0
+  - first:
+      213: 92481849624525140
+    second: UI_upscayl_5x_upscayl-standard-4x_1
+  - first:
+      213: 889701455887783201
+    second: UI_upscayl_5x_upscayl-standard-4x_2
+  - first:
+      213: 2191034690994467755
+    second: UI_upscayl_5x_upscayl-standard-4x_3
+  - first:
+      213: -3733513789444478491
+    second: UI_upscayl_5x_upscayl-standard-4x_4
+  - first:
+      213: -4639602214974929026
+    second: UI_upscayl_5x_upscayl-standard-4x_5
+  - first:
+      213: 9179526881578029141
+    second: UI_upscayl_5x_upscayl-standard-4x_6
+  - first:
+      213: 1462064686462167222
+    second: UI_upscayl_5x_upscayl-standard-4x_7
+  - first:
+      213: 3895645504417852524
+    second: UI_upscayl_5x_upscayl-standard-4x_8
+  - first:
+      213: 7864765282252372610
+    second: UI_upscayl_5x_upscayl-standard-4x_9
+  - first:
+      213: -851048993698178340
+    second: UI_upscayl_5x_upscayl-standard-4x_10
+  - first:
+      213: 8724852477127129673
+    second: UI_upscayl_5x_upscayl-standard-4x_11
+  - first:
+      213: -6239160287569385366
+    second: UI_upscayl_5x_upscayl-standard-4x_12
+  - first:
+      213: 7229889423933791052
+    second: UI_upscayl_5x_upscayl-standard-4x_13
+  - first:
+      213: -1186749778260424871
+    second: UI_upscayl_5x_upscayl-standard-4x_14
+  - first:
+      213: -1147744499896254771
+    second: UI_upscayl_5x_upscayl-standard-4x_15
+  - first:
+      213: 5698126455379828214
+    second: UI_upscayl_5x_upscayl-standard-4x_16
+  - first:
+      213: 761685014366415888
+    second: UI_upscayl_5x_upscayl-standard-4x_17
+  - first:
+      213: -1007171681210434272
+    second: UI_upscayl_5x_upscayl-standard-4x_18
+  - first:
+      213: -630782025783819584
+    second: UI_upscayl_5x_upscayl-standard-4x_19
+  - first:
+      213: -792217310462545270
+    second: UI_upscayl_5x_upscayl-standard-4x_20
+  - first:
+      213: 22238824880158285
+    second: UI_upscayl_5x_upscayl-standard-4x_21
+  - first:
+      213: -6249998193762723781
+    second: UI_upscayl_5x_upscayl-standard-4x_22
+  - first:
+      213: -6235579799152684132
+    second: UI_upscayl_5x_upscayl-standard-4x_23
+  - first:
+      213: 8720163839184911863
+    second: UI_upscayl_5x_upscayl-standard-4x_24
+  - first:
+      213: 2938318384899614791
+    second: UI_upscayl_5x_upscayl-standard-4x_25
+  - first:
+      213: 1325155286598288038
+    second: UI_upscayl_5x_upscayl-standard-4x_26
+  - first:
+      213: -1651695552985933301
+    second: UI_upscayl_5x_upscayl-standard-4x_27
+  - first:
+      213: -5612052109013026271
+    second: UI_upscayl_5x_upscayl-standard-4x_28
+  - first:
+      213: 574367133517843514
+    second: UI_upscayl_5x_upscayl-standard-4x_29
+  - first:
+      213: -7308091327955522845
+    second: UI_upscayl_5x_upscayl-standard-4x_30
+  - first:
+      213: -4937573252011110328
+    second: UI_upscayl_5x_upscayl-standard-4x_31
+  - first:
+      213: -2250290180604856576
+    second: UI_upscayl_5x_upscayl-standard-4x_32
+  - first:
+      213: -7587695872515337533
+    second: UI_upscayl_5x_upscayl-standard-4x_33
+  - first:
+      213: -3529560220113702564
+    second: UI_upscayl_5x_upscayl-standard-4x_34
+  - first:
+      213: -7911525764199359312
+    second: UI_upscayl_5x_upscayl-standard-4x_35
+  - first:
+      213: 1653220485560737422
+    second: UI_upscayl_5x_upscayl-standard-4x_36
+  - first:
+      213: -6122398880393130944
+    second: UI_upscayl_5x_upscayl-standard-4x_37
+  - first:
+      213: 7266177658400618275
+    second: UI_upscayl_5x_upscayl-standard-4x_38
+  - first:
+      213: 7433410151299965558
+    second: UI_upscayl_5x_upscayl-standard-4x_39
+  - first:
+      213: 4616039947969558264
+    second: UI_upscayl_5x_upscayl-standard-4x_40
+  - first:
+      213: 1363034897014491766
+    second: UI_upscayl_5x_upscayl-standard-4x_41
+  - first:
+      213: -2128819966061175283
+    second: UI_upscayl_5x_upscayl-standard-4x_42
+  - first:
+      213: -226997104986596683
+    second: UI_upscayl_5x_upscayl-standard-4x_43
+  - first:
+      213: 4351180335215446968
+    second: UI_upscayl_5x_upscayl-standard-4x_44
+  - first:
+      213: 272243739714267634
+    second: UI_upscayl_5x_upscayl-standard-4x_45
+  - first:
+      213: -2931485953522924540
+    second: UI_upscayl_5x_upscayl-standard-4x_46
+  - first:
+      213: 7797839186668438580
+    second: UI_upscayl_5x_upscayl-standard-4x_47
+  - first:
+      213: 3992822830769789281
+    second: UI_upscayl_5x_upscayl-standard-4x_48
+  - first:
+      213: 6627243782938500326
+    second: UI_upscayl_5x_upscayl-standard-4x_49
+  - first:
+      213: -1815783874540308468
+    second: UI_upscayl_5x_upscayl-standard-4x_50
+  - first:
+      213: -4311151396173896800
+    second: UI_upscayl_5x_upscayl-standard-4x_51
+  - first:
+      213: -4147335040122629785
+    second: UI_upscayl_5x_upscayl-standard-4x_52
+  - first:
+      213: 422274168748177683
+    second: UI_upscayl_5x_upscayl-standard-4x_53
+  - first:
+      213: 6218390846375319756
+    second: UI_upscayl_5x_upscayl-standard-4x_54
+  - first:
+      213: 5296768116927132676
+    second: UI_upscayl_5x_upscayl-standard-4x_55
+  - first:
+      213: -201789094557984550
+    second: UI_upscayl_5x_upscayl-standard-4x_56
+  - first:
+      213: 3992305141061008294
+    second: UI_upscayl_5x_upscayl-standard-4x_57
+  - first:
+      213: -3330786872626588948
+    second: UI_upscayl_5x_upscayl-standard-4x_58
+  - first:
+      213: 4380256051959864434
+    second: UI_upscayl_5x_upscayl-standard-4x_59
+  - first:
+      213: -2658298103585886816
+    second: UI_upscayl_5x_upscayl-standard-4x_60
+  - first:
+      213: 2365703501916724363
+    second: UI_upscayl_5x_upscayl-standard-4x_61
+  - first:
+      213: 8629098743921132334
+    second: UI_upscayl_5x_upscayl-standard-4x_62
+  - first:
+      213: 2369846717814260456
+    second: UI_upscayl_5x_upscayl-standard-4x_63
+  - first:
+      213: -8355944381111263241
+    second: UI_upscayl_5x_upscayl-standard-4x_64
+  - first:
+      213: 8761496772127479936
+    second: UI_upscayl_5x_upscayl-standard-4x_65
+  - first:
+      213: -4279997891374855496
+    second: UI_upscayl_5x_upscayl-standard-4x_66
+  - first:
+      213: -7490082516519927379
+    second: UI_upscayl_5x_upscayl-standard-4x_67
+  - first:
+      213: 199412414853311661
+    second: UI_upscayl_5x_upscayl-standard-4x_68
+  - first:
+      213: 7642140203524361371
+    second: UI_upscayl_5x_upscayl-standard-4x_69
+  - first:
+      213: 8479701650856277016
+    second: UI_upscayl_5x_upscayl-standard-4x_70
+  - first:
+      213: -4630316576944745187
+    second: UI_upscayl_5x_upscayl-standard-4x_71
+  - first:
+      213: 7703380736399090768
+    second: UI_upscayl_5x_upscayl-standard-4x_72
+  - first:
+      213: 6963094610816887597
+    second: UI_upscayl_5x_upscayl-standard-4x_73
+  - first:
+      213: -2019826213733667897
+    second: UI_upscayl_5x_upscayl-standard-4x_74
+  - first:
+      213: 5041826677856705095
+    second: UI_upscayl_5x_upscayl-standard-4x_75
+  - first:
+      213: 1109452246864222919
+    second: UI_upscayl_5x_upscayl-standard-4x_76
+  - first:
+      213: -5995157816896003836
+    second: UI_upscayl_5x_upscayl-standard-4x_77
+  - first:
+      213: 7990679505696618259
+    second: UI_upscayl_5x_upscayl-standard-4x_78
+  - first:
+      213: -3281835732896754909
+    second: UI_upscayl_5x_upscayl-standard-4x_79
+  - first:
+      213: -834068056118157688
+    second: UI_upscayl_5x_upscayl-standard-4x_80
+  - first:
+      213: 8912026643996993214
+    second: UI_upscayl_5x_upscayl-standard-4x_81
+  - first:
+      213: -9005865400336106941
+    second: UI_upscayl_5x_upscayl-standard-4x_82
+  - first:
+      213: 447003925093088900
+    second: UI_upscayl_5x_upscayl-standard-4x_83
+  - first:
+      213: -967565220632757490
+    second: UI_upscayl_5x_upscayl-standard-4x_84
+  - first:
+      213: 7879531517152424866
+    second: UI_upscayl_5x_upscayl-standard-4x_85
+  - first:
+      213: 1148509174707517061
+    second: UI_upscayl_5x_upscayl-standard-4x_86
+  - first:
+      213: -2720082352465924750
+    second: UI_upscayl_5x_upscayl-standard-4x_87
+  - first:
+      213: -44506075032449309
+    second: UI_upscayl_5x_upscayl-standard-4x_88
+  - first:
+      213: -225958844970995156
+    second: UI_upscayl_5x_upscayl-standard-4x_89
+  - first:
+      213: -2804997146234703468
+    second: UI_upscayl_5x_upscayl-standard-4x_90
+  - first:
+      213: 2970637379462262402
+    second: UI_upscayl_5x_upscayl-standard-4x_91
+  - first:
+      213: 4323146802919344125
+    second: UI_upscayl_5x_upscayl-standard-4x_92
+  - first:
+      213: 5307791798505802082
+    second: UI_upscayl_5x_upscayl-standard-4x_93
+  - first:
+      213: -7790085138342973555
+    second: UI_upscayl_5x_upscayl-standard-4x_94
+  - first:
+      213: 7422929297907808830
+    second: UI_upscayl_5x_upscayl-standard-4x_95
+  - first:
+      213: 609968537835680735
+    second: UI_upscayl_5x_upscayl-standard-4x_96
+  - first:
+      213: -7575766130695750927
+    second: UI_upscayl_5x_upscayl-standard-4x_97
+  - first:
+      213: -5352376197590177013
+    second: UI_upscayl_5x_upscayl-standard-4x_98
+  - first:
+      213: -2691807026962089257
+    second: UI_upscayl_5x_upscayl-standard-4x_99
+  - first:
+      213: -3273879855436950054
+    second: UI_upscayl_5x_upscayl-standard-4x_100
+  - first:
+      213: 538077290126734727
+    second: UI_upscayl_5x_upscayl-standard-4x_101
+  - first:
+      213: 1164550163296842320
+    second: UI_upscayl_5x_upscayl-standard-4x_102
+  - first:
+      213: 7634147964701044008
+    second: UI_upscayl_5x_upscayl-standard-4x_103
+  - first:
+      213: 3160874741289718049
+    second: UI_upscayl_5x_upscayl-standard-4x_104
+  - first:
+      213: 4776496201041502776
+    second: UI_upscayl_5x_upscayl-standard-4x_105
+  - first:
+      213: -9171475017974860742
+    second: UI_upscayl_5x_upscayl-standard-4x_106
+  - first:
+      213: -5667335227422053459
+    second: UI_upscayl_5x_upscayl-standard-4x_107
+  - first:
+      213: 4373034085266470044
+    second: UI_upscayl_5x_upscayl-standard-4x_108
+  - first:
+      213: 9184706319574732565
+    second: UI_upscayl_5x_upscayl-standard-4x_109
+  - first:
+      213: 1697971250474009769
+    second: UI_upscayl_5x_upscayl-standard-4x_110
+  - first:
+      213: -3935490262378642558
+    second: UI_upscayl_5x_upscayl-standard-4x_111
+  - first:
+      213: -3401502022823395465
+    second: UI_upscayl_5x_upscayl-standard-4x_112
+  - first:
+      213: -7738149916757927995
+    second: UI_upscayl_5x_upscayl-standard-4x_113
+  - first:
+      213: 7157844443455888647
+    second: UI_upscayl_5x_upscayl-standard-4x_114
+  - first:
+      213: -4371799620185333324
+    second: UI_upscayl_5x_upscayl-standard-4x_115
+  - first:
+      213: -8002150892801125760
+    second: UI_upscayl_5x_upscayl-standard-4x_116
+  - first:
+      213: 2453279800452390837
+    second: UI_upscayl_5x_upscayl-standard-4x_117
+  - first:
+      213: 8207098804818266025
+    second: UI_upscayl_5x_upscayl-standard-4x_118
+  - first:
+      213: 143610971649742449
+    second: UI_upscayl_5x_upscayl-standard-4x_119
+  - first:
+      213: -5910848581072705919
+    second: UI_upscayl_5x_upscayl-standard-4x_120
+  - first:
+      213: -7545499042047659000
+    second: UI_upscayl_5x_upscayl-standard-4x_121
+  - first:
+      213: -6938620026388364610
+    second: UI_upscayl_5x_upscayl-standard-4x_122
+  - first:
+      213: 7744488054201583927
+    second: UI_upscayl_5x_upscayl-standard-4x_123
+  - first:
+      213: 4953924367747900259
+    second: UI_upscayl_5x_upscayl-standard-4x_124
+  - first:
+      213: -8914417334975646339
+    second: UI_upscayl_5x_upscayl-standard-4x_125
+  - first:
+      213: 4240865558351877631
+    second: UI_upscayl_5x_upscayl-standard-4x_126
+  - first:
+      213: 3432413966123823876
+    second: UI_upscayl_5x_upscayl-standard-4x_127
+  - first:
+      213: -6811312334109299784
+    second: UI_upscayl_5x_upscayl-standard-4x_128
+  - first:
+      213: -3042172264316247975
+    second: UI_upscayl_5x_upscayl-standard-4x_129
+  - first:
+      213: 4240962038900211970
+    second: UI_upscayl_5x_upscayl-standard-4x_130
+  - first:
+      213: -3545128097316019718
+    second: UI_upscayl_5x_upscayl-standard-4x_131
+  - first:
+      213: 8896146674823553012
+    second: UI_upscayl_5x_upscayl-standard-4x_132
+  - first:
+      213: -4229001629981736040
+    second: UI_upscayl_5x_upscayl-standard-4x_133
+  - first:
+      213: 1466109876746688997
+    second: UI_upscayl_5x_upscayl-standard-4x_134
+  - first:
+      213: -9078629509508718150
+    second: UI_upscayl_5x_upscayl-standard-4x_135
+  - first:
+      213: 6854214273361063668
+    second: UI_upscayl_5x_upscayl-standard-4x_136
+  - first:
+      213: 5334146353131961566
+    second: UI_upscayl_5x_upscayl-standard-4x_137
+  - first:
+      213: -133249520929394446
+    second: UI_upscayl_5x_upscayl-standard-4x_138
+  - first:
+      213: 3849746960640306773
+    second: UI_upscayl_5x_upscayl-standard-4x_139
+  - first:
+      213: 7579835954195958436
+    second: UI_upscayl_5x_upscayl-standard-4x_140
+  - first:
+      213: 6825683237395652990
+    second: UI_upscayl_5x_upscayl-standard-4x_141
+  - first:
+      213: 8794654710157072528
+    second: UI_upscayl_5x_upscayl-standard-4x_142
+  - first:
+      213: -5985586128929955767
+    second: UI_upscayl_5x_upscayl-standard-4x_143
+  - first:
+      213: 559287797582641580
+    second: UI_upscayl_5x_upscayl-standard-4x_144
+  - first:
+      213: -5740370673083208208
+    second: UI_upscayl_5x_upscayl-standard-4x_145
+  - first:
+      213: 336980441297737422
+    second: UI_upscayl_5x_upscayl-standard-4x_146
+  - first:
+      213: 5535987013574334704
+    second: UI_upscayl_5x_upscayl-standard-4x_147
+  - first:
+      213: -7698765260778663003
+    second: UI_upscayl_5x_upscayl-standard-4x_148
+  - first:
+      213: -5193380206851401889
+    second: UI_upscayl_5x_upscayl-standard-4x_149
+  - first:
+      213: -4022920948272262776
+    second: UI_upscayl_5x_upscayl-standard-4x_150
+  - first:
+      213: 6071089004138758701
+    second: UI_upscayl_5x_upscayl-standard-4x_151
+  - first:
+      213: -4157270196917587667
+    second: UI_upscayl_5x_upscayl-standard-4x_152
+  - first:
+      213: 5099645291422005201
+    second: UI_upscayl_5x_upscayl-standard-4x_153
+  - first:
+      213: -405027430300443075
+    second: UI_upscayl_5x_upscayl-standard-4x_154
+  - first:
+      213: 7232234638189422941
+    second: UI_upscayl_5x_upscayl-standard-4x_155
+  - first:
+      213: -4329787714491877590
+    second: UI_upscayl_5x_upscayl-standard-4x_156
+  - first:
+      213: 7970710989011740068
+    second: UI_upscayl_5x_upscayl-standard-4x_157
+  - first:
+      213: 6681902551157906069
+    second: UI_upscayl_5x_upscayl-standard-4x_158
+  - first:
+      213: 2805502654702603502
+    second: UI_upscayl_5x_upscayl-standard-4x_159
+  - first:
+      213: -6265964917340601678
+    second: UI_upscayl_5x_upscayl-standard-4x_160
+  - first:
+      213: 5379054108659745420
+    second: UI_upscayl_5x_upscayl-standard-4x_161
+  - first:
+      213: 7308660519690875316
+    second: UI_upscayl_5x_upscayl-standard-4x_162
+  - first:
+      213: -2771112613666874394
+    second: UI_upscayl_5x_upscayl-standard-4x_163
+  - first:
+      213: -7515880775348669942
+    second: UI_upscayl_5x_upscayl-standard-4x_164
+  - first:
+      213: 6566824732837610284
+    second: UI_upscayl_5x_upscayl-standard-4x_165
+  - first:
+      213: -8567684973549784219
+    second: UI_upscayl_5x_upscayl-standard-4x_166
+  - first:
+      213: 8901101182925855499
+    second: UI_upscayl_5x_upscayl-standard-4x_167
+  - first:
+      213: 1020526502830470894
+    second: UI_upscayl_5x_upscayl-standard-4x_168
+  - first:
+      213: 3230579283104850072
+    second: UI_upscayl_5x_upscayl-standard-4x_169
+  - first:
+      213: -7049462544350653751
+    second: UI_upscayl_5x_upscayl-standard-4x_170
+  - first:
+      213: -7593103322823833394
+    second: UI_upscayl_5x_upscayl-standard-4x_171
+  - first:
+      213: -1188323062824937812
+    second: UI_upscayl_5x_upscayl-standard-4x_172
+  - first:
+      213: -3422773170749259270
+    second: UI_upscayl_5x_upscayl-standard-4x_173
+  - first:
+      213: 4665446801228506652
+    second: UI_upscayl_5x_upscayl-standard-4x_174
+  - first:
+      213: -3583199679496411728
+    second: UI_upscayl_5x_upscayl-standard-4x_175
+  - first:
+      213: 7323276895342055526
+    second: UI_upscayl_5x_upscayl-standard-4x_176
+  - first:
+      213: -6377715705021196112
+    second: UI_upscayl_5x_upscayl-standard-4x_177
+  - first:
+      213: 4703121293842089184
+    second: UI_upscayl_5x_upscayl-standard-4x_178
+  - first:
+      213: 6086003406936655536
+    second: UI_upscayl_5x_upscayl-standard-4x_179
+  - first:
+      213: -7347367759235491261
+    second: UI_upscayl_5x_upscayl-standard-4x_180
+  - first:
+      213: 8950679904374570518
+    second: UI_upscayl_5x_upscayl-standard-4x_181
+  - first:
+      213: 2125547469108801397
+    second: UI_upscayl_5x_upscayl-standard-4x_182
+  - first:
+      213: 1488463026065936815
+    second: UI_upscayl_5x_upscayl-standard-4x_183
+  - first:
+      213: 2765852021989270386
+    second: UI_upscayl_5x_upscayl-standard-4x_184
+  - first:
+      213: -3216066341496429866
+    second: UI_upscayl_5x_upscayl-standard-4x_185
+  - first:
+      213: 5406825766990154322
+    second: UI_upscayl_5x_upscayl-standard-4x_186
+  - first:
+      213: 5002515002429637838
+    second: UI_upscayl_5x_upscayl-standard-4x_187
+  - first:
+      213: 7534489660677553888
+    second: UI_upscayl_5x_upscayl-standard-4x_188
+  - first:
+      213: 4471015324365900034
+    second: UI_upscayl_5x_upscayl-standard-4x_189
+  - first:
+      213: -8041292115372206626
+    second: UI_upscayl_5x_upscayl-standard-4x_190
+  - first:
+      213: -7037291994990694444
+    second: UI_upscayl_5x_upscayl-standard-4x_191
+  - first:
+      213: -3750609585499692403
+    second: UI_upscayl_5x_upscayl-standard-4x_192
+  - first:
+      213: -2453595206299741765
+    second: UI_upscayl_5x_upscayl-standard-4x_193
+  - first:
+      213: 2600932828282683707
+    second: UI_upscayl_5x_upscayl-standard-4x_194
+  - first:
+      213: 3494657788259093083
+    second: UI_upscayl_5x_upscayl-standard-4x_195
+  - first:
+      213: 1856053640406215964
+    second: UI_upscayl_5x_upscayl-standard-4x_196
+  - first:
+      213: -4526792775556166730
+    second: UI_upscayl_5x_upscayl-standard-4x_197
+  - first:
+      213: -7551541687321134700
+    second: UI_upscayl_5x_upscayl-standard-4x_198
+  - first:
+      213: 3690419965797660854
+    second: UI_upscayl_5x_upscayl-standard-4x_199
+  - first:
+      213: 9046620112169234207
+    second: UI_upscayl_5x_upscayl-standard-4x_200
+  - first:
+      213: -6827732397390252932
+    second: UI_upscayl_5x_upscayl-standard-4x_201
+  - first:
+      213: 9115023744142402748
+    second: UI_upscayl_5x_upscayl-standard-4x_202
+  - first:
+      213: -368109574966211559
+    second: UI_upscayl_5x_upscayl-standard-4x_203
+  - first:
+      213: -627256777195344031
+    second: UI_upscayl_5x_upscayl-standard-4x_204
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1924
+        width: 242
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156d604e6bb1ee830800000000000000
+      internalID: 4102246782904751697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_1
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 1838
+        width: 254
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4597a0390cf884100800000000000000
+      internalID: 92481849624525140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_2
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1192
+        width: 970
+        height: 970
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125d652a2cad85c00800000000000000
+      internalID: 889701455887783201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_3
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1848
+        width: 1289
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3784f517e186e10800000000000000
+      internalID: 2191034690994467755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_4
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 2083
+        width: 241
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9a3205df4ef2cc0800000000000000
+      internalID: -3733513789444478491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_5
+      rect:
+        serializedVersion: 2
+        x: 4078
+        y: 2083
+        width: 164
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77cd4dfd52dc9fb0800000000000000
+      internalID: -4639602214974929026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_6
+      rect:
+        serializedVersion: 2
+        x: 4323
+        y: 2088
+        width: 234
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5509b96401b346f70800000000000000
+      internalID: 9179526881578029141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_7
+      rect:
+        serializedVersion: 2
+        x: 4638
+        y: 1998
+        width: 319
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b86833061c4a4410800000000000000
+      internalID: 1462064686462167222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_8
+      rect:
+        serializedVersion: 2
+        x: 4963
+        y: 2078
+        width: 154
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c6cad32fc101630800000000000000
+      internalID: 3895645504417852524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_9
+      rect:
+        serializedVersion: 2
+        x: 5123
+        y: 2078
+        width: 79
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a3a7ada52452d60800000000000000
+      internalID: 7864765282252372610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_10
+      rect:
+        serializedVersion: 2
+        x: 5273
+        y: 1673
+        width: 729
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda9a2403777034f0800000000000000
+      internalID: -851048993698178340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_11
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 2003
+        width: 329
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a79d80a17e41970800000000000000
+      internalID: 8724852477127129673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_12
+      rect:
+        serializedVersion: 2
+        x: 4323
+        y: 2008
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68e3b266cc0a69a0800000000000000
+      internalID: -6239160287569385366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_13
+      rect:
+        serializedVersion: 2
+        x: 4393
+        y: 2008
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b5dee102ab55460800000000000000
+      internalID: 7229889423933791052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_14
+      rect:
+        serializedVersion: 2
+        x: 4473
+        y: 2008
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95783854d51d78fe0800000000000000
+      internalID: -1186749778260424871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_15
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1998
+        width: 154
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce76c655746210f0800000000000000
+      internalID: -1147744499896254771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_16
+      rect:
+        serializedVersion: 2
+        x: 5043
+        y: 2008
+        width: 154
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd9b2a32dfc31f40800000000000000
+      internalID: 5698126455379828214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_17
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 1923
+        width: 241
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c6c082c7c029a00800000000000000
+      internalID: 761685014366415888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_18
+      rect:
+        serializedVersion: 2
+        x: 4078
+        y: 1923
+        width: 164
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d7e9131bec502f0800000000000000
+      internalID: -1007171681210434272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_19
+      rect:
+        serializedVersion: 2
+        x: 4348
+        y: 1938
+        width: 204
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2447ee6130f37f0800000000000000
+      internalID: -630782025783819584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_20
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 1843
+        width: 329
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82f6f0bd8a7105f0800000000000000
+      internalID: -792217310462545270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_21
+      rect:
+        serializedVersion: 2
+        x: 4348
+        y: 1858
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d463439e7120f4000800000000000000
+      internalID: 22238824880158285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_22
+      rect:
+        serializedVersion: 2
+        x: 4393
+        y: 1858
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3890f5b1cb8349a0800000000000000
+      internalID: -6249998193762723781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_23
+      rect:
+        serializedVersion: 2
+        x: 4473
+        y: 1858
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9317eec535c679a0800000000000000
+      internalID: -6235579799152684132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_24
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 1758
+        width: 59
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdb2d17fce340970800000000000000
+      internalID: 8720163839184911863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_25
+      rect:
+        serializedVersion: 2
+        x: 4738
+        y: 1838
+        width: 54
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748e0f0d00107c820800000000000000
+      internalID: 2938318384899614791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_26
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1838
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a20ce156b5e36210800000000000000
+      internalID: 1325155286598288038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_27
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1838
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a5e2745aff319e0800000000000000
+      internalID: -1651695552985933301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_28
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1838
+        width: 54
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12afb4d375cfd12b0800000000000000
+      internalID: -5612052109013026271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_29
+      rect:
+        serializedVersion: 2
+        x: 5043
+        y: 1758
+        width: 59
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c8df36ddf88f700800000000000000
+      internalID: 574367133517843514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_30
+      rect:
+        serializedVersion: 2
+        x: 5128
+        y: 1843
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea291b38a1749a90800000000000000
+      internalID: -7308091327955522845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_31
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1753
+        width: 94
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8405865a9473a7bb0800000000000000
+      internalID: -4937573252011110328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_32
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 1758
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0077f77d00d55c0e0800000000000000
+      internalID: -2250290180604856576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_33
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 1673
+        width: 86
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c296072ec613b690800000000000000
+      internalID: -7587695872515337533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_34
+      rect:
+        serializedVersion: 2
+        x: 2723
+        y: 1673
+        width: 239
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51f5c22eab740fc0800000000000000
+      internalID: -3529560220113702564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_35
+      rect:
+        serializedVersion: 2
+        x: 3038
+        y: 1758
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcdb890c3d943290800000000000000
+      internalID: -7911525764199359312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_36
+      rect:
+        serializedVersion: 2
+        x: 3123
+        y: 1763
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e1f31c54b61f610800000000000000
+      internalID: 1653220485560737422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_37
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 1753
+        width: 74
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c0be8f7aed80ba0800000000000000
+      internalID: -6122398880393130944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_38
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 1678
+        width: 64
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32739db1516a6d460800000000000000
+      internalID: 7266177658400618275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_39
+      rect:
+        serializedVersion: 2
+        x: 3433
+        y: 1673
+        width: 329
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67264021627c82760800000000000000
+      internalID: 7433410151299965558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_40
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 1678
+        width: 329
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6fcb730e77f0040800000000000000
+      internalID: 4616039947969558264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_41
+      rect:
+        serializedVersion: 2
+        x: 4081
+        y: 1758
+        width: 161
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a820564097ae210800000000000000
+      internalID: 1363034897014491766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_42
+      rect:
+        serializedVersion: 2
+        x: 4353
+        y: 1778
+        width: 184
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e1a241589e472e0800000000000000
+      internalID: -2128819966061175283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_43
+      rect:
+        serializedVersion: 2
+        x: 4738
+        y: 1758
+        width: 54
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba5b30f55b89dcf0800000000000000
+      internalID: -226997104986596683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_44
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1758
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb8e2a167f726c30800000000000000
+      internalID: 4351180335215446968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_45
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1758
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f92ef52d3437c300800000000000000
+      internalID: 272243739714267634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_46
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1758
+        width: 54
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40408349e054157d0800000000000000
+      internalID: -2931485953522924540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_47
+      rect:
+        serializedVersion: 2
+        x: 5123
+        y: 1758
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4344ef0fc6d773c60800000000000000
+      internalID: 7797839186668438580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_48
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1673
+        width: 94
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1695a1fa53b596730800000000000000
+      internalID: 3992822830769789281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_49
+      rect:
+        serializedVersion: 2
+        x: 2558
+        y: 1678
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ec17f1ab13b8fb50800000000000000
+      internalID: 6627243782938500326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_50
+      rect:
+        serializedVersion: 2
+        x: 3038
+        y: 1678
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c087421cf2a0dc6e0800000000000000
+      internalID: -1815783874540308468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_51
+      rect:
+        serializedVersion: 2
+        x: 3123
+        y: 1683
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3202a85a6bb24c0800000000000000
+      internalID: -4311151396173896800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_52
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 1673
+        width: 74
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761d5f821c4b176c0800000000000000
+      internalID: -4147335040122629785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_53
+      rect:
+        serializedVersion: 2
+        x: 4348
+        y: 1698
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319fe028e183cd500800000000000000
+      internalID: 422274168748177683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_54
+      rect:
+        serializedVersion: 2
+        x: 4393
+        y: 1698
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8ddb047892c4650800000000000000
+      internalID: 6218390846375319756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_55
+      rect:
+        serializedVersion: 2
+        x: 4473
+        y: 1698
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4047e03f986e18940800000000000000
+      internalID: 5296768116927132676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_56
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 1601
+        width: 239
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8d25b33e9133df0800000000000000
+      internalID: -201789094557984550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_57
+      rect:
+        serializedVersion: 2
+        x: 4078
+        y: 1598
+        width: 159
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab38e7af54876730800000000000000
+      internalID: 3992305141061008294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_58
+      rect:
+        serializedVersion: 2
+        x: 4388
+        y: 1623
+        width: 149
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2de829cfaa6c1d0800000000000000
+      internalID: -3330786872626588948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_59
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 1608
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c9252fbabc9cc30800000000000000
+      internalID: 4380256051959864434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_60
+      rect:
+        serializedVersion: 2
+        x: 4728
+        y: 1608
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad2ba485f3db1bd0800000000000000
+      internalID: -2658298103585886816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_61
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1608
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cd4ab0dcaa4d020800000000000000
+      internalID: 2365703501916724363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_62
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1613
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e234033b697b0c770800000000000000
+      internalID: 8629098743921132334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_63
+      rect:
+        serializedVersion: 2
+        x: 4963
+        y: 1613
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2c17ba80363e020800000000000000
+      internalID: 2369846717814260456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_64
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1613
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff11f86bd8b90c80800000000000000
+      internalID: -8355944381111263241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_65
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 1627
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088d363d4e6179970800000000000000
+      internalID: 8761496772127479936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_66
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 1518
+        width: 236
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba4e2d18946a94c0800000000000000
+      internalID: -4279997891374855496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_67
+      rect:
+        serializedVersion: 2
+        x: 4073
+        y: 1523
+        width: 94
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da14778a2a1ed0890800000000000000
+      internalID: -7490082516519927379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_68
+      rect:
+        serializedVersion: 2
+        x: 4388
+        y: 1543
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac6227e88474c200800000000000000
+      internalID: 199412414853311661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_69
+      rect:
+        serializedVersion: 2
+        x: 4473
+        y: 1543
+        width: 59
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c0dca76065e0a60800000000000000
+      internalID: 7642140203524361371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_70
+      rect:
+        serializedVersion: 2
+        x: 4648
+        y: 1528
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814f49c59b3fda570800000000000000
+      internalID: 8479701650856277016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_71
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 1533
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d151b911b9fcdbfb0800000000000000
+      internalID: -4630316576944745187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_72
+      rect:
+        serializedVersion: 2
+        x: 4818
+        y: 1533
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054a7aa27f7e7ea60800000000000000
+      internalID: 7703380736399090768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_73
+      rect:
+        serializedVersion: 2
+        x: 4893
+        y: 1532
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b6d2f08a1e1a060800000000000000
+      internalID: 6963094610816887597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_74
+      rect:
+        serializedVersion: 2
+        x: 4978
+        y: 1533
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cbe16692c228f3e0800000000000000
+      internalID: -2019826213733667897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_75
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1533
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a9cb896aa28f540800000000000000
+      internalID: 5041826677856705095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_76
+      rect:
+        serializedVersion: 2
+        x: 5128
+        y: 1528
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cad99db0f0956f00800000000000000
+      internalID: 1109452246864222919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_77
+      rect:
+        serializedVersion: 2
+        x: 5273
+        y: 1113
+        width: 729
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401e18faabbeccca0800000000000000
+      internalID: -5995157816896003836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_78
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 1198
+        width: 464
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3177a0b8ca894ee60800000000000000
+      internalID: 7990679505696618259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_79
+      rect:
+        serializedVersion: 2
+        x: 4648
+        y: 1458
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3235181f9c39472d0800000000000000
+      internalID: -3281835732896754909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_80
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 1453
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e9394a58bcc64f0800000000000000
+      internalID: -834068056118157688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_81
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1458
+        width: 74
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6e148c301edab70800000000000000
+      internalID: 8912026643996993214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_82
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1458
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a3cfd222db40380800000000000000
+      internalID: -9005865400336106941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_83
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1453
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ef06893b3143600800000000000000
+      internalID: 447003925093088900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_84
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1453
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b7927ee848292f0800000000000000
+      internalID: -967565220632757490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_85
+      rect:
+        serializedVersion: 2
+        x: 5123
+        y: 1453
+        width: 74
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a37d54da28b95d60800000000000000
+      internalID: 7879531517152424866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_86
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1368
+        width: 334
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586f7b3620350ff00800000000000000
+      internalID: 1148509174707517061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_87
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1368
+        width: 334
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27da5751383504ad0800000000000000
+      internalID: -2720082352465924750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_88
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 1003
+        width: 46
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee0857e5f1e16ff0800000000000000
+      internalID: -44506075032449309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_89
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1358
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2275afa0ab3ddcf0800000000000000
+      internalID: -225958844970995156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_90
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 1113
+        width: 574
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49132bef4f5a219d0800000000000000
+      internalID: -2804997146234703468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_91
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 1378
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e685f15f2d93920800000000000000
+      internalID: 2970637379462262402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_92
+      rect:
+        serializedVersion: 2
+        x: 4738
+        y: 1368
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df78fdbbc17eefb30800000000000000
+      internalID: 4323146802919344125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_93
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 1373
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2698ba3d48019a940800000000000000
+      internalID: 5307791798505802082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_94
+      rect:
+        serializedVersion: 2
+        x: 4888
+        y: 1372
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f640f17de04e390800000000000000
+      internalID: -7790085138342973555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_95
+      rect:
+        serializedVersion: 2
+        x: 4973
+        y: 1373
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a72aa3eda830760800000000000000
+      internalID: 7422929297907808830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_96
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1288
+        width: 334
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd33cd5472b077800800000000000000
+      internalID: 609968537835680735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_97
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1288
+        width: 334
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fab17e97d87dd690800000000000000
+      internalID: -7575766130695750927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_98
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1293
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ba166d43a88b5b0800000000000000
+      internalID: -5352376197590177013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_99
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1288
+        width: 84
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da360255c7c4aad0800000000000000
+      internalID: -2691807026962089257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_100
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1298
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad59f530e97d092d0800000000000000
+      internalID: -3273879855436950054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_101
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 1287
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78575bbc172a77700800000000000000
+      internalID: 538077290126734727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_102
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1043
+        width: 24
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0527e661430592010800000000000000
+      internalID: 1164550163296842320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_103
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 1138
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82de6ce5021f1f960800000000000000
+      internalID: 7634147964701044008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_104
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 1138
+        width: 44
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121141684deaddb20800000000000000
+      internalID: 3160874741289718049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_105
+      rect:
+        serializedVersion: 2
+        x: 4073
+        y: 77
+        width: 334
+        height: 1290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832e416ecf5894240800000000000000
+      internalID: 4776496201041502776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_106
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 1288
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a343d3f401068b080800000000000000
+      internalID: -9171475017974860742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_107
+      rect:
+        serializedVersion: 2
+        x: 4728
+        y: 1288
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab637233a49951b0800000000000000
+      internalID: -5667335227422053459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_108
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1288
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94bbfac45320bc30800000000000000
+      internalID: 4373034085266470044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_109
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1293
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f89882cb1a67f70800000000000000
+      internalID: 9184706319574732565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_110
+      rect:
+        serializedVersion: 2
+        x: 4963
+        y: 1293
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a444572bd7609710800000000000000
+      internalID: 1697971250474009769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_111
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1293
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28389ed15745269c0800000000000000
+      internalID: -3935490262378642558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_112
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 1307
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77fb6d2aeef6bc0d0800000000000000
+      internalID: -3401502022823395465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_113
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1208
+        width: 334
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7dce036a19c9490800000000000000
+      internalID: -7738149916757927995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_114
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1208
+        width: 334
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d11b1f895c55360800000000000000
+      internalID: 7157844443455888647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_115
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1218
+        width: 74
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b16aa1886f3453c0800000000000000
+      internalID: -4371799620185333324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_116
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1213
+        width: 84
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08293830926a2f090800000000000000
+      internalID: -8002150892801125760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_117
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1223
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf1b900bfccb0220800000000000000
+      internalID: 2453279800452390837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_118
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 1207
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7c9b141e875e170800000000000000
+      internalID: 8207098804818266025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_119
+      rect:
+        serializedVersion: 2
+        x: 4648
+        y: 1208
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1761807fa653ef100800000000000000
+      internalID: 143610971649742449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_120
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 1213
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1862a04588278fda0800000000000000
+      internalID: -5910848581072705919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_121
+      rect:
+        serializedVersion: 2
+        x: 4818
+        y: 1213
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804f2b95990094790800000000000000
+      internalID: -7545499042047659000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_122
+      rect:
+        serializedVersion: 2
+        x: 4893
+        y: 1212
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2c5bf29d115bf90800000000000000
+      internalID: -6938620026388364610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_123
+      rect:
+        serializedVersion: 2
+        x: 4978
+        y: 1213
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73901fd6ad2f97b60800000000000000
+      internalID: 7744488054201583927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_124
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1213
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363e3c727ffdfb440800000000000000
+      internalID: 4953924367747900259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_125
+      rect:
+        serializedVersion: 2
+        x: 5128
+        y: 1208
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7531391aa0a94480800000000000000
+      internalID: -8914417334975646339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_126
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1132
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff590c991c49ada30800000000000000
+      internalID: 4240865558351877631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_127
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1132
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40376e4015262af20800000000000000
+      internalID: 3432413966123823876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_128
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 878
+        width: 494
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bbad2f158b5971a0800000000000000
+      internalID: -6811312334109299784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_129
+      rect:
+        serializedVersion: 2
+        x: 4648
+        y: 1138
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95062e7917808c5d0800000000000000
+      internalID: -3042172264316247975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_130
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 1133
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201409a318ceada30800000000000000
+      internalID: 4240962038900211970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_131
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1138
+        width: 74
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1e83447cc2dcec0800000000000000
+      internalID: -3545128097316019718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_132
+      rect:
+        serializedVersion: 2
+        x: 4883
+        y: 1138
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff51a65446757b70800000000000000
+      internalID: 8896146674823553012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_133
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1133
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893046a7c619f45c0800000000000000
+      internalID: -4229001629981736040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_134
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 1133
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e99d254a2ba85410800000000000000
+      internalID: 1466109876746688997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_135
+      rect:
+        serializedVersion: 2
+        x: 5123
+        y: 1133
+        width: 74
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1aa5ecf8a320280800000000000000
+      internalID: -9078629509508718150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_136
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 1063
+        width: 254
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe2912019f0f1f50800000000000000
+      internalID: 6854214273361063668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_137
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 1058
+        width: 204
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc306eb8d1b60a40800000000000000
+      internalID: 5334146353131961566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_138
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 1058
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f03386444a962ef0800000000000000
+      internalID: -133249520929394446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_139
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 1058
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55eea10c67c0d6530800000000000000
+      internalID: 3849746960640306773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_140
+      rect:
+        serializedVersion: 2
+        x: 4738
+        y: 1048
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa859104acf03960800000000000000
+      internalID: 7579835954195958436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_141
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 1053
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e716e4a8db2b9be50800000000000000
+      internalID: 6825683237395652990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_142
+      rect:
+        serializedVersion: 2
+        x: 4888
+        y: 1052
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098d021ecd3ec0a70800000000000000
+      internalID: 8794654710157072528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_143
+      rect:
+        serializedVersion: 2
+        x: 4973
+        y: 1053
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940ef94f02deeeca0800000000000000
+      internalID: -5985586128929955767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_144
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 872
+        width: 254
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9bf16e94df2c700800000000000000
+      internalID: 559287797582641580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_145
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 963
+        width: 44
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd2ecf594b1650b0800000000000000
+      internalID: -5740370673083208208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_146
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 967
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec65ecb0de13da400800000000000000
+      internalID: 336980441297737422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_147
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 963
+        width: 44
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f81641abd6c3dc40800000000000000
+      internalID: 5535987013574334704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_148
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 972
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a39b2ef8cd782590800000000000000
+      internalID: -7698765260778663003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_149
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1008
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57d313b7386de7b0800000000000000
+      internalID: -5193380206851401889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_150
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 983
+        width: 254
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88111ce36b6bb28c0800000000000000
+      internalID: -4022920948272262776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_151
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 818
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2288738847d04450800000000000000
+      internalID: 6071089004138758701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_152
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 818
+        width: 44
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d21b86538c86e46c0800000000000000
+      internalID: -4157270196917587667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_153
+      rect:
+        serializedVersion: 2
+        x: 5273
+        y: 313
+        width: 494
+        height: 734
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7b3bb9f5495c640800000000000000
+      internalID: 5099645291422005201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_154
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 893
+        width: 384
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e17a4b2bd016af0800000000000000
+      internalID: -405027430300443075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_155
+      rect:
+        serializedVersion: 2
+        x: 3113
+        y: 903
+        width: 254
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d596e8dd51f0e5460800000000000000
+      internalID: 7232234638189422941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_156
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 478
+        width: 494
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a277cdc830189e3c0800000000000000
+      internalID: -4329787714491877590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_157
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 807
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5e853f967ad9e60800000000000000
+      internalID: 7970710989011740068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_158
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 807
+        width: 84
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a1b81d7f2eabc50800000000000000
+      internalID: 6681902551157906069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_159
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 863
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecc6fddcc52fe620800000000000000
+      internalID: 2805502654702603502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_160
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 853
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b28ade2b12da09a0800000000000000
+      internalID: -6265964917340601678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_161
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 853
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82054e563d36aa40800000000000000
+      internalID: 5379054108659745420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_162
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 853
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1b81c05049d6560800000000000000
+      internalID: 7308660519690875316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_163
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 713
+        width: 334
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb18c582c70b89d0800000000000000
+      internalID: -2771112613666874394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_164
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 813
+        width: 334
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02b723714a32b790800000000000000
+      internalID: -7515880775348669942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_165
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 818
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23090f4d4c022b50800000000000000
+      internalID: 6566824732837610284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_166
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 818
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563fc1cf8e7791980800000000000000
+      internalID: -8567684973549784219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_167
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 793
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0bda16ad50178b70800000000000000
+      internalID: 8901101182925855499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_168
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 793
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6f4158273a92e00800000000000000
+      internalID: 1020526502830470894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_169
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 793
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 890633cddb255dc20800000000000000
+      internalID: 3230579283104850072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_170
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 793
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2de826a274b2e90800000000000000
+      internalID: -7049462544350653751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_171
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 733
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec84f3402c0ef9690800000000000000
+      internalID: -7593103322823833394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_172
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 748
+        width: 314
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca65ae9687a328fe0800000000000000
+      internalID: -1188323062824937812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_173
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 733
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1c0c29feddf70d0800000000000000
+      internalID: -3422773170749259270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_174
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 733
+        width: 334
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1625b9a52ffeb040800000000000000
+      internalID: 4665446801228506652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_175
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 738
+        width: 204
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5a25840eae54ec0800000000000000
+      internalID: -3583199679496411728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_176
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 738
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66050b2398181a560800000000000000
+      internalID: 7323276895342055526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_177
+      rect:
+        serializedVersion: 2
+        x: 2553
+        y: 653
+        width: 254
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b818cb5b5dcd77a0800000000000000
+      internalID: -6377715705021196112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_178
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 498
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4880706e7d44140800000000000000
+      internalID: 4703121293842089184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_179
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 493
+        width: 44
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6c6448ad3d57450800000000000000
+      internalID: 6086003406936655536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_180
+      rect:
+        serializedVersion: 2
+        x: 4638
+        y: 473
+        width: 249
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a5c9473f7e80a90800000000000000
+      internalID: -7347367759235491261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_181
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 573
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e397643f3373c70800000000000000
+      internalID: 8950679904374570518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_182
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 578
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fe57959267f7d10800000000000000
+      internalID: 2125547469108801397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_183
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 573
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa196f96c3518a410800000000000000
+      internalID: 1488463026065936815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_184
+      rect:
+        serializedVersion: 2
+        x: 3538
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27367f782c7426620800000000000000
+      internalID: 2765852021989270386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_185
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 493
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2e30da3bc3e53d0800000000000000
+      internalID: -3216066341496429866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_186
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 498
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a80e37367e80b40800000000000000
+      internalID: 5406825766990154322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_187
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 493
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec48167e3e08c6540800000000000000
+      internalID: 5002515002429637838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_188
+      rect:
+        serializedVersion: 2
+        x: 3453
+        y: 413
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eef98c4d62ef8860800000000000000
+      internalID: 7534489660677553888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_189
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 418
+        width: 204
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2094822cfbc3c0e30800000000000000
+      internalID: 4471015324365900034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_190
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 418
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed51718fc67976090800000000000000
+      internalID: -8041292115372206626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_191
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 183
+        width: 195
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df21e93734865e90800000000000000
+      internalID: -7037291994990694444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_192
+      rect:
+        serializedVersion: 2
+        x: 3048
+        y: 273
+        width: 64
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82ad1d147823fbc0800000000000000
+      internalID: -3750609585499692403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_193
+      rect:
+        serializedVersion: 2
+        x: 3048
+        y: 166
+        width: 64
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb117e9d82413fdd0800000000000000
+      internalID: -2453595206299741765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_194
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 183
+        width: 184
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31017280ae581420800000000000000
+      internalID: 2600932828282683707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_195
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 183
+        width: 24
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a4cb03eb48f7030800000000000000
+      internalID: 3494657788259093083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_196
+      rect:
+        serializedVersion: 2
+        x: 3512
+        y: 238
+        width: 96
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1dab70c3f602c910800000000000000
+      internalID: 1856053640406215964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_197
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 178
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb8b2164f99d21c0800000000000000
+      internalID: -4526792775556166730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_198
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 173
+        width: 44
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4997bac58d8833790800000000000000
+      internalID: -7551541687321134700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_199
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 88
+        width: 124
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8f06df761073330800000000000000
+      internalID: 3690419965797660854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_200
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 88
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f60cb9f0d0c8d70800000000000000
+      internalID: 9046620112169234207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_201
+      rect:
+        serializedVersion: 2
+        x: 3033
+        y: 73
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74b0283f850f31a0800000000000000
+      internalID: -6827732397390252932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_202
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 103
+        width: 184
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4ebd44dc11f7e70800000000000000
+      internalID: 9115023744142402748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_203
+      rect:
+        serializedVersion: 2
+        x: 3778
+        y: 98
+        width: 204
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c08b9ba4634eaf0800000000000000
+      internalID: -368109574966211559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_upscayl_5x_upscayl-standard-4x_204
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fa054d8498b47f0800000000000000
+      internalID: -627256777195344031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 933d550eedb4e0b4e98b4044980038c5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UI_upscayl_5x_upscayl-standard-4x_0: 4102246782904751697
+      UI_upscayl_5x_upscayl-standard-4x_1: 92481849624525140
+      UI_upscayl_5x_upscayl-standard-4x_10: -851048993698178340
+      UI_upscayl_5x_upscayl-standard-4x_100: -3273879855436950054
+      UI_upscayl_5x_upscayl-standard-4x_101: 538077290126734727
+      UI_upscayl_5x_upscayl-standard-4x_102: 1164550163296842320
+      UI_upscayl_5x_upscayl-standard-4x_103: 7634147964701044008
+      UI_upscayl_5x_upscayl-standard-4x_104: 3160874741289718049
+      UI_upscayl_5x_upscayl-standard-4x_105: 4776496201041502776
+      UI_upscayl_5x_upscayl-standard-4x_106: -9171475017974860742
+      UI_upscayl_5x_upscayl-standard-4x_107: -5667335227422053459
+      UI_upscayl_5x_upscayl-standard-4x_108: 4373034085266470044
+      UI_upscayl_5x_upscayl-standard-4x_109: 9184706319574732565
+      UI_upscayl_5x_upscayl-standard-4x_11: 8724852477127129673
+      UI_upscayl_5x_upscayl-standard-4x_110: 1697971250474009769
+      UI_upscayl_5x_upscayl-standard-4x_111: -3935490262378642558
+      UI_upscayl_5x_upscayl-standard-4x_112: -3401502022823395465
+      UI_upscayl_5x_upscayl-standard-4x_113: -7738149916757927995
+      UI_upscayl_5x_upscayl-standard-4x_114: 7157844443455888647
+      UI_upscayl_5x_upscayl-standard-4x_115: -4371799620185333324
+      UI_upscayl_5x_upscayl-standard-4x_116: -8002150892801125760
+      UI_upscayl_5x_upscayl-standard-4x_117: 2453279800452390837
+      UI_upscayl_5x_upscayl-standard-4x_118: 8207098804818266025
+      UI_upscayl_5x_upscayl-standard-4x_119: 143610971649742449
+      UI_upscayl_5x_upscayl-standard-4x_12: -6239160287569385366
+      UI_upscayl_5x_upscayl-standard-4x_120: -5910848581072705919
+      UI_upscayl_5x_upscayl-standard-4x_121: -7545499042047659000
+      UI_upscayl_5x_upscayl-standard-4x_122: -6938620026388364610
+      UI_upscayl_5x_upscayl-standard-4x_123: 7744488054201583927
+      UI_upscayl_5x_upscayl-standard-4x_124: 4953924367747900259
+      UI_upscayl_5x_upscayl-standard-4x_125: -8914417334975646339
+      UI_upscayl_5x_upscayl-standard-4x_126: 4240865558351877631
+      UI_upscayl_5x_upscayl-standard-4x_127: 3432413966123823876
+      UI_upscayl_5x_upscayl-standard-4x_128: -6811312334109299784
+      UI_upscayl_5x_upscayl-standard-4x_129: -3042172264316247975
+      UI_upscayl_5x_upscayl-standard-4x_13: 7229889423933791052
+      UI_upscayl_5x_upscayl-standard-4x_130: 4240962038900211970
+      UI_upscayl_5x_upscayl-standard-4x_131: -3545128097316019718
+      UI_upscayl_5x_upscayl-standard-4x_132: 8896146674823553012
+      UI_upscayl_5x_upscayl-standard-4x_133: -4229001629981736040
+      UI_upscayl_5x_upscayl-standard-4x_134: 1466109876746688997
+      UI_upscayl_5x_upscayl-standard-4x_135: -9078629509508718150
+      UI_upscayl_5x_upscayl-standard-4x_136: 6854214273361063668
+      UI_upscayl_5x_upscayl-standard-4x_137: 5334146353131961566
+      UI_upscayl_5x_upscayl-standard-4x_138: -133249520929394446
+      UI_upscayl_5x_upscayl-standard-4x_139: 3849746960640306773
+      UI_upscayl_5x_upscayl-standard-4x_14: -1186749778260424871
+      UI_upscayl_5x_upscayl-standard-4x_140: 7579835954195958436
+      UI_upscayl_5x_upscayl-standard-4x_141: 6825683237395652990
+      UI_upscayl_5x_upscayl-standard-4x_142: 8794654710157072528
+      UI_upscayl_5x_upscayl-standard-4x_143: -5985586128929955767
+      UI_upscayl_5x_upscayl-standard-4x_144: 559287797582641580
+      UI_upscayl_5x_upscayl-standard-4x_145: -5740370673083208208
+      UI_upscayl_5x_upscayl-standard-4x_146: 336980441297737422
+      UI_upscayl_5x_upscayl-standard-4x_147: 5535987013574334704
+      UI_upscayl_5x_upscayl-standard-4x_148: -7698765260778663003
+      UI_upscayl_5x_upscayl-standard-4x_149: -5193380206851401889
+      UI_upscayl_5x_upscayl-standard-4x_15: -1147744499896254771
+      UI_upscayl_5x_upscayl-standard-4x_150: -4022920948272262776
+      UI_upscayl_5x_upscayl-standard-4x_151: 6071089004138758701
+      UI_upscayl_5x_upscayl-standard-4x_152: -4157270196917587667
+      UI_upscayl_5x_upscayl-standard-4x_153: 5099645291422005201
+      UI_upscayl_5x_upscayl-standard-4x_154: -405027430300443075
+      UI_upscayl_5x_upscayl-standard-4x_155: 7232234638189422941
+      UI_upscayl_5x_upscayl-standard-4x_156: -4329787714491877590
+      UI_upscayl_5x_upscayl-standard-4x_157: 7970710989011740068
+      UI_upscayl_5x_upscayl-standard-4x_158: 6681902551157906069
+      UI_upscayl_5x_upscayl-standard-4x_159: 2805502654702603502
+      UI_upscayl_5x_upscayl-standard-4x_16: 5698126455379828214
+      UI_upscayl_5x_upscayl-standard-4x_160: -6265964917340601678
+      UI_upscayl_5x_upscayl-standard-4x_161: 5379054108659745420
+      UI_upscayl_5x_upscayl-standard-4x_162: 7308660519690875316
+      UI_upscayl_5x_upscayl-standard-4x_163: -2771112613666874394
+      UI_upscayl_5x_upscayl-standard-4x_164: -7515880775348669942
+      UI_upscayl_5x_upscayl-standard-4x_165: 6566824732837610284
+      UI_upscayl_5x_upscayl-standard-4x_166: -8567684973549784219
+      UI_upscayl_5x_upscayl-standard-4x_167: 8901101182925855499
+      UI_upscayl_5x_upscayl-standard-4x_168: 1020526502830470894
+      UI_upscayl_5x_upscayl-standard-4x_169: 3230579283104850072
+      UI_upscayl_5x_upscayl-standard-4x_17: 761685014366415888
+      UI_upscayl_5x_upscayl-standard-4x_170: -7049462544350653751
+      UI_upscayl_5x_upscayl-standard-4x_171: -7593103322823833394
+      UI_upscayl_5x_upscayl-standard-4x_172: -1188323062824937812
+      UI_upscayl_5x_upscayl-standard-4x_173: -3422773170749259270
+      UI_upscayl_5x_upscayl-standard-4x_174: 4665446801228506652
+      UI_upscayl_5x_upscayl-standard-4x_175: -3583199679496411728
+      UI_upscayl_5x_upscayl-standard-4x_176: 7323276895342055526
+      UI_upscayl_5x_upscayl-standard-4x_177: -6377715705021196112
+      UI_upscayl_5x_upscayl-standard-4x_178: 4703121293842089184
+      UI_upscayl_5x_upscayl-standard-4x_179: 6086003406936655536
+      UI_upscayl_5x_upscayl-standard-4x_18: -1007171681210434272
+      UI_upscayl_5x_upscayl-standard-4x_180: -7347367759235491261
+      UI_upscayl_5x_upscayl-standard-4x_181: 8950679904374570518
+      UI_upscayl_5x_upscayl-standard-4x_182: 2125547469108801397
+      UI_upscayl_5x_upscayl-standard-4x_183: 1488463026065936815
+      UI_upscayl_5x_upscayl-standard-4x_184: 2765852021989270386
+      UI_upscayl_5x_upscayl-standard-4x_185: -3216066341496429866
+      UI_upscayl_5x_upscayl-standard-4x_186: 5406825766990154322
+      UI_upscayl_5x_upscayl-standard-4x_187: 5002515002429637838
+      UI_upscayl_5x_upscayl-standard-4x_188: 7534489660677553888
+      UI_upscayl_5x_upscayl-standard-4x_189: 4471015324365900034
+      UI_upscayl_5x_upscayl-standard-4x_19: -630782025783819584
+      UI_upscayl_5x_upscayl-standard-4x_190: -8041292115372206626
+      UI_upscayl_5x_upscayl-standard-4x_191: -7037291994990694444
+      UI_upscayl_5x_upscayl-standard-4x_192: -3750609585499692403
+      UI_upscayl_5x_upscayl-standard-4x_193: -2453595206299741765
+      UI_upscayl_5x_upscayl-standard-4x_194: 2600932828282683707
+      UI_upscayl_5x_upscayl-standard-4x_195: 3494657788259093083
+      UI_upscayl_5x_upscayl-standard-4x_196: 1856053640406215964
+      UI_upscayl_5x_upscayl-standard-4x_197: -4526792775556166730
+      UI_upscayl_5x_upscayl-standard-4x_198: -7551541687321134700
+      UI_upscayl_5x_upscayl-standard-4x_199: 3690419965797660854
+      UI_upscayl_5x_upscayl-standard-4x_2: 889701455887783201
+      UI_upscayl_5x_upscayl-standard-4x_20: -792217310462545270
+      UI_upscayl_5x_upscayl-standard-4x_200: 9046620112169234207
+      UI_upscayl_5x_upscayl-standard-4x_201: -6827732397390252932
+      UI_upscayl_5x_upscayl-standard-4x_202: 9115023744142402748
+      UI_upscayl_5x_upscayl-standard-4x_203: -368109574966211559
+      UI_upscayl_5x_upscayl-standard-4x_204: -627256777195344031
+      UI_upscayl_5x_upscayl-standard-4x_21: 22238824880158285
+      UI_upscayl_5x_upscayl-standard-4x_22: -6249998193762723781
+      UI_upscayl_5x_upscayl-standard-4x_23: -6235579799152684132
+      UI_upscayl_5x_upscayl-standard-4x_24: 8720163839184911863
+      UI_upscayl_5x_upscayl-standard-4x_25: 2938318384899614791
+      UI_upscayl_5x_upscayl-standard-4x_26: 1325155286598288038
+      UI_upscayl_5x_upscayl-standard-4x_27: -1651695552985933301
+      UI_upscayl_5x_upscayl-standard-4x_28: -5612052109013026271
+      UI_upscayl_5x_upscayl-standard-4x_29: 574367133517843514
+      UI_upscayl_5x_upscayl-standard-4x_3: 2191034690994467755
+      UI_upscayl_5x_upscayl-standard-4x_30: -7308091327955522845
+      UI_upscayl_5x_upscayl-standard-4x_31: -4937573252011110328
+      UI_upscayl_5x_upscayl-standard-4x_32: -2250290180604856576
+      UI_upscayl_5x_upscayl-standard-4x_33: -7587695872515337533
+      UI_upscayl_5x_upscayl-standard-4x_34: -3529560220113702564
+      UI_upscayl_5x_upscayl-standard-4x_35: -7911525764199359312
+      UI_upscayl_5x_upscayl-standard-4x_36: 1653220485560737422
+      UI_upscayl_5x_upscayl-standard-4x_37: -6122398880393130944
+      UI_upscayl_5x_upscayl-standard-4x_38: 7266177658400618275
+      UI_upscayl_5x_upscayl-standard-4x_39: 7433410151299965558
+      UI_upscayl_5x_upscayl-standard-4x_4: -3733513789444478491
+      UI_upscayl_5x_upscayl-standard-4x_40: 4616039947969558264
+      UI_upscayl_5x_upscayl-standard-4x_41: 1363034897014491766
+      UI_upscayl_5x_upscayl-standard-4x_42: -2128819966061175283
+      UI_upscayl_5x_upscayl-standard-4x_43: -226997104986596683
+      UI_upscayl_5x_upscayl-standard-4x_44: 4351180335215446968
+      UI_upscayl_5x_upscayl-standard-4x_45: 272243739714267634
+      UI_upscayl_5x_upscayl-standard-4x_46: -2931485953522924540
+      UI_upscayl_5x_upscayl-standard-4x_47: 7797839186668438580
+      UI_upscayl_5x_upscayl-standard-4x_48: 3992822830769789281
+      UI_upscayl_5x_upscayl-standard-4x_49: 6627243782938500326
+      UI_upscayl_5x_upscayl-standard-4x_5: -4639602214974929026
+      UI_upscayl_5x_upscayl-standard-4x_50: -1815783874540308468
+      UI_upscayl_5x_upscayl-standard-4x_51: -4311151396173896800
+      UI_upscayl_5x_upscayl-standard-4x_52: -4147335040122629785
+      UI_upscayl_5x_upscayl-standard-4x_53: 422274168748177683
+      UI_upscayl_5x_upscayl-standard-4x_54: 6218390846375319756
+      UI_upscayl_5x_upscayl-standard-4x_55: 5296768116927132676
+      UI_upscayl_5x_upscayl-standard-4x_56: -201789094557984550
+      UI_upscayl_5x_upscayl-standard-4x_57: 3992305141061008294
+      UI_upscayl_5x_upscayl-standard-4x_58: -3330786872626588948
+      UI_upscayl_5x_upscayl-standard-4x_59: 4380256051959864434
+      UI_upscayl_5x_upscayl-standard-4x_6: 9179526881578029141
+      UI_upscayl_5x_upscayl-standard-4x_60: -2658298103585886816
+      UI_upscayl_5x_upscayl-standard-4x_61: 2365703501916724363
+      UI_upscayl_5x_upscayl-standard-4x_62: 8629098743921132334
+      UI_upscayl_5x_upscayl-standard-4x_63: 2369846717814260456
+      UI_upscayl_5x_upscayl-standard-4x_64: -8355944381111263241
+      UI_upscayl_5x_upscayl-standard-4x_65: 8761496772127479936
+      UI_upscayl_5x_upscayl-standard-4x_66: -4279997891374855496
+      UI_upscayl_5x_upscayl-standard-4x_67: -7490082516519927379
+      UI_upscayl_5x_upscayl-standard-4x_68: 199412414853311661
+      UI_upscayl_5x_upscayl-standard-4x_69: 7642140203524361371
+      UI_upscayl_5x_upscayl-standard-4x_7: 1462064686462167222
+      UI_upscayl_5x_upscayl-standard-4x_70: 8479701650856277016
+      UI_upscayl_5x_upscayl-standard-4x_71: -4630316576944745187
+      UI_upscayl_5x_upscayl-standard-4x_72: 7703380736399090768
+      UI_upscayl_5x_upscayl-standard-4x_73: 6963094610816887597
+      UI_upscayl_5x_upscayl-standard-4x_74: -2019826213733667897
+      UI_upscayl_5x_upscayl-standard-4x_75: 5041826677856705095
+      UI_upscayl_5x_upscayl-standard-4x_76: 1109452246864222919
+      UI_upscayl_5x_upscayl-standard-4x_77: -5995157816896003836
+      UI_upscayl_5x_upscayl-standard-4x_78: 7990679505696618259
+      UI_upscayl_5x_upscayl-standard-4x_79: -3281835732896754909
+      UI_upscayl_5x_upscayl-standard-4x_8: 3895645504417852524
+      UI_upscayl_5x_upscayl-standard-4x_80: -834068056118157688
+      UI_upscayl_5x_upscayl-standard-4x_81: 8912026643996993214
+      UI_upscayl_5x_upscayl-standard-4x_82: -9005865400336106941
+      UI_upscayl_5x_upscayl-standard-4x_83: 447003925093088900
+      UI_upscayl_5x_upscayl-standard-4x_84: -967565220632757490
+      UI_upscayl_5x_upscayl-standard-4x_85: 7879531517152424866
+      UI_upscayl_5x_upscayl-standard-4x_86: 1148509174707517061
+      UI_upscayl_5x_upscayl-standard-4x_87: -2720082352465924750
+      UI_upscayl_5x_upscayl-standard-4x_88: -44506075032449309
+      UI_upscayl_5x_upscayl-standard-4x_89: -225958844970995156
+      UI_upscayl_5x_upscayl-standard-4x_9: 7864765282252372610
+      UI_upscayl_5x_upscayl-standard-4x_90: -2804997146234703468
+      UI_upscayl_5x_upscayl-standard-4x_91: 2970637379462262402
+      UI_upscayl_5x_upscayl-standard-4x_92: 4323146802919344125
+      UI_upscayl_5x_upscayl-standard-4x_93: 5307791798505802082
+      UI_upscayl_5x_upscayl-standard-4x_94: -7790085138342973555
+      UI_upscayl_5x_upscayl-standard-4x_95: 7422929297907808830
+      UI_upscayl_5x_upscayl-standard-4x_96: 609968537835680735
+      UI_upscayl_5x_upscayl-standard-4x_97: -7575766130695750927
+      UI_upscayl_5x_upscayl-standard-4x_98: -5352376197590177013
+      UI_upscayl_5x_upscayl-standard-4x_99: -2691807026962089257
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
