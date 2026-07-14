@@ -16,12 +16,14 @@ public class UIDirector : MonoBehaviour
     private PauseMenu _pauseMenu;
     private bool _isTimerStop;
     private SaveData _loadFastestData;
+    private AudioSource _pauseAudioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _mainCanvas.enabled = true;
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
+        _pauseAudioSource = _pauseCanvas.GetComponent<AudioSource>();
         if (_data == null )
         {
             _data = new Score();
@@ -63,10 +65,19 @@ public class UIDirector : MonoBehaviour
         {
             //Canvasの状態を入れ替える
             _pauseCanvas.enabled = !_pauseCanvas.enabled;
-
+            _pauseAudioSource.Play();
             //ポーズキャンバスが有効なら時間を止めておく
-            if (_pauseCanvas.enabled) Time.timeScale = 0.0f;
-            else Time.timeScale = 1.0f;
+            if (_pauseCanvas.enabled) 
+            {
+                _playerContorller.IsEnableInput = false;
+                Time.timeScale = 0.0f; 
+            }
+
+            else 
+            {
+                _playerContorller.IsEnableInput = true;
+                Time.timeScale = 1.0f; 
+            }
         }
     }
     public void SetData(SaveData data)

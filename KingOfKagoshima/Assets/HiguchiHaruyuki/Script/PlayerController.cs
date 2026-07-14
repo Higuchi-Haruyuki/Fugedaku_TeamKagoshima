@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     //二段ジャンプが許可されているか(アイテムの所持状況は考慮しない)
     [SerializeField, ReadOnly] private bool _isEnableDoubleJump = false;
 
+    [ReadOnly] public bool IsEnableInput { get; set; } = true;
+
     //<コンポーネントの変数>
     private PlayerItemSystem _itemSystem;
     /// <summary>
@@ -107,6 +109,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Update()
     {
+
         CheckChargeing();
         ChargeJump();
         Move();
@@ -136,8 +139,14 @@ public class PlayerController : MonoBehaviour
 
         //<プレイヤーの状態の処理>
         //いずれかの移動キーが押されているかを取得する。
-        bool isPressedMoveKey = Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed
+        bool isPressedMoveKey = false;
+
+        if ((IsEnableInput))
+        {
+            isPressedMoveKey = Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed
             || Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed;
+        }
+        
 
         //ジャンプチャージ中
         //ジャンプチャージ中のフラグがtrueのときで地面に足がついているとき
@@ -237,6 +246,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void CheckChargeing()
     {
+        if (!IsEnableInput) return;
+
         if (Keyboard.current.spaceKey.isPressed)
         {
             if (!_isGround) return;
@@ -258,6 +269,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _moveInput = -1;
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _moveInput = 1f;
 
+        if (!IsEnableInput) _moveInput = 0.0f;
 
         //ジャンプため中は入力無効
         if (_isJumpPressed) _moveInput = 0;
@@ -298,6 +310,7 @@ public class PlayerController : MonoBehaviour
 
         //ジャンプフラグをリセットする。
         _isJump = false;
+        _isEnableDoubleJump = true;
 
         //ジャンプ関連のメンバ変数をリセットする。
         _chargePower = 0f;
@@ -312,6 +325,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void ChargeJump()
     {
+        if (!IsEnableInput) return;
+
         //ジャンプキーを離したときまたはチャージ値が最大チャージ値を超えたときにジャンプする
         if (Keyboard.current.spaceKey.wasReleasedThisFrame || _chargePower >= _maxCharge)
         {
@@ -325,6 +340,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void SetJumpChargeX()
     {
+        if (!IsEnableInput) return;
+
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _jumpChargeX = -1;
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _jumpChargeX = 1f;
 

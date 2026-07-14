@@ -2092,9 +2092,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 876570342988385419, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
+    - target: {fileID: 201363485472324519, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2063340902838146303, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2104,32 +2104,12 @@ PrefabInstance:
       propertyPath: _inputSystem
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2489452474448353874, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2218427808371434498, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
+      propertyPath: _playerContorller
       value: 
-      objectReference: {fileID: 4102246782904751697, guid: 099bc6e97d19ef9408bff33868a72695, type: 3}
-    - target: {fileID: 2489452474448353874, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.g
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489452474448353874, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 876758961}
     - target: {fileID: 2707514188802400927, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2716442584025268700, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4102246782904751697, guid: 099bc6e97d19ef9408bff33868a72695, type: 3}
-    - target: {fileID: 2716442584025268700, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.g
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 2716442584025268700, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2787656693046364989, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
@@ -2140,18 +2120,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4672976338050216173, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4102246782904751697, guid: 099bc6e97d19ef9408bff33868a72695, type: 3}
-    - target: {fileID: 4672976338050216173, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.g
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672976338050216173, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5205833771163202422, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_Name
       value: MainSceneUI
@@ -2160,41 +2128,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5260487795161976025, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4102246782904751697, guid: 099bc6e97d19ef9408bff33868a72695, type: 3}
-    - target: {fileID: 5260487795161976025, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5260487795161976025, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7226033
-      objectReference: {fileID: 0}
-    - target: {fileID: 5260487795161976025, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5691374410103758999, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113089062400055167, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4102246782904751697, guid: 099bc6e97d19ef9408bff33868a72695, type: 3}
-    - target: {fileID: 6113089062400055167, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.b
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113089062400055167, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.g
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113089062400055167, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6297502317135021533, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: _player

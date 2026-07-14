@@ -12,6 +12,7 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     //SerializeField付きprivateメンバ変数
+    [SerializeField] private PlayerController _playerContorller;
     [SerializeField] private GameObject _infoWindow;
     [SerializeField] private GameObject _giveupMenu;
     [SerializeField] private GameObject _keyConfigMenu;
@@ -19,7 +20,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private List<GameObject> _choiceMenuCheckBoxList;
     [SerializeField] private List<GameObject> _giveupMenuCheckBoxList;
     [SerializeField] private List<GameObject> _breakGameMenuCheckBoxList;
-
     //privateメンバ変数
     private Canvas _pauseCanvas;
     private char _currentMenu = 'c';
@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
     private List<bool> _isGiveupMenuCheckBoxList = new();
     private List<bool> _isBreakGameMenuCheckBoxList = new();
     private TextMeshProUGUI _timeText, _jumpCountText, _fallCountText;
+    private AudioSource _audioSource;
     //
     public Action OnGiveup;
 
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         _pauseCanvas = GetComponent<Canvas>();
+        _audioSource = GetComponent<AudioSource>();
         _giveupMenu.SetActive(false);
         _timeText = _infoWindow.transform.Find("Time").GetComponent<TextMeshProUGUI>();
         _jumpCountText = _infoWindow.transform.Find("JumpCount").GetComponent<TextMeshProUGUI>();
@@ -184,6 +186,7 @@ public class PauseMenu : MonoBehaviour
         //SPACEキーが押されたとき、今選択されている項目を決定する
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            _audioSource.Play();
             //現在のメニューの状態や選択状態で呼び出す関数を変える
             if (_currentMenu == 'c')
             {
@@ -257,6 +260,7 @@ public class PauseMenu : MonoBehaviour
         _pauseCanvas.enabled = false;
         _giveupMenu.SetActive(false);
         Time.timeScale = 1.0f;
+        _playerContorller.IsEnableInput = true;
         _currentMenu = 'c';
     }
     //choiceメニューでのKeyConfig選択肢
