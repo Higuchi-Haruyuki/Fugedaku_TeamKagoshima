@@ -29,15 +29,13 @@ public class StageSelectManeger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _cursors = new StageSelectCursor[3, 3];
+        _cursors = new StageSelectCursor[2, 2];
         // Findで目当てのオブジェクトを取得して保存しとく
-        _cursors[0, 0] = GameObject.Find("Stage1Text").GetComponent<StageSelectCursor>();
-        _cursors[0, 1] = GameObject.Find("StageText").GetComponent<StageSelectCursor>();
-        _cursors[0, 2] = GameObject.Find("Save1").GetComponent<StageSelectCursor>();
-
-        _cursors[1, 0] = GameObject.Find("Stage2Text").GetComponent<StageSelectCursor>();
-        _cursors[1, 1] = GameObject.Find("StageText2").GetComponent<StageSelectCursor>();
-        _cursors[2, 2] = GameObject.Find("Save2").GetComponent<StageSelectCursor>();
+       
+        _cursors[0, 0] = GameObject.Find("StageText").GetComponent<StageSelectCursor>();
+        _cursors[0, 1] = GameObject.Find("Save1").GetComponent<StageSelectCursor>();
+        _cursors[1, 0] = GameObject.Find("StageText2").GetComponent<StageSelectCursor>();
+        _cursors[1, 1] = GameObject.Find("Save2").GetComponent<StageSelectCursor>();
 
 
 
