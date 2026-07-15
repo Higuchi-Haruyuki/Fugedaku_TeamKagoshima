@@ -8,13 +8,17 @@ public class PlayerItemSystem : MonoBehaviour
 {
     [SerializeField] private List<ItemBase> m_itemList;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.CompareTag("Item"))
         {
             ItemBase item = collision.gameObject.GetComponent<ItemBase>();
-            if (m_itemList.Count == 0) m_itemList.Add(item);
+            if (m_itemList.Count == 0)
+            { 
+                m_itemList.Add(item);
+
+            }
             else
             {
                 //見つかったアイテムを保管する変数
@@ -25,9 +29,6 @@ public class PlayerItemSystem : MonoBehaviour
                     if (i.Name == item.Name)
                     {
                         foundItem = i; 
-                        
-                        item.gameObject.GetComponent<Collider2D>().enabled = false;
-                        item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                         break;               
                     }
                 }
@@ -41,6 +42,9 @@ public class PlayerItemSystem : MonoBehaviour
                     m_itemList.Add(item);
                 }
             }
+
+            item.gameObject.GetComponent<Collider2D>().enabled = false;
+            item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
     //アイテムの名前を引数にとり、所持しているときに使用して、そのインスタンスを返す関数

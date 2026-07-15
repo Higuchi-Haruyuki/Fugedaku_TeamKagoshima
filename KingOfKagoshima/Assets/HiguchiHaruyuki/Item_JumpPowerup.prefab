@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8497792089792859292, guid: 109fd47f8193b2e46a71d40db6248745, type: 3}
+  m_Sprite: {fileID: -6291402141775289809, guid: f9bb9228dee543240b05b29f283f0081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_JumpPowerup
   m_useCount: 3
-  m_jumpPower: 1.5
+  m_jumpPower: 1.1
 --- !u!58 &8410430577318657958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,4 +142,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.5
+  m_Radius: 1.5
