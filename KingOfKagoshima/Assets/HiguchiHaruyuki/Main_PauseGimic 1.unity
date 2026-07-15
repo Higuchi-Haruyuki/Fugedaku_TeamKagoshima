@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5044161471598069133, guid: 599185126acab714c869f39b382d4fe7, type: 3}
+      propertyPath: _doubleJumpPower
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8187757611820778884, guid: 599185126acab714c869f39b382d4fe7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.24
@@ -1913,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_DoubleJump (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2841406805197439712, guid: f7234e619236cde459f88ba172594533, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.320181
@@ -2033,11 +2041,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2312747796441626482, guid: 112986b2db9989d44a39555dae286cd1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.591
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2312747796441626482, guid: 112986b2db9989d44a39555dae286cd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.907
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 2312747796441626482, guid: 112986b2db9989d44a39555dae286cd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2074,10 +2082,6 @@ PrefabInstance:
     - target: {fileID: 6470167672744393395, guid: 112986b2db9989d44a39555dae286cd1, type: 3}
       propertyPath: m_Name
       value: Item_JumpPowerup
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470167672744393395, guid: 112986b2db9989d44a39555dae286cd1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2253,17 +2257,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_DoubleJump
       objectReference: {fileID: 0}
-    - target: {fileID: 2841406805197439712, guid: f7234e619236cde459f88ba172594533, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.414
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.907
+      value: -2.721
       objectReference: {fileID: 0}
     - target: {fileID: 9050525858331976745, guid: f7234e619236cde459f88ba172594533, type: 3}
       propertyPath: m_LocalPosition.z
