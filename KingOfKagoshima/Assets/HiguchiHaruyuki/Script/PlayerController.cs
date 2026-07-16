@@ -386,6 +386,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    bool IsInLangeY(float min, float max)
+    {
+        foreach (var vector in _normalVectors)
+        {
+            //ほぼ一緒なら一緒とみなす
+            if (min < vector.y && vector.y < max) return true;
+        }
+        return false;
+    }
+
     /// <summary>
     /// 指定したベクトルを法線ベクトルとして持っているならtrueを返す
     /// </summary>
@@ -423,7 +433,7 @@ public class PlayerController : MonoBehaviour
                 _normalVectors.Add(contact.normal);
             }
 
-            if (HasNormalVector(new(0, 1.00f)))
+            if (IsInLangeY(0.5f, 1.5f))
             {
                 _isGround = true;
                 if (collision.gameObject.CompareTag("IceGround"))
