@@ -18,6 +18,9 @@ public class StageSelectManeger : MonoBehaviour
     [SerializeField] RectTransform[] _stageTextRects; // StageText, StageText2のRectTransformをInspectorで登録
     [SerializeField] float _slideDuration = 0.25f;
     [SerializeField] float _slideDistance = 300f;
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _decideSE;
+
 
     Vector2[] _stageTextHomePositions; // 各テキストの本来の位置を保存
     Coroutine _slideCoroutine;
@@ -93,6 +96,10 @@ public class StageSelectManeger : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _cursors[_stageIndex, _cursorIndex].Pressed();
+            if (_audioSource != null && _decideSE != null)
+            {
+                _audioSource.PlayOneShot(_decideSE);
+            }
         }
     }
 
