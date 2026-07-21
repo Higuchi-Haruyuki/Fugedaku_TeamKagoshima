@@ -106,11 +106,14 @@ public class MainUIDirector : MonoBehaviour
             //使用可能回数を保存する
             _itemUseCountBeforeCall.Add(item.UseCount);
             //アイコンの設定
-            var image = itemUI.GetComponentInChildren<Image>();
-            image.sprite = Resources.Load<Sprite>($"{item.IconPath}");
+            var image = itemUI.GetComponentsInChildren<Image>();
+            image[1].sprite = Resources.Load<Sprite>($"{item.IconPath}");
+            
+            var text = itemUI.GetComponentsInChildren<TextMeshProUGUI>();
             //個数表示
-            var text = itemUI.GetComponentInChildren<TextMeshProUGUI>();
-            text.SetText($"残り{item.UseCount}回");
+            text[0].SetText($"残り{item.UseCount}回");
+            //説明表示
+            text[1].SetText(item.Description);
         }
     }
     //プレイヤーがアイテムを使用していたら描画し直す

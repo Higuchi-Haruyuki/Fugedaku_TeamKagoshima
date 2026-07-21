@@ -2178,7 +2178,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5153555077202469884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,6 +2208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e817ee15df2831a408240fa7a0d31c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  _playerContorller: {fileID: 0}
   _infoWindow: {fileID: 1459091727964451530}
   _giveupMenu: {fileID: 6769120617613132326}
   _keyConfigMenu: {fileID: 7242319648877071557}
