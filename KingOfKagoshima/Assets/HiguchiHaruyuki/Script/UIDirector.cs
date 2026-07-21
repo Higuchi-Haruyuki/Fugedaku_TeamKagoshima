@@ -124,6 +124,7 @@ public class UIDirector : MonoBehaviour
     Application.Quit();//ゲームプレイ終了
 #endif
         }
+        Time.timeScale = 1f;
     }
     void OnClear()
     {
@@ -154,6 +155,7 @@ public class UIDirector : MonoBehaviour
         Score fastestTime = new();
         fastestTime.AddTime(currentFastestTime);
         fastestTime.SaveFastestTime();
+        Time.timeScale = 1f;
         //シーンのロード
         StartCoroutine(FadeOutAndLoadScene("resultScene"));
     }
