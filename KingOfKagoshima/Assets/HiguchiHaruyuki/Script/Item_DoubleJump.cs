@@ -7,8 +7,8 @@ public class Item_DoubleJump : ItemBase
     void Start()
     {
         Name = "二段ジャンプ";
-        Description = "一定回数二段ジャンプができます";
-        IconPath = "ItemIcon/DoubleJump(kari)";
+        Description = "一定回数空中で一回ジャンプができます";
+        IconPath = "ItemIcon/DoubleJump";
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数 

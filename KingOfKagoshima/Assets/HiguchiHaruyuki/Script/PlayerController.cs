@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
     private List<Vector2> _normalVectors;
 
-
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -451,6 +450,23 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         CheckIsGround(collision);
+
+        var normalY = collision.contacts[0].normal.y;
+        var normalX = collision.contacts[0].normal.x;
+        //30~80度の時、-80~-30度は滑るようにする
+        var rad = MathF.Atan(normalY / normalX);
+        var degree = rad * Mathf.Rad2Deg;
+        Debug.Log(degree);
+
+        bool leftTopToRightBottom = degree > 30 && degree < 80;
+        bool rightTopToleftBottom = degree > -80 && degree < -30;
+
+        if (leftTopToRightBottom || rightTopToleftBottom)
+        {
+            var pos = transform.position;
+            pos.y -= 0.1f;
+            transform.position = pos;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

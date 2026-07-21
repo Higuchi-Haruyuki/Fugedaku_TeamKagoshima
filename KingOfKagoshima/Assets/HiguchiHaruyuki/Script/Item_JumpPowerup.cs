@@ -11,7 +11,7 @@ public class Item_JumpPowerup : ItemBase
     {
         Name = "ジャンプ力上昇";
         Description = "一定回数ジャンプ力が上がります";
-        IconPath = "ItemIcon/JumpPowerUp(kari)";
+        IconPath = "ItemIcon/JumpPowerUp";
         UseCount = m_useCount;
     }
     //プレイヤー側から呼び出す関数
