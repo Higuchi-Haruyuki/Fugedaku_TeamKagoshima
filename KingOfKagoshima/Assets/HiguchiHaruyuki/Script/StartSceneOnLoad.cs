@@ -10,6 +10,7 @@ public class StartSceneOnLoad : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
+        Time.timeScale = 1f;
         if (StageNum == 1)
             _data = SaveManager.LoadJson(SaveManager.GetPath(SaveFile.Stage1SaveData));
         else if (StageNum == 2)
