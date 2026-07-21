@@ -95,12 +95,13 @@ public class StageSelectManeger : MonoBehaviour
         //スペースキーで決定
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            _cursors[_stageIndex, _cursorIndex].Pressed();
             if (_audioSource != null && _decideSE != null)
             {
                 _audioSource.PlayOneShot(_decideSE);
             }
+            Invoke(nameof(CallPressed), _decideSE != null ? _decideSE.length : 0f);
         }
+        
     }
 
     /// <summary>
@@ -185,7 +186,10 @@ public class StageSelectManeger : MonoBehaviour
         //新しく選ばれたカーソルの色を変える
         _cursors[_stageIndex, _cursorIndex].Selected();
     }
-
+    void CallPressed()
+    {
+        _cursors[_stageIndex, _cursorIndex].Pressed();
+    }
 
     StageSelectCursor GetNowcursor()
     {
