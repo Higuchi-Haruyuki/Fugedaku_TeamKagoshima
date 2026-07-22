@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
     //<フラグ>
     [Header("フラグ")]
+    //ジャンプしていいか
+    [SerializeField, ReadOnly] private bool _isEnableJump = true;
     //地面に触れているか
     [SerializeField, ReadOnly] private bool _isGround = true;
     //氷の地面にたっているか
@@ -212,7 +214,7 @@ public class PlayerController : MonoBehaviour
                 _isJumpPressed = false;
             }
             //ジャンプ処理
-            else if (_isJump)
+            else if (_isJump && _isEnableJump)
             {
                 Jump();
             }
@@ -325,6 +327,9 @@ public class PlayerController : MonoBehaviour
     void ChargeJump()
     {
         if (!IsEnableInput) return;
+
+        //ジャンプできないとき処理をしない
+        if (!_isEnableJump) return;
 
         //ジャンプキーを離したときまたはチャージ値が最大チャージ値を超えたときにジャンプする
         if (Keyboard.current.spaceKey.wasReleasedThisFrame || _chargePower >= _maxCharge)
@@ -466,7 +471,9 @@ public class PlayerController : MonoBehaviour
             var pos = transform.position;
             pos.y -= 0.1f;
             transform.position = pos;
+            _isEnableJump = false;
         }
+        else _isEnableJump = true;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
