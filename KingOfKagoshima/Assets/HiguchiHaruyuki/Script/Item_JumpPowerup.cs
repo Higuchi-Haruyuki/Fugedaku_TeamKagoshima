@@ -10,7 +10,7 @@ public class Item_JumpPowerup : ItemBase
     void Start()
     {
         Name = "ジャンプ力上昇";
-        Description = "一定回数ジャンプ力が上がります";
+        Description = "ジャンプ力が上がります";
         IconPath = "ItemIcon/JumpPowerUp";
         UseCount = m_useCount;
     }
