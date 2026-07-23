@@ -461,7 +461,7 @@ public class PlayerController : MonoBehaviour
         //30~80度の時、-80~-30度は滑るようにする
         var rad = MathF.Atan(normalY / normalX);
         var degree = rad * Mathf.Rad2Deg;
-        Debug.Log(degree);
+        //Debug.Log(degree);
 
         bool leftTopToRightBottom = degree > 30 && degree < 80;
         bool rightTopToleftBottom = degree > -80 && degree < -30;
