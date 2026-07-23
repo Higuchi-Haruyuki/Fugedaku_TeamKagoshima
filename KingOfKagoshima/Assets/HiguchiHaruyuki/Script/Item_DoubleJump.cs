@@ -7,7 +7,7 @@ public class Item_DoubleJump : ItemBase
     void Start()
     {
         Name = "二段ジャンプ";
-        Description = "一定回数空中で一回ジャンプができます";
+        Description = "空中でもう1回ジャンプができます";
         IconPath = "ItemIcon/DoubleJump";
         UseCount = m_useCount;
     }

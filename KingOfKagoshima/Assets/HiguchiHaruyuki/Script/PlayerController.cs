@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
         //ジャンプチャージ中
         //ジャンプチャージ中のフラグがtrueのときで地面に足がついているとき
-        if (_isJumpPressed && _isGround)
+        if (_isJumpPressed && _isGround && _isEnableJump)
         {
             _stateManager.CurrentState = PlayerState.JumpCharge;
         }
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
         //移動中
         //移動キーをおしているとき で 地面についているとき で 氷の地面についていないとき
-        else if (isPressedMoveKey && _isGround && !_isIceGround)
+        else if (isPressedMoveKey && _isEnableJump && _isGround && !_isIceGround)
         {
             _stateManager.CurrentState = PlayerState.Move;
         }
@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
         if (_isGround)
         {
             //ジャンプため処理
-            if (_isJumpPressed)
+            if (_isJumpPressed && _isEnableJump)
             {
                 _chargePower++;
                 _chargePower = Mathf.Clamp(_chargePower, _minCharge, _maxCharge);
