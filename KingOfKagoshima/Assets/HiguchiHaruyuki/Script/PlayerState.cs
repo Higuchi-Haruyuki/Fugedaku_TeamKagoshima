@@ -7,11 +7,11 @@ public enum PlayerState
 public class PlayerStateManager : MonoBehaviour
 {
     [SerializeField] private bool isShowDebugLog = false;
-    private static readonly int PlayerIdleHash = Animator.StringToHash("Player_Idle");
-    private static readonly int PlayerMoveHash = Animator.StringToHash("Player_Move");
-    private static readonly int PlayerJumpChargeHash = Animator.StringToHash("Player_JumpCharge");
-    private static readonly int PlayerJumpHash = Animator.StringToHash("Player_Jump");
-    private static readonly int PlayerFallHash = Animator.StringToHash("Player_Fall");
+    private static readonly int PlayerIdleHash = Animator.StringToHash("Samurai_Idle");
+    private static readonly int PlayerMoveHash = Animator.StringToHash("Samurai_Move");
+    private static readonly int PlayerJumpChargeHash = Animator.StringToHash("Samurai_JumpCharge");
+    private static readonly int PlayerJumpHash = Animator.StringToHash("Samurai_Jump");
+    private static readonly int PlayerFallHash = Animator.StringToHash("Samurai_Fall");
     private Animator _animator;
     private void Start()
     {
