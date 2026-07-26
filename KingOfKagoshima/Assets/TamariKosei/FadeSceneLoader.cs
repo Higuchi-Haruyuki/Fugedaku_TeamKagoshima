@@ -7,7 +7,7 @@ public class FadeSceneLoader : MonoBehaviour
 {
     public Image fadePanel;              // フェード用のUIパネル（Image）
     public float fadeDuration = 5.0f;    // フェードの完了にかかる時間
-    public bool isPressdEnterKey = false;    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool isPressdSpaceKey = false;    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private AudioSource bgmAudioSource;
     private void Start()
     {
@@ -45,10 +45,10 @@ public class FadeSceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.enterKey.isPressed && !isPressdEnterKey)
+        if (Keyboard.current.spaceKey.isPressed && !isPressdSpaceKey)
         {
             StartCoroutine(FadeOutAndLoadScene());
-            isPressdEnterKey = true;
+            isPressdSpaceKey = true;
         }
     }
 }

@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 911}
+  m_AnchoredPosition: {x: 17, y: 840}
   m_SizeDelta: {x: 1443.8297, y: 403.4869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52927500
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME CLEAR
+  m_text: '- GAME CLEAR -'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1a4dd042904d0d447a6f3e663ab66cc7, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 44b0216e1ff6a704bb330b863d622cda, type: 2}
@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.23969, y: -142}
+  m_AnchoredPosition: {x: 47.8, y: -142}
   m_SizeDelta: {x: 1122.3503, y: 91.6903}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135480042
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u305D\u3044\u3058\u3083\u3001Enter\u3067\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8\u3058\u3083\u3063\u3069\u30FC"
+  m_text: "\u305D\u3044\u3058\u3083\u3001Space\u3067\u30B9\u30C6\u30FC\u30B8\u30BB\u30EC\u30AF\u30C8\u3058\u3083\u3063\u3069\u30FC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
   m_sharedMaterial: {fileID: 5617397082899650180, guid: 64e96ec34f6154f44bc78060180c576b, type: 2}
@@ -580,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.24, y: 164}
+  m_AnchoredPosition: {x: 47.8, y: 164}
   m_SizeDelta: {x: 1122.3466, y: 95.2857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972090206
@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 1175839682}
   - component: {fileID: 1175839681}
   - component: {fileID: 1175839680}
+  - component: {fileID: 1175839683}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -775,6 +776,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175839683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175839679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.PixelPerfect::UnityEngine.U2D.PixelPerfectCamera
+  m_AssetsPPU: 108
+  m_RefResolutionX: 1440
+  m_RefResolutionY: 1080
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1255101468
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.24, y: 23}
+  m_AnchoredPosition: {x: 47.8, y: 23}
   m_SizeDelta: {x: 1122.3503, y: 83.9642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374649366
@@ -1204,7 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FadeSceneLoader
   fadePanel: {fileID: 1613870966}
   fadeDuration: 1
-  isPressdEnterKey: 0
+  isPressdSpaceKey: 0
 --- !u!82 &1660456727
 AudioSource:
   m_ObjectHideFlags: 0
