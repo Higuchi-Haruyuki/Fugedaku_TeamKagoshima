@@ -152,6 +152,7 @@ Transform:
   - {fileID: 653156291}
   - {fileID: 345250156}
   - {fileID: 1167556381}
+  - {fileID: 280486588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85113496
@@ -566,7 +567,7 @@ RectTransform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8613847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -823,6 +824,7 @@ GameObject:
   - component: {fileID: 488715580}
   - component: {fileID: 488715579}
   - component: {fileID: 488715578}
+  - component: {fileID: 488715581}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -904,6 +906,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488715581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488715577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.PixelPerfect::UnityEngine.U2D.PixelPerfectCamera
+  m_AssetsPPU: 108
+  m_RefResolutionX: 1440
+  m_RefResolutionY: 1080
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &653156290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee40bfa07660474b9ae7bc3c51fd56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectCursor
-  _sceneName: StageScene1 1
+  _sceneName: StageScene1_Background
   _saveFile: 1
   _isNewGame: 0
   _selectedSizeMultiplier: 1.2
@@ -1919,7 +1941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee40bfa07660474b9ae7bc3c51fd56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageSelectCursor
-  _sceneName: StageScene1 1
+  _sceneName: StageScene1_Background
   _saveFile: 1
   _isNewGame: 1
   _selectedSizeMultiplier: 1.2
@@ -1958,7 +1980,7 @@ MonoBehaviour:
   - {fileID: 1217668350}
   backgrounds: []
   slideDistance: 15
-  duration: 0.005
+  duration: 0.4
 --- !u!4 &1539068859
 Transform:
   m_ObjectHideFlags: 0
@@ -2111,7 +2133,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   slideDistance: 15
-  duration: 0.005
+  duration: 0.4
 --- !u!4 &1722207617
 Transform:
   m_ObjectHideFlags: 0
@@ -2342,7 +2364,7 @@ MonoBehaviour:
   - {fileID: 664017142}
   backgrounds: []
   slideDistance: 15
-  duration: 0.005
+  duration: 0.4
 --- !u!4 &1959380681
 Transform:
   m_ObjectHideFlags: 0
@@ -2394,7 +2416,7 @@ MonoBehaviour:
   - {fileID: 1167556381}
   - {fileID: 461841922}
   slideDistance: 15
-  duration: 0.005
+  duration: 0.4
 --- !u!4 &1971307334
 Transform:
   m_ObjectHideFlags: 0
@@ -2418,7 +2440,6 @@ SceneRoots:
   - {fileID: 1338110031}
   - {fileID: 85113498}
   - {fileID: 8613847}
-  - {fileID: 280486588}
   - {fileID: 283822792}
   - {fileID: 1539068859}
   - {fileID: 1959380681}

@@ -15,9 +15,11 @@ public class StageDebug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
         if(Keyboard.current.leftShiftKey.isPressed)
         {
             _player.position = pos;
         }
+#endif
     }
 }

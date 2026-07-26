@@ -86,12 +86,12 @@ public class TextSlider : MonoBehaviour
         if (Keyboard.current == null) return;
         if (originalPositions == null) return;
 
-        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame)
         {
             int nextIndex = (currentIndex + 1) % texts.Length;
             StartCoroutine(SlideTo(nextIndex, 1));
         }
-        else if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
+        else if (Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame)
         {
             int nextIndex = (currentIndex - 1 + texts.Length) % texts.Length;
             StartCoroutine(SlideTo(nextIndex, -1));

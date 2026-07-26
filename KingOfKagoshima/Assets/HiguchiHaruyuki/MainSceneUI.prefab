@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7686586632758517250, guid: 25dd94730a8da8a44a07e8494cb64fa2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8045602064309815506, guid: 25dd94730a8da8a44a07e8494cb64fa2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -496,7 +500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418213214463450459, guid: 25dd94730a8da8a44a07e8494cb64fa2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
