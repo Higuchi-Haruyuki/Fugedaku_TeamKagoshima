@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Item_DoubleJump : ItemBase
 {
@@ -6,6 +8,9 @@ public class Item_DoubleJump : ItemBase
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _circleGaugeImage = transform.Find("Canvas/RepopCircle").GetComponent<Image>();
+        _circleGaugeImage.fillAmount = 0.0f;
+
         Name = "二段ジャンプ";
         Description = "空中でもう1回ジャンプができます";
         IconPath = "ItemIcon/DoubleJump";
