@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private PlayerStateManager _stateManager;
     private Rigidbody2D _rb;
+    private AudioSource _landAudioSource;
 
     //<イベント>
     public Action OnJump;
@@ -99,6 +100,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _itemSystem = GetComponent<PlayerItemSystem>();
         _stateManager = GetComponent<PlayerStateManager>();
+        _landAudioSource = GetComponent<AudioSource>();
         _groundLayer = LayerMask.NameToLayer("Ground");
         //プレイヤーの状態を設定する
         _stateManager.CurrentState = PlayerState.Idle;
@@ -110,7 +112,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-
+        
         CheckChargeing();
         ChargeJump();
         Move();
@@ -439,6 +441,11 @@ public class PlayerController : MonoBehaviour
 
             if (IsInLangeY(0.5f, 1.5f))
             {
+                //着地したと考えられるから
+                if(!_isGround)
+                {
+                    _landAudioSource.Play();
+                }
                 _isGround = true;
                 if (collision.gameObject.CompareTag("IceGround"))
                 {

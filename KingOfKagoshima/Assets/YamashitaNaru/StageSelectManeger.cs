@@ -27,7 +27,7 @@ public class StageSelectManeger : MonoBehaviour
 
 
 
-    int _cursorIndex = 0;//初めからと途中で選択中
+    int _cursorIndex = 1;//初めからと途中で選択中
     int _stageIndex = 0;//左右選択中
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,24 +69,24 @@ public class StageSelectManeger : MonoBehaviour
     {
 
         //下キー入力で次のステージの選択
-        if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame)
         {
             MoveCursorIndex(1);
         }
 
         //上キーで決定
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame)
         {
             MoveCursorIndex(-1);
         }
         //左キー入力でステージの選択
-        if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame)
         {
             //ステージを切り替える
             MoveStageIndex(-1);
         }
         //右キーでステージ選択
-        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame)
         {
             //ステージを切り替える
             MoveStageIndex(1);
@@ -127,6 +127,7 @@ public class StageSelectManeger : MonoBehaviour
         {
             _cursorIndex = 0;//末尾から次に行ったら先頭へ
         }
+
         //新しく選ばれたカーソルの色を変える
         _cursors[_stageIndex, _cursorIndex].Selected();
 

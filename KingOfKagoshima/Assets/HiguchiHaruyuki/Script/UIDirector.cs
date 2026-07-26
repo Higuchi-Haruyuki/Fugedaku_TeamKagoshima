@@ -12,6 +12,8 @@ public class UIDirector : MonoBehaviour
     [SerializeField] private int _stageNumber = 1;
     [SerializeField] private Image _fadePanel;
     [SerializeField] private float _fadeDuration = 1;
+    private AudioSource _jumpSource;
+
     private Score _data;
     private PauseMenu _pauseMenu;
     private bool _isTimerStop;
@@ -24,6 +26,8 @@ public class UIDirector : MonoBehaviour
         _pauseCanvas.enabled = false;
         _pauseMenu = _pauseCanvas.GetComponent<PauseMenu>();
         _pauseAudioSource = _pauseCanvas.GetComponent<AudioSource>();
+
+        _jumpSource = GetComponent<AudioSource>();
         if (_data == null )
         {
             _data = new Score();
@@ -164,6 +168,9 @@ public class UIDirector : MonoBehaviour
         if (!_pauseCanvas.enabled)
         {
             _data.JumpCount++;
+            if (!_jumpSource) return;
+            _jumpSource.Play();
+
             //Debug.Log($"ジャンプ回数{_data.JumpCount}");
         }
     }

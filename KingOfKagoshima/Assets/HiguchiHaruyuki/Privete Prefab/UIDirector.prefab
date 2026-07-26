@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ec88e5dc365ba4496d1e955c29b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIDirector
-  m_mainCanvas: {fileID: 0}
-  m_pauseCanvas: {fileID: 0}
+  _mainCanvas: {fileID: 0}
+  _pauseCanvas: {fileID: 0}
+  _clearManager: {fileID: 0}
+  _playerContorller: {fileID: 0}
+  _stageNumber: 1
+  _fadePanel: {fileID: 0}
+  _fadeDuration: 1
