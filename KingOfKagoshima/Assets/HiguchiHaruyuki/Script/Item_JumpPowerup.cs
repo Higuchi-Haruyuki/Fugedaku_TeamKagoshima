@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item_JumpPowerup : ItemBase
 {
@@ -9,6 +10,9 @@ public class Item_JumpPowerup : ItemBase
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _circleGaugeImage = transform.Find("Canvas/RepopCircle").GetComponent<Image>();
+        _circleGaugeImage.fillAmount = 0.0f;
+
         Name = "ジャンプ力上昇";
         Description = "ジャンプ力が上がります";
         IconPath = "ItemIcon/JumpPowerUp";
