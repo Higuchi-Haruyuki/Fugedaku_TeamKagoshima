@@ -13,6 +13,8 @@ using System.Collections;
 ///</summary>
 public class StageSelectManeger : MonoBehaviour
 {
+    [SerializeField] private float _inputInactiveTime = 0.5f;
+
     [SerializeField] StageSelectCursor[,] _cursors;//Inspectorでステージの数だけ登録SAVEも含める
 
     [SerializeField] RectTransform[] _stageTextRects; // StageText, StageText2のRectTransformをInspectorで登録
@@ -29,6 +31,8 @@ public class StageSelectManeger : MonoBehaviour
 
     int _cursorIndex = 1;//初めからと途中で選択中
     int _stageIndex = 0;//左右選択中
+
+    float _lastInputTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,7 +71,7 @@ public class StageSelectManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _lastInputTimer -= Time.deltaTime;
         //下キー入力で次のステージの選択
         if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame)
         {
@@ -82,14 +86,18 @@ public class StageSelectManeger : MonoBehaviour
         //左キー入力でステージの選択
         if (Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame)
         {
+            if (_lastInputTimer > 0) return;
             //ステージを切り替える
             MoveStageIndex(-1);
+            _lastInputTimer = _inputInactiveTime;
         }
         //右キーでステージ選択
         if (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame)
         {
+            if (_lastInputTimer > 0) return;
             //ステージを切り替える
             MoveStageIndex(1);
+            _lastInputTimer = _inputInactiveTime;
         }
 
         //スペースキーで決定

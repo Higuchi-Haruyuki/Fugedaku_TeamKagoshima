@@ -36,8 +36,11 @@ EditorBuildSettings:
     path: Assets/TamariKosei/SteageScene2tamari.unity
     guid: 70bc23acbb930494fb0eea53489d8766
   - enabled: 1
-    path: Assets/HiguchiHaruyuki/StageScene1_Background.unity
+    path: Assets/HiguchiHaruyuki/StageScene1_Backgroundh.unity
     guid: d6e58c4c9705b9b4196471ebde2aa4d3
+  - enabled: 1
+    path: Assets/NozoeYuki/StageScene1_Background.unity
+    guid: 29938122814a00d4f9075ae55bb902e0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
