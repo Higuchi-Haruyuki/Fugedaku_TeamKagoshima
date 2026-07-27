@@ -348,8 +348,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsEnableInput) return;
 
-        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) _jumpChargeX = -1;
-        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) _jumpChargeX = 1f;
+        bool pressedLeft = Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed;
+        bool pressedRight = Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed;
+
+        if (pressedLeft) _jumpChargeX = -1;
+        if (pressedRight) _jumpChargeX = 1f;
+        if (!pressedLeft && !pressedRight) _jumpChargeX = 0.0f;
+        
 
     }
 
