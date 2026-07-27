@@ -5196,6 +5196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2218427808371434498, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
+      propertyPath: _playerContorller
+      value: 
+      objectReference: {fileID: 1336544321}
     - target: {fileID: 3703105934225312081, guid: 31953cb2e9d8f6d49a0c650d79db4073, type: 3}
       propertyPath: m_Enabled
       value: 1
