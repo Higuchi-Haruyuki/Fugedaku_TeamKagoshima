@@ -41,6 +41,38 @@ public class PlayerItemSystem : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            ItemBase item = other.gameObject.GetComponent<ItemBase>();
+            if (m_itemList.Count == 0)
+            {
+                m_itemList.Add(item);
+            }
+            else
+            {
+                //見つかったアイテムを保管する変数
+                ItemBase foundItem = null;
+                foreach (ItemBase i in m_itemList)
+                {
+                    //同じアイテムのインスタンスを代入する
+                    if (i.Name == item.Name)
+                    {
+                        foundItem = i;
+                        break;
+                    }
+                }
+                if (!foundItem)
+                {
+                    m_itemList.Add(item);
+                }
+            }
+            item.SetUseCount();
+            item.OnGet();
+        }
+    }
+
     //型引数でアイテムの型を受け取り、所持しているならそのインスタンスを返す
     public T CheckItem<T>() where T : ItemBase
     {
